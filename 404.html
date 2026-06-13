@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>404 - Page Not Found | Olivia & Co.</title>
+  <meta name="description" content="Oops! The page you are looking for has drifted away. Let's guide you back to our artisan olive oils and aged balsamic vinegars.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🫒</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefaf5;
+      color: #2c2418;
+      transition: background-color 0.3s ease, color 0.2s ease;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: auto; /* Allow scrolling on short screens */
+      padding: 2rem 1.5rem;
+    }
+
+    /* Dark Mode Theme */
+    body.dark {
+      background-color: #121212;
+      color: #ece8e0;
+    }
+
+    /* RTL Support */
+    body.rtl {
+      direction: rtl;
+    }
+
+    body.rtl .fa-chevron-right,
+    body.rtl .fa-arrow-right,
+    body.rtl .fa-arrow-left {
+      transform: scaleX(-1);
+    }
+
+    /* Premium Background Patterns */
+    .bg-pattern {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 50% 50%, rgba(95, 139, 111, 0.06) 0%, transparent 60%);
+      z-index: 0;
+      animation: rotateBg 60s linear infinite;
+      pointer-events: none;
+    }
+
+    body.dark .bg-pattern {
+      background: radial-gradient(circle at 50% 50%, rgba(95, 139, 111, 0.15) 0%, transparent 60%);
+    }
+
+    @keyframes rotateBg {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Controls in Top Right */
+    .controls-container {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      gap: 0.75rem;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    body.rtl .controls-container {
+      right: auto;
+      left: 1.5rem;
+    }
+
+    .control-btn {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(95, 139, 111, 0.2);
+      color: #2c2418;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .control-btn:hover {
+      background: #5f8b6f;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(95, 139, 111, 0.3);
+      border-color: #5f8b6f;
+    }
+
+    body.dark .control-btn {
+      background: rgba(31, 27, 22, 0.85);
+      border-color: rgba(143, 188, 159, 0.2);
+      color: #ece8e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark .control-btn:hover {
+      background: #8fbc9f;
+      color: #121212;
+      box-shadow: 0 6px 16px rgba(143, 188, 159, 0.4);
+      border-color: #8fbc9f;
+    }
+
+    /* Content Card */
+    .error-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 3.5rem 2.5rem;
+      border-radius: 32px;
+      max-width: 620px;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+      box-shadow: 0 20px 40px rgba(63, 46, 33, 0.05);
+      position: relative;
+      overflow: hidden;
+      margin: auto; /* Flexbox centering companion that allows scrolling if height overflows */
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body.dark .error-card {
+      background: rgba(31, 27, 22, 0.75);
+      border-color: rgba(58, 46, 38, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Logo Brand Header */
+    .brand-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .brand-icon {
+      font-size: 1.8rem;
+      color: #5f8b6f;
+    }
+
+    .brand-text {
+      font-weight: 800;
+      font-size: 1.8rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #3f2e21, #5f8b6f, #b89f7a, #3f2e21);
+      background-size: 300% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: textGradient 6s linear infinite;
+      text-decoration: none;
+    }
+
+    body.dark .brand-text {
+      background: linear-gradient(90deg, #f0e9df, #8fbc9f, #d4c3aa, #f0e9df);
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    @keyframes textGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Main 404 Title */
+    .error-code {
+      font-size: clamp(4rem, 15vw, 7.5rem); /* Safer minimum for ultra-small screens */
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -3px;
+      background: linear-gradient(135deg, #5f8b6f, #3a5c46);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    body.dark .error-code {
+      background: linear-gradient(135deg, #8fbc9f, #5f8b6f);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    /* Premium Animation (Floating Olive and Oil Drip) */
+    .illustration-container {
+      position: relative;
+      height: 120px;
+      margin: 1.5rem auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .olive-branch-svg {
+      width: 140px;
+      height: 100px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .stem {
+      stroke: #7c6853;
+      stroke-width: 3;
+    }
+    
+    body.dark .stem {
+      stroke: #a8947f;
+    }
+
+    .leaf {
+      fill: #8fbc9f;
+      stroke: #5f8b6f;
+      stroke-width: 1.5;
+      transform-origin: center;
+      animation: windSway 4s ease-in-out infinite;
+    }
+
+    .leaf-2 {
+      animation-delay: -1.5s;
+    }
+
+    .leaf-3 {
+      animation-delay: -3s;
+    }
+
+    @keyframes windSway {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(4deg) translateY(1px); }
+    }
+
+    .floating-olive {
+      fill: #606f40;
+      stroke: #46522f;
+      stroke-width: 1.5;
+      transform-origin: 65px 50px;
+      animation: oliveSway 3s ease-in-out infinite;
+    }
+
+    @keyframes oliveSway {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(10deg); }
+    }
+
+    .dripping-oil {
+      fill: #e8a838;
+      opacity: 0;
+      animation: dripAnimation 3s ease-in infinite;
+      transform-origin: center;
+    }
+
+    @keyframes dripAnimation {
+      0% {
+        transform: translateY(0) scale(0.6);
+        opacity: 0;
+      }
+      30% {
+        transform: translateY(15px) scale(1.1);
+        opacity: 1;
+      }
+      60% {
+        transform: translateY(55px) scale(0.8);
+        opacity: 0.8;
+      }
+      80% {
+        transform: translateY(70px) scale(0.3);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(70px) scale(0);
+        opacity: 0;
+      }
+    }
+
+    /* Subtitle & Message */
+    .error-title {
+      font-size: clamp(1.25rem, 4vw, 1.8rem); /* Fluid scaling down to 20px */
+      font-weight: 700;
+      color: #3f2e21;
+      margin-bottom: 0.75rem;
+    }
+
+    body.dark .error-title {
+      color: #f0e9df;
+    }
+
+    .error-message {
+      font-size: 1rem;
+      color: #5a4f41;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    body.dark .error-message {
+      color: #b5aba0;
+    }
+
+    /* Navigation Buttons */
+    .cta-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #5f8b6f;
+      color: white;
+      padding: 0.9rem 2.25rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 10px 20px rgba(95, 139, 111, 0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-home:hover {
+      background: #4e725b;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(95, 139, 111, 0.3);
+    }
+
+    body.dark .btn-home {
+      background: #8fbc9f;
+      color: #121212;
+      box-shadow: 0 10px 20px rgba(143, 188, 159, 0.15);
+    }
+
+    body.dark .btn-home:hover {
+      background: #a3cbb1;
+      box-shadow: 0 12px 24px rgba(143, 188, 159, 0.25);
+    }
+
+    .links-grid {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+      border-top: 1px solid rgba(95, 139, 111, 0.15);
+      padding-top: 1.25rem;
+      width: 100%;
+    }
+
+    body.dark .links-grid {
+      border-top-color: rgba(143, 188, 159, 0.1);
+    }
+
+    .sub-link {
+      color: #5f8b6f;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .sub-link:hover {
+      color: #3f2e21;
+      transform: translateY(-1px);
+    }
+
+    body.dark .sub-link {
+      color: #8fbc9f;
+    }
+
+    body.dark .sub-link:hover {
+      color: #f0e9df;
+    }
+
+  </style>
+
+  <!-- REQUIRED RESPONSIVE STYLING (Validated by verify_pages.py) -->
+  <style id="global-responsive-scaling">
+    html, body {
+      overflow-x: clip !important;
+      width: 100% !important;
+      max-width: 100vw !important;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box !important;
+    }
+    
+    @media (max-width: 768px) {
+      .error-card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 24px;
+        margin-top: 3.5rem; /* Ensure card flows below header buttons, preventing overlap */
+        margin-bottom: 1.5rem;
+      }
+      
+      .links-grid {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+      }
+      
+      .btn-home {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .controls-container {
+        top: 1rem;
+        right: 1rem;
+        gap: 0.5rem;
+      }
+      
+      .control-btn {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+      }
+      
+      body.rtl .controls-container {
+        right: auto;
+        left: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem 1rem;
+      }
+
+      .error-card {
+        padding: 2rem 1.25rem;
+        border-radius: 20px;
+        margin-top: 3.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .controls-container {
+        top: 0.75rem;
+        right: 0.75rem;
+        gap: 0.4rem;
+      }
+
+      .control-btn {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 0.95rem;
+      }
+
+      body.rtl .controls-container {
+        right: auto;
+        left: 0.75rem;
+      }
+
+      .sub-link {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Decorative radial background -->
+  <div class="bg-pattern"></div>
+
+  <!-- Top-Right Dark Mode and RTL buttons -->
+  <div class="controls-container">
+    <button id="themeToggle" class="control-btn" aria-label="Toggle Dark Mode" title="Toggle Theme">
+      <i id="themeIcon" class="fas fa-moon"></i>
+    </button>
+    <button id="rtlToggle" class="control-btn" aria-label="Toggle RTL Mode" title="Toggle RTL/LTR Direction">
+      <i class="fas fa-right-left"></i>
+    </button>
+  </div>
+
+  <!-- 404 Main Container -->
+  <div class="error-card">
+    
+    <!-- Branding Header -->
+    <div class="brand-header">
+      <span class="brand-icon">🫒</span>
+      <span class="brand-text">Olivia & Co.</span>
+    </div>
+
+    <!-- Error Code -->
+    <h1 class="error-code">404</h1>
+
+    <!-- Inline SVG animation matching olive/vinegar theme -->
+    <div class="illustration-container">
+      <svg class="olive-branch-svg" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Stem -->
+        <path class="stem" d="M15 65 C40 55, 70 45, 105 35" />
+        
+        <!-- Leaves -->
+        <path class="leaf leaf-1" d="M40 54 C35 40, 50 35, 55 48 C60 61, 45 68, 40 54 Z" />
+        <path class="leaf leaf-2" d="M75 42 C70 28, 85 23, 90 36 C95 49, 80 56, 75 42 Z" />
+        <path class="leaf leaf-3" d="M100 37 C96 22, 112 19, 115 32 C118 45, 104 50, 100 37 Z" />
+        
+        <!-- Olive hanging and swaying -->
+        <g class="floating-olive">
+          <line x1="65" y1="47" x2="65" y2="60" stroke="#7c6853" stroke-width="2"/>
+          <ellipse cx="65" cy="70" rx="10" ry="14"/>
+          <!-- Droplet ready to drip -->
+          <path class="dripping-oil" d="M65 82 C65 82, 62 88, 62 91 C62 93, 63.5 94.5, 65 94.5 C66.5 94.5, 68 93, 68 91 C68 88, 65 82, 65 82 Z" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- Error Message -->
+    <h2 class="error-title">Lost in the Olive Groves</h2>
+    <p class="error-message">
+      The page you are looking for has drifted away, like a leaf in the Mediterranean wind. Let's guide you back to our exquisite, artisan collections.
+    </p>
+
+    <!-- Navigation Options -->
+    <div class="cta-container">
+      <a href="index.html" class="btn-home">
+        <i class="fas fa-home"></i>
+        <span>Return to Home</span>
+      </a>
+
+      <div class="links-grid">
+        <a href="olive oil collection.html" class="sub-link">
+          <span>Artisan Olive Oils</span>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+        <a href="Balsamic Vinegar Collection.html" class="sub-link">
+          <span>Aged Balsamic Vinegars</span>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+        <a href="Recipe Blog.html" class="sub-link">
+          <span>Recipe Blog</span>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Script for local storage integration (Theme & RTL) -->
+  <script>
+    (function() {
+      const body = document.body;
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const rtlToggle = document.getElementById('rtlToggle');
+
+      const DARK_KEY = 'oliveOilDarkMode';
+      const RTL_KEY = 'oliveOilRTLMode';
+
+      // --- Dark Mode State ---
+      function updateDarkModeUI(isDark) {
+        if (themeIcon) {
+          themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        }
+      }
+
+      function setDarkMode(isDark) {
+        if (isDark) {
+          body.classList.add('dark');
+        } else {
+          body.classList.remove('dark');
+        }
+        localStorage.setItem(DARK_KEY, isDark);
+        updateDarkModeUI(isDark);
+      }
+
+      function toggleDarkMode(e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        setDarkMode(!body.classList.contains('dark'));
+      }
+
+      // Load saved theme or match system settings
+      const savedDark = localStorage.getItem(DARK_KEY);
+      if (savedDark === 'true') {
+        setDarkMode(true);
+      } else if (savedDark === 'false') {
+        setDarkMode(false);
+      } else {
+        setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+      }
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', toggleDarkMode);
+      }
+
+      // --- RTL State ---
+      function setRTL(isRTL) {
+        if (isRTL) {
+          body.classList.add('rtl');
+          body.setAttribute('dir', 'rtl');
+        } else {
+          body.classList.remove('rtl');
+          body.removeAttribute('dir');
+        }
+        localStorage.setItem(RTL_KEY, isRTL);
+      }
+
+      function toggleRTL(e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        setRTL(!body.classList.contains('rtl'));
+      }
+
+      // Load saved RTL preference
+      const savedRTL = localStorage.getItem(RTL_KEY);
+      if (savedRTL === 'true') {
+        setRTL(true);
+      } else {
+        setRTL(false);
+      }
+
+      if (rtlToggle) {
+        rtlToggle.addEventListener('click', toggleRTL);
+      }
+    })();
+  </script>
+</body>
+</html>
