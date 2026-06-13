@@ -67,6 +67,14 @@ new_css = """
     .exhibit-img { flex: 1.2; width: 100%; position: relative; }
     .exhibit-img img { width: 100%; height: 500px; object-fit: cover; box-shadow: 20px 20px 0px var(--bg-surface), 21px 21px 0px var(--border-light); transition: transform 0.5s ease; }
     .exhibit-row:hover .exhibit-img img { transform: translate(-5px, -5px); }
+    @media(min-width: 992px) {
+      .exhibit-row.reverse .exhibit-img img {
+        box-shadow: -20px 20px 0px var(--bg-surface), -21px 21px 0px var(--border-light);
+      }
+      .exhibit-row.reverse:hover .exhibit-img img {
+        transform: translate(5px, -5px);
+      }
+    }
     
     .exhibit-text { flex: 1; padding: 2rem 0; }
     @media(min-width: 992px) { .exhibit-text { padding: 2rem 4rem; } }
@@ -1123,11 +1131,11 @@ new_html = """
   <!-- 8. Gift Sets -->
   <section class="reveal-on-scroll">
     <h2 class="gallery-title" style="font-size: 2.5rem; text-align: left;">8. Balsamic Gift Sets</h2>
-    <div class="exhibit-row reverse" style="gap: 2rem; align-items: stretch;">
-      <div class="exhibit-img" style="flex: 2;">
-        <img src="images/bal_giftset.png" alt="Balsamic Gift Box" style="height: 100%; min-height: 400px;">
+    <div class="exhibit-row reverse" style="align-items: stretch;">
+      <div class="exhibit-img">
+        <img src="images/bal_giftset.png" alt="Balsamic Gift Box">
       </div>
-      <div class="exhibit-text" style="flex: 1; display: flex; flex-direction: column; justify-content: center; background: var(--bg-surface); padding: 3rem; border: 1px solid var(--border-light);">
+      <div class="exhibit-text" style="display: flex; flex-direction: column; justify-content: center; background: var(--bg-surface); padding: 3rem; border: 1px solid var(--border-light);">
         <h3>The Connoisseur's Flight</h3>
         <p style="margin-top: 1rem;">Give the gift of extraordinary flavor. Our elegantly packaged tasting flights include six 60ml bottles of our most popular traditional, white, and infused balsamics.</p>
         <a href="#" class="gallery-btn" style="margin-top: 1.5rem; align-self: flex-start;">Shop Gifts</a>
