@@ -421,6 +421,29 @@ new_css = """    /* ---------- RESET & BASE ---------- */
         right: -6px !important;
       }
 
+      /* Specific mobile overrides for Gift Box timeline (ws-shipping) */
+      .ws-shipping .ws-timeline-item {
+        border-left: none !important; /* Remove connecting line */
+        padding: 0 0 2rem 5.5rem !important; /* Make room for the icon on the left */
+      }
+      .ws-shipping .ws-timeline-icon {
+        left: 0 !important; /* Align icon to the left edge of padding */
+        top: 0 !important;
+        position: absolute !important;
+        width: 60px !important; /* Reduce icon size */
+        height: 60px !important;
+        font-size: 1.5rem !important; /* Reduce icon font size */
+        box-shadow: none !important; /* Remove large white ring shadow */
+      }
+      body.rtl .ws-shipping .ws-timeline-item {
+        border-right: none !important;
+        padding: 0 5.5rem 2rem 0 !important;
+      }
+      body.rtl .ws-shipping .ws-timeline-icon {
+        left: auto !important;
+        right: 0 !important;
+      }
+
       /* Horizontal scroll elements stack vertically on mobile */
       .ws-scroll-row, .selections-wrapper {
         flex-direction: column !important;
