@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Olivia & Co. | Artisan Olive Oil & Vinegar</title>
+  <meta name="description" content="Premium olive oils, aged balsamic vinegars, and artisanal gift boxes. Compact navbar design with matching elegant footer.">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>    /* ---------- RESET & BASE ---------- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body{
+      font-family: 'Inter', sans-serif;
+      background-color: #fefaf5;
+      color: #2c2418;
+      transition: background-color 0.3s ease, color 0.2s ease;
+      line-height: 1.5;
+      overflow-x: clip;
+      width: 100%;
+    }
+    body.dark { background-color: #121212; color: #ece8e0; }
+
+    /* ---------- ARTISAN WORKSHOP DESIGN ---------- */
+    .workshop-wrapper {
+      background-color: #fdfaf5;
+      padding: 0; margin: 0;
+      position: relative;
+    }
+    body.dark .workshop-wrapper { background-color: #1a1613; }
+
+    /* 1. Hero Section */
+    .ws-hero {
+      position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(to bottom, rgba(44,36,24,0.4), rgba(31,27,22,0.9)), url('images/giftbox_hero.png') center/cover;
+      text-align: center; color: white; padding: 2rem; border-bottom: 8px solid #5f8b6f;
+    }
+    .ws-hero-content { max-width: 800px; z-index: 2; position: relative; }
+    .ws-hero h1 { font-size: 4.5rem; font-family: 'Playfair Display', serif; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -1px; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .ws-hero p { font-size: 1.3rem; opacity: 0.95; line-height: 1.8; font-weight: 300; margin-bottom: 2.5rem; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+    @media (max-width: 768px) { .ws-hero h1 { font-size: 3rem; } }
+
+    .ws-btn-primary { background: #5f8b6f; color: white; border: none; padding: 1.2rem 3rem; font-size: 1.1rem; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; box-shadow: 0 10px 20px rgba(95,139,111,0.3); }
+    .ws-btn-primary:hover { background: #4a6f58; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(95,139,111,0.5); }
+
+    /* Custom responsive sizing for Hero & Corporate buttons */
+    .ws-btn-custom-size {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      width: 280px !important;
+      height: 60px !important;
+      padding: 0 !important;
+    }
+
+    @media (max-width: 1024px) {
+      .mobile-menu-close {
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        width: 40px !important;
+        height: 40px !important;
+        background: transparent !important;
+        border: none !important;
+        font-size: 1.5rem !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        padding: 0 !important;
+        z-index: 1001 !important;
+        color: #2c2418 !important;
+        transition: background-color 0.2s, color 0.2s !important;
+      }
+      body.dark .mobile-menu-close {
+        color: #f0e9df !important;
+      }
+      .mobile-menu-close:hover {
+        background-color: rgba(95, 139, 111, 0.1) !important;
+        color: #5f8b6f !important;
+      }
+      body.dark .mobile-menu-close:hover {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #f0e9df !important;
+      }
+      body.rtl .mobile-menu-close {
+        right: auto !important;
+        left: 20px !important;
+      }
+
+      .ws-btn-custom-size {
+        width: 240px !important;
+        height: 55px !important;
+        font-size: 1rem !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .ws-btn-custom-size {
+        width: 100% !important;
+        max-width: 300px !important;
+        height: 50px !important;
+        font-size: 0.95rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ws-btn-custom-size {
+        max-width: 260px !important;
+        height: 48px !important;
+        font-size: 0.9rem !important;
+      }
+    }
+
+    /* 2. Create Custom Box (Interactive Look) */
+    .ws-custom-box { padding: 8rem 2rem; background: #ffffff; position: relative; }
+    body.dark .ws-custom-box { background: #1e1915; }
+    .ws-custom-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 4rem; }
+    @media (min-width: 1024px) { .ws-custom-container { grid-template-columns: 1fr 1fr; align-items: start; } }
+    
+    .ws-visualizer { 
+      position: sticky; 
+      top: 120px; 
+      background: #fdfcfb; 
+      border: 1px solid #e9dfd3; 
+      border-radius: 2rem; 
+      padding: 3rem; 
+      box-shadow: 0 30px 60px rgba(0,0,0,0.05); 
+      text-align: center; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    body.dark .ws-visualizer { background: #221c19; border-color: #3a2e26; box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
+    .ws-visualizer img { display: block; margin: 0 auto; width: 100%; max-width: 400px; height: auto; mix-blend-mode: multiply; }
+    body.dark .ws-visualizer img { mix-blend-mode: normal; filter: brightness(0.9); }
+    @media (max-width: 1023px) {
+      .ws-visualizer {
+        position: static !important;
+        width: 100% !important;
+      }
+    }
+    .ws-visualizer-footer {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      padding-top: 1.5rem;
+      width: 100%;
+    }
+    body.dark .ws-visualizer-footer {
+      border-top-color: var(--border-light);
+    }
+    .ws-visualizer-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #5f8b6f;
+    }
+    .ws-visualizer-btn {
+      padding: 0.8rem 2rem !important;
+      font-size: 0.9rem !important;
+    }
+    
+    .ws-steps-list { display: flex; flex-direction: column; gap: 2rem; }
+    .ws-step { border: 1px solid #e9dfd3; border-radius: 1.5rem; padding: 2.5rem; background: #ffffff; transition: all 0.3s ease; }
+    body.dark .ws-step { border-color: #3a2e26; background: #1a1613; }
+    .ws-step:hover { border-color: #5f8b6f; box-shadow: 0 15px 30px rgba(95,139,111,0.05); transform: translateX(10px); }
+    .ws-step h3 { font-size: 1.8rem; margin-bottom: 1rem; color: #2c2418; display: flex; align-items: center; gap: 15px; }
+    body.dark .ws-step h3 { color: #f0e9df; }
+    .ws-step h3 span { background: #5f8b6f; color: white; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 1.2rem; }
+    .ws-step p { font-size: 1.1rem; color: #6b5a48; line-height: 1.7; }
+    body.dark .ws-step p { color: #c7b59b; }
+
+    /* 3. Holiday Gifts (Festive Horizontal Scroll) */
+    .ws-holiday { padding: 8rem 2rem; background: #2a1f1a; color: #fdfaf5; overflow: hidden; position: relative; }
+    .ws-holiday::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at top right, rgba(212,184,139,0.15), transparent 60%); pointer-events: none; }
+    .ws-holiday h2 { font-size: 3.5rem; text-align: center; margin-bottom: 1rem; font-family: 'Playfair Display', serif; color: #d4b88b; }
+    .ws-holiday-desc { text-align: center; max-width: 600px; margin: 0 auto 4rem; font-size: 1.2rem; opacity: 0.9; }
+    .ws-scroll-row { display: flex; gap: 2rem; overflow-x: auto; padding: 1rem 2rem 3rem; scroll-snap-type: x mandatory; margin: 0 -2rem; -webkit-overflow-scrolling: touch; }
+    .ws-scroll-row::-webkit-scrollbar { height: 8px; }
+    .ws-scroll-row::-webkit-scrollbar-thumb { background: #d4b88b; border-radius: 10px; }
+    .ws-holiday-card { min-width: 350px; background: rgba(255,255,255,0.03); border: 1px solid rgba(212,184,139,0.2); border-radius: 1.5rem; padding: 2rem; scroll-snap-align: center; transition: transform 0.3s; }
+    .ws-holiday-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.06); border-color: #d4b88b; }
+    .ws-holiday-card img { width: 100%; height: 250px; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem; }
+    .ws-holiday-card h3 { font-size: 1.6rem; margin-bottom: 0.5rem; color: #fff; }
+    .ws-holiday-card p { font-size: 1rem; opacity: 0.8; margin-bottom: 1.5rem; }
+
+    /* 4. Corporate Gifts (Sleek Professional Block) */
+    .ws-corporate { padding: 8rem 2rem; background: #f4f0ea; position: relative; }
+    body.dark .ws-corporate { background: #16120f; }
+    .ws-corp-container { max-width: 1400px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 4rem; }
+    @media (min-width: 992px) { .ws-corp-container { flex-direction: row; } }
+    .ws-corp-img { flex: 1; border-radius: 2rem; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+    .ws-corp-img img { width: 100%; height: 100%; min-height: 500px; object-fit: cover; }
+    .ws-corp-text { flex: 1; padding: 2rem; }
+    .ws-corp-text h2 { font-size: 3.5rem; color: #2c2418; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif; }
+    body.dark .ws-corp-text h2 { color: #f0e9df; }
+    .ws-corp-text p { font-size: 1.15rem; color: #6b5a48; line-height: 1.8; margin-bottom: 2rem; }
+    body.dark .ws-corp-text p { color: #c7b59b; }
+    .ws-corp-list { list-style: none; padding: 0; margin-bottom: 3rem; }
+    .ws-corp-list li { display: flex; align-items: center; gap: 15px; font-size: 1.1rem; margin-bottom: 1rem; color: #2c2418; }
+    body.dark .ws-corp-list li { color: #f0e9df; }
+    .ws-corp-list li i { color: #5f8b6f; font-size: 1.3rem; }
+
+    /* 5. Gourmet Bundles (Masonry/Bento Showcase) */
+    .ws-gourmet { padding: 8rem 2rem; background: #ffffff; text-align: center; }
+    body.dark .ws-gourmet { background: #1e1915; }
+    .ws-gourmet h2 { font-size: 3.5rem; color: #2c2418; margin-bottom: 4rem; font-family: 'Playfair Display', serif; }
+    body.dark .ws-gourmet h2 { color: #f0e9df; }
+    .ws-bento-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media (min-width: 768px) { .ws-bento-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .ws-bento-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 350px; } }
+    .ws-bento-card { position: relative; border-radius: 1.5rem; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 2.5rem; text-align: left; }
+    .ws-bento-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: transform 0.6s ease; }
+    .ws-bento-card:hover img { transform: scale(1.05); }
+    .ws-bento-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(30,25,21,0.9), transparent); z-index: 2; }
+    .ws-bento-content { position: relative; z-index: 3; color: white; }
+    .ws-bento-content h3 { font-size: 2rem; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; }
+    .ws-bento-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1rem; }
+    .ws-bento-card.large { grid-column: span 1; grid-row: span 2; }
+    @media (min-width: 1024px) { .ws-bento-card.large { grid-column: span 2; } }
+
+    /* 6. Personalized Packaging (Hover to Reveal Details) */
+    .ws-packaging { padding: 8rem 2rem; background: #e9dfd3; text-align: center; }
+    body.dark .ws-packaging { background: #2a241e; }
+    .ws-packaging h2 { font-size: 3.5rem; color: #2c2418; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif; }
+    body.dark .ws-packaging h2 { color: #f0e9df; }
+    .ws-packaging-desc { font-size: 1.2rem; max-width: 700px; margin: 0 auto 4rem; color: #6b5a48; line-height: 1.8; }
+    body.dark .ws-packaging-desc { color: #c7b59b; }
+    .ws-pack-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
+    .ws-pack-item { background: #ffffff; border-radius: 50%; width: 300px; height: 300px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.06); transition: all 0.4s; overflow: hidden; }
+    body.dark .ws-pack-item { background: #1a1613; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .ws-pack-item:hover { transform: scale(1.05); }
+    .ws-pack-item img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.2; z-index: 1; transition: opacity 0.4s; }
+    .ws-pack-item:hover img { opacity: 0.5; }
+    .ws-pack-item-content { position: relative; z-index: 2; padding: 2rem; }
+    .ws-pack-item-content i { font-size: 3rem; color: #5f8b6f; margin-bottom: 1rem; }
+    .ws-pack-item-content h3 { font-size: 1.5rem; color: #2c2418; margin-bottom: 0.5rem; }
+    body.dark .ws-pack-item-content h3 { color: #f0e9df; }
+
+    /* 7. The Unboxing Experience */
+    .ws-unboxing { padding: 8rem 2rem; background: linear-gradient(135deg, #120e0b, #1f1b16); color: white; text-align: center; border-top: 1px solid #3a2e26; }
+    .ws-unboxing-container { max-width: 900px; margin: 0 auto; }
+    .ws-unboxing h2 { font-size: 3.5rem; font-family: 'Playfair Display', serif; margin-bottom: 2rem; color: #d4b88b; }
+    .ws-unboxing blockquote { font-size: 1.5rem; font-style: italic; line-height: 1.8; opacity: 0.9; margin-bottom: 2rem; }
+    .ws-unboxing .author { font-size: 1.1rem; color: #5f8b6f; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+
+    /* 8. Shipping & Delivery Timeline */
+    .ws-shipping { padding: 6rem 2rem; background: #ffffff; text-align: center; }
+    body.dark .ws-shipping { background: #16120f; }
+    .ws-shipping h2 { font-size: 3rem; color: #2c2418; margin-bottom: 4rem; font-family: 'Playfair Display', serif; }
+    body.dark .ws-shipping h2 { color: #f0e9df; }
+    .ws-timeline { display: flex; flex-direction: column; align-items: center; gap: 3rem; position: relative; max-width: 1000px; margin: 0 auto; }
+    @media (min-width: 768px) { .ws-timeline { flex-direction: row; justify-content: space-between; } }
+    .ws-timeline::after { content: ''; position: absolute; top: 40px; left: 10%; right: 10%; height: 2px; background: #e9dfd3; z-index: 1; display: none; }
+    body.dark .ws-timeline::after { background: #3a2e26; }
+    @media (min-width: 768px) { .ws-timeline::after { display: block; } }
+    .ws-timeline-item { position: relative; z-index: 2; width: 200px; }
+    .ws-timeline-icon { width: 80px; height: 80px; background: #fdfaf5; border: 2px solid #5f8b6f; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #5f8b6f; margin: 0 auto 1.5rem; box-shadow: 0 0 0 10px #ffffff; }
+    body.dark .ws-timeline-icon { background: #1a1613; box-shadow: 0 0 0 10px #16120f; }
+    .ws-timeline-item h4 { font-size: 1.3rem; color: #2c2418; margin-bottom: 0.5rem; }
+    body.dark .ws-timeline-item h4 { color: #f0e9df; }
+    .ws-timeline-item p { font-size: 0.95rem; color: #6b5a48; }
+    body.dark .ws-timeline-item p { color: #8a7a68; }
+/* ==========================================================================
+       GLOBAL RESPONSIVE OVERRIDES (Mobile Breakpoints: 320px, 480px, 768px, 1024px)
+       ========================================================================== */
+    html, body{
+      max-width: 100% !important;
+      overflow-x: clip !important;
+      box-sizing: border-box !important;
+    }
+    *, *::before, *::after {
+      box-sizing: inherit !important;
+    }
+    img, video, picture, iframe {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+    p, h1, h2, h3, h4, h5, h6, span, a, li {
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+    }
+
+    /* Prevent flex containers or elements with fixed widths from overflowing */
+    .container, .gallery-wrapper, .vip-wrapper, .workshop-wrapper, .pr-container, .editorial-container, .contact-section {
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: clip !important;
+    }
+
+    @media (max-width: 1024px) {
+      /* Smooth out desktop-to-tablet transitions */
+      .cards-grid, .pricing-grid, .profiles-grid, .science-bento-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Mobile layout stack overrides */
+      section, 
+      .about-section, 
+      .ws-custom-box, 
+      .ws-holiday, 
+      .ws-corporate, 
+      .ws-gourmet, 
+      .ws-packaging, 
+      .ws-unboxing, 
+      .ws-shipping, 
+      .vip-journey, 
+      .vip-selections, 
+      .vip-benefits, 
+      .vip-pricing, 
+      .vip-testimonials, 
+      .collection-section, 
+      .features-section, 
+      .heritage-section, 
+      .pairing-section, 
+      .club-section, 
+      .testimonial-section,
+      .terroir-section,
+      .sustainability-section,
+      .join-society-section,
+      .creative-hero,
+      .pairing-container,
+      .exhibit-row,
+      .exhibit-row.reverse,
+      .asymmetric-section,
+      .alchemy-section,
+      .cultivars-section {
+        padding: 2.5rem 1.25rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+      .editorial-container {
+        padding: 0 1.25rem !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 3rem !important;
+      }
+      .about-hero, .ws-hero, .contact-hero, .editorial-hero, .vip-hero-content {
+        padding: 3.5rem 1.25rem !important;
+        min-height: auto !important;
+      }
+      
+      /* Typography responsive scaling */
+      h1, .ws-hero h1, .ws-corp-text h2, .vip-section-title, .ws-holiday h2, .ws-gourmet h2, .ws-packaging h2, .ws-unboxing h2, .ws-shipping h2, .gallery-title {
+        font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+        line-height: 1.2 !important;
+      }
+      h2, .about-text h2, .section-title, .exhibit-text h2, .reserve-content h2 {
+        font-size: clamp(1.5rem, 5.5vw, 1.8rem) !important;
+        line-height: 1.2 !important;
+      }
+      h3 {
+        font-size: clamp(1.2rem, 4.5vw, 1.4rem) !important;
+      }
+
+      /* Stack grids and columns vertically */
+      .cards-grid, 
+      .features-grid, 
+      .testimonial-grid, 
+      .collection-grid, 
+      .about-grid, 
+      .values-grid, 
+      .ws-bento-grid, 
+      .ws-pack-grid, 
+      .ws-timeline, 
+      .journey-grid, 
+      .pricing-grid, 
+      .benefits-grid, 
+      .blog-layout, 
+      .two-columns, 
+      .contact-grid, 
+      .matrix-grid, 
+      .triptych-grid, 
+      .masonry-grid,
+      .terroir-grid,
+      .creative-hero,
+      .ws-custom-container,
+      .ws-corp-container,
+      .zig-zag-row,
+      .profiles-grid,
+      .sommelier-layout,
+      .science-bento-grid,
+      .sommelier-steps,
+      .ws-steps-list,
+      .feature-grid,
+      .pairing-ingredients,
+      .seasons-grid,
+      .cultivar-grid,
+      .alchemy-stages,
+      .article-list,
+      .article-item,
+      .sidebar,
+      .tags-cloud,
+      .social-login,
+      .checkbox-group,
+      .exhibit-row,
+      .exhibit-row.reverse,
+      .pricing-grid,
+      .testi-grid,
+      .seasons-grid,
+      .cultivar-grid {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+      }
+      
+      /* Make items span full width when stacked */
+      .matrix-col, .masonry-item, .triptych-card, .ws-pack-item, .ws-holiday-card, .selection-card, .price-card, .testi-card, .benefit-item, .journey-step, .profile-card, .science-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+      }
+      
+      /* Custom timeline stacking */
+      .timeline::before, .ws-timeline::before, .alchemy-stages::before {
+        display: none !important;
+      }
+      .timeline-item, .ws-timeline-item, .alchemy-stage {
+        width: 100% !important;
+        left: 0 !important;
+        text-align: left !important;
+        padding: 0 0 1.5rem 1.5rem !important;
+        border-left: 2px solid #5f8b6f !important;
+        border-bottom: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .timeline-dot, .ws-timeline-icon, .alchemy-number {
+        left: -6px !important;
+        right: auto !important;
+        position: absolute !important;
+      }
+      
+      /* RTL Support for stacked timeline */
+      body.rtl .timeline-item, body.rtl .ws-timeline-item, body.rtl .alchemy-stage {
+        text-align: right !important;
+        padding-left: 0 !important;
+        padding-right: 1.5rem !important;
+        border-left: none !important;
+        border-right: 2px solid #5f8b6f !important;
+      }
+      body.rtl .timeline-dot, body.rtl .ws-timeline-icon, body.rtl .alchemy-number {
+        left: auto !important;
+        right: -6px !important;
+      }
+
+      /* Horizontal scroll elements stack vertically on mobile */
+      .ws-scroll-row, .selections-wrapper {
+        flex-direction: column !important;
+        overflow-x: visible !important;
+        padding: 1rem 0 !important;
+        margin: 0 !important;
+      }
+      .ws-holiday-card, .selection-card {
+        min-width: 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Flex and spacing adjustments */
+      .info-text, .info-image, .ws-visualizer, .ws-corp-img, .ws-corp-text, .exhibit-img, .exhibit-text {
+        width: 100% !important;
+        flex: none !important;
+      }
+      .ws-visualizer {
+        position: static !important;
+        padding: 2rem 1.5rem !important;
+      }
+      .ws-visualizer-footer {
+        flex-direction: column !important;
+        gap: 1.2rem !important;
+        text-align: center !important;
+        align-items: center !important;
+      }
+      .ws-visualizer-footer .ws-btn-primary {
+        width: 100% !important;
+        display: block !important;
+        text-align: center !important;
+      }
+
+      /* Image height adjustments for mobile */
+      .exhibit-img img, .form-image img, .map-box img {
+        height: auto !important;
+        max-height: 300px !important;
+        width: 100% !important;
+        box-shadow: none !important;
+      }
+      
+      /* Buttons fit mobile screens */
+      .btn, .btn-primary, .btn-submit, .btn-secondary, .vip-btn, .login-btn, .mobile-login-btn, .gallery-btn {
+        width: 100% !important;
+        text-align: center !important;
+        display: block !important;
+        padding: 0.8rem 1.25rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1, .ws-hero h1 { font-size: 1.6rem !important; }
+      h2, .about-text h2, .section-title { font-size: 1.35rem !important; }
+      h3 { font-size: 1.15rem !important; }
+
+      .login-container, .register-container, .ws-step, .sidebar-widget, .price-card, .value-card, .benefit-circle, .testi-card {
+        padding: 1rem 0.75rem !important;
+      }
+      .ws-pack-item {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 !important;
+      }
+      .selection-card, .ws-holiday-card {
+        height: auto !important;
+      }
+      
+      /* Section padding reduction for small screens */
+      main, section, .editorial-container, .alchemy-container, .workshop-wrapper, .pr-container, .contact-section {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+      }
+    }
+
+    @media (max-width: 320px) {
+      h1, .ws-hero h1 { font-size: 1.45rem !important; }
+      h2, .about-text h2 { font-size: 1.2rem !important; }
+      
+      /* Extra padding reduction */
+      main, section, .editorial-container, .alchemy-container, .workshop-wrapper, .pr-container, .contact-section {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        padding-top: 1.25rem !important;
+        padding-bottom: 1.25rem !important;
+      }
+    }
+
+    /* RTL Support for Font Awesome directional icons */
+    body.rtl .fa-arrow-right, 
+    body.rtl .fa-long-arrow-alt-right, 
+    body.rtl .fa-chevron-right {
+      display: inline-block !important;
+      transform: scaleX(-1) !important;
+    }
+
+    /* --- INJECTED NAVBAR & FOOTER STYLES --- */
+    body.dark .navbar {
+      border-bottom: 1px solid rgba(58, 46, 38, 0.8);
+      background: transparent;
+    }
+
+    body.dark .navbar::before {
+      background: linear-gradient(135deg, rgba(31,27,22,0.95), rgba(42,36,30,0.95), rgba(26,35,30,0.95), rgba(31,27,22,0.95));
+      background-size: 300% 300%;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    body.dark .footer {
+      background-color: #1f1b16;
+      border-bottom: 1px solid #3a2e26;
+      border-top: 1px solid #3a2e26;
+    }
+
+    body.dark .nav-link,
+    body.dark .nav-item a,
+    body.dark .icon-btn,
+    body.dark .login-btn,
+    body.dark .mobile-controls .icon-btn,
+    body.dark .mobile-login-btn,
+    body.dark .footer a,
+    body.dark .footer .footer-link,
+    body.dark .footer-heading,
+    body.dark .footer-bottom-text {
+      color: #f0e9df;
+    }
+    
+    body.dark .logo-text {
+      background: linear-gradient(90deg, #f0e9df, #8fbc9f, #d4c3aa, #f0e9df);
+      background-size: 300% auto;
+      color: transparent !important;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    body.dark .dropdown-menu,
+    body.dark .mega-dropdown-menu {
+      background-color: #1f1b16;
+      border-color: #4a3e34;
+    }
+
+    body.dark .dropdown-item,
+    body.dark .mega-dropdown-item {
+      color: #f0e9df;
+    }
+
+    body.dark .dropdown-item:hover,
+    body.dark .mega-dropdown-item:hover {
+      background-color: #3f3329;
+    }
+
+    body.dark .hamburger span {
+      background-color: #f0e9df;
+    }
+
+    body.dark .login-btn {
+      border-color: #c7b59b;
+    }
+
+    body.dark .mobile-controls {
+      border-top-color: #3a2e26;
+    }
+
+    body.dark .feature-card,
+    body.dark .blog-card {
+      background-color: #1f1b16;
+      border-color: #3a2e26;
+    }
+
+    body.dark .badge {
+      background: #2f281f;
+    }
+    
+    body.dark .footer {
+      border-top-color: #3a2e26;
+      background-color: #1f1b16;
+    }
+    
+    body.dark .footer-social-icon {
+      background-color: #1f1b16;
+      color: #f0e9df;
+    }
+    
+    body.dark .footer-social-icon:hover {
+      background-color: #5f8b6f;
+      color: white;
+    }
+    
+    body.dark .footer-newsletter input {
+      background-color: #1f1b16;
+      border-color: #4a3e34;
+      color: #f0e9df;
+    }
+
+    /* ---------- COMPACT NAVBAR (Reduced size) ---------- */
+    @keyframes premiumShimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes glowingBorder {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+        .navbar {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      padding: 0.4rem 1rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      border-bottom: none;
+      background: transparent;
+    }
+
+    .navbar::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(246,240,230,0.92), rgba(235,242,238,0.92), rgba(255,255,255,0.92));
+      background-size: 300% 300%;
+      animation: premiumShimmer 10s ease infinite;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: -1;
+      pointer-events: none;
+      transition: background 0.3s ease, backdrop-filter 0.3s ease;
+    }
+
+    .navbar::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, rgba(95,139,111,0.2), #5f8b6f, #cfbcab, rgba(95,139,111,0.2));
+      background-size: 200% auto;
+      animation: glowingBorder 4s linear infinite;
+    }
+
+    @media (min-width: 768px) {
+      .navbar {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+
+        padding: 0.4rem 2rem;
+      }
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Logo - left side */
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+      min-width: 120px;
+    }
+
+    .logo-icon {
+      font-size: 1.1rem;
+      color: #5f8b6f;
+    }
+
+    @keyframes textGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .logo-text {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #3f2e21, #5f8b6f, #b89f7a, #3f2e21);
+      background-size: 300% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: textGradient 6s linear infinite;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo-text:hover {
+      transform: scale(1.02);
+    }
+
+    @media (min-width: 480px) {
+      .logo-icon { font-size: 1.2rem; }
+      .logo-text { font-size: 1.05rem; }
+    }
+
+    /* Desktop navigation menu - centered */
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      margin: 0 1rem;
+      gap: 0.05rem;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0.3rem 0.7rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: #2c2418;
+      border-radius: 30px;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 2px;
+      left: 50%;
+      background: linear-gradient(90deg, #5f8b6f, #cfbcab);
+      transition: width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      border-radius: 2px;
+      opacity: 0;
+    }
+
+    .nav-link:hover::after {
+      width: 80%;
+      left: 10%;
+      opacity: 1;
+    }
+
+    .nav-link:hover {
+      color: #5f8b6f;
+      transform: translateY(-1px);
+    }
+
+    /* Dropdown menus - desktop */
+    .mega-dropdown-menu, .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(255, 253, 249, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 18px;
+      min-width: 200px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(233, 223, 211, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(15px) scale(0.98);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 100;
+      list-style: none;
+      padding: 0.6rem 0;
+    }
+
+    .nav-item.mega-dropdown:hover .mega-dropdown-menu,
+    .nav-item.dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(8px) scale(1);
+    }
+
+    .mega-dropdown-item, .dropdown-item {
+      display: block;
+      padding: 0.4rem 1.2rem;
+      text-decoration: none;
+      color: #2c2418;
+      font-size: 0.75rem;
+      font-weight: 450;
+      transition: background 0.15s;
+    }
+
+    .mega-dropdown-item:hover, .dropdown-item:hover {
+      background-color: #f7efe7;
+    }
+
+    /* Desktop controls (hidden on mobile/tablet) */
+    .desktop-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #2c2418;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .icon-btn:hover {
+      background-color: #e7dfd6;
+    }
+
+    .login-btn {
+      background: transparent;
+      border: 1.5px solid #cfbcab;
+      padding: 0.35rem 1rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      color: #2c2418;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .login-btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+
+    .login-btn:hover::before {
+      left: 100%;
+    }
+
+    .login-btn:hover {
+      background: linear-gradient(135deg, #5f8b6f, #4a6f58);
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 6px 16px rgba(95, 139, 111, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; margin-left: 6px; }
+    .hamburger span { width: 22px; height: 2px; background-color: #2c2418; transition: 0.3s ease; border-radius: 2px; transform-origin: center; }
+    .hamburger.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    @media (max-width: 1024px) {
+      .desktop-controls { display: none !important; } .hamburger { display: flex; }
+      .nav-menu { position: fixed; right: -100%; top: 0; flex-direction: column; background-color: #ffffff; width: 280px; height: 100vh; transition: right 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1); box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15); padding: 70px 0 2rem 0; overflow-y: auto; z-index: 999; border-left: 1px solid #e2d6ca; align-items: stretch; gap: 0; margin: 0; flex: none; justify-content: flex-start; }
+      body.dark .nav-menu { background-color: #1f1b16; border-left-color: #3a2e26; }
+      .nav-menu.active { right: 0; }
+      .nav-item { width: 100%; }
+      .nav-link { white-space: normal; justify-content: space-between; padding: 0.75rem 1.5rem; border-radius: 0; font-size: 0.9rem; }
+      .dropdown-menu, .mega-dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; display: none; width: 100%; background-color: rgba(0, 0, 0, 0.02); border: none; padding-left: 1.5rem; box-shadow: none; }
+      .nav-item.dropdown.open .dropdown-menu, .nav-item.mega-dropdown.open .mega-dropdown-menu { display: block; }
+      .mobile-controls { display: flex; flex-direction: column; gap: 12px; padding: 1.5rem; margin-top: 1rem; border-top: 1px solid #e9dfd3; }
+      .mobile-controls .control-row { display: flex; align-items: center; width: 100%; }
+      .mobile-controls .icon-btn { justify-content: flex-start; gap: 12px; width: auto; padding: 0.6rem 1rem; font-size: 0.9rem; border-radius: 12px; background-color: transparent; transition: all 0.2s; }
+      .mobile-controls .icon-btn:hover { background-color: #e7dfd6; color: #2c2418; }
+      body.dark .mobile-controls .icon-btn:hover { background-color: #3a2e26; color: #f0e9df; }
+      .mobile-login-btn { border: 1.5px solid #cfbcab; padding: 0.7rem; border-radius: 40px; font-weight: 600; text-align: center; width: 100%; background: transparent; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s; }
+      .mobile-login-btn:hover { background-color: #e7dfd6; border-color: #5f8b6f; }
+      .menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); z-index: 998; opacity: 0; visibility: hidden; transition: all 0.25s ease; }
+      .menu-overlay.active { opacity: 1; visibility: visible; }
+
+    }
+    @media (min-width: 1025px) {
+      .mobile-controls, .mobile-menu-close {
+        display: none !important;
+      }
+      .nav-menu {
+        justify-content: center;
+      }
+      .logo-area, .desktop-controls {
+        width: auto;
+      }
+    }
+
+    /* ---------- RTL SUPPORT ---------- */
+    body.rtl {
+      direction: rtl;
+    }
+    body.rtl .nav-menu {
+      padding-right: 0;
+    }
+    body.rtl .dropdown-menu,
+    body.rtl .mega-dropdown-menu {
+      left: auto;
+      right: 0;
+    }
+    @media (max-width: 1024px) {
+      body.rtl .nav-menu {
+        right: auto;
+        left: -100%;
+        border-left: none;
+        border-right: 1px solid #e2d6ca;
+      }
+      body.rtl .nav-menu.active {
+        right: auto;
+        left: 0;
+      }
+    }
+
+    /* ---------- FOOTER SECTION - MATCHING NAVBAR STYLES ---------- */
+    .footer {
+      background-color: #ffffff;
+      border-top: 1px solid #ede5db;
+      margin-top: 3rem;
+      padding: 2rem 1rem 1.5rem;
+      transition: background 0.2s;
+    }
+    
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        padding: 0 1rem;
+      }
+    }
+    
+    /* Footer Logo Area - identical to navbar logo */
+    .footer-logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-logo-icon {
+      font-size: 1.2rem;
+      color: #5f8b6f;
+    }
+    
+    .footer-logo-text {
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #3f2e21, #5f8b6f, #b89f7a, #3f2e21);
+      background-size: 300% auto;
+      color: transparent !important;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: textGradient 6s linear infinite;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    .footer-logo-text:hover {
+      transform: scale(1.02);
+    }
+    body.dark .footer-logo-text {
+      background: linear-gradient(90deg, #f0e9df, #8fbc9f, #d4c3aa, #f0e9df);
+      background-size: 300% auto;
+      color: transparent !important;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    
+    .footer-description {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: #5a4a38;
+      margin-top: 0.5rem;
+    }
+    
+    body.dark .footer-description {
+      color: #c7b59b;
+    }
+    
+    .footer-heading {
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      color: #3f2e21;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+    
+    .footer-link {
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #2c2418;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .footer-link:hover {
+      color: #5f8b6f;
+      transform: translateX(3px);
+    }
+    
+    body.rtl .footer-link:hover {
+      transform: translateX(-3px);
+    }
+    
+    /* Social Icons */
+    .footer-social {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .footer-social-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #f0e8df;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #2c2418;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    
+    .footer-social-icon:hover {
+      background-color: #5f8b6f;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    /* Newsletter Form */
+    .footer-newsletter {
+      margin-top: 0.5rem;
+    }
+    
+    .footer-newsletter input {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid #e9dfd3;
+      border-radius: 40px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      background-color: transparent;
+      color: #2c2418;
+      outline: none;
+      transition: all 0.2s;
+    }
+    
+    .footer-newsletter input:focus {
+      border-color: #5f8b6f;
+    }
+    
+    .footer-newsletter button {
+      margin-top: 0.6rem;
+      background-color: #5f8b6f;
+      color: white;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.7rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .footer-newsletter button:hover {
+      background-color: #4a6f58;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 1.5rem;
+      border-top: 1px solid #ede5db;
+      font-size: 0.7rem;
+    }
+    
+    .footer-bottom-text {
+      color: #5a4a38;
+    }
+    
+    @media (min-width: 768px) {
+      .footer {
+        padding: 2.5rem 2rem 1.5rem;
+      }
+    }
+</style>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🫒</text></svg>">
+
+  <!-- THEME OVERRIDE: FORCE OLIVE OIL COLLECTION COLORS -->
+  <style id="theme-override">
+    :root {
+      --bg-main: #fefaf5;
+      --text-main: #2c2418;
+      --bg-surface: #ffffff;
+      --border-light: #e9dfd3;
+      --accent: #5f8b6f;
+    }
+    body.dark {
+      --bg-main: #121212;
+      --text-main: #ece8e0;
+      --bg-surface: #1e1915;
+      --border-light: #3a2e26;
+    }
+
+    body{ background-color: var(--bg-main) !important; color: var(--text-main) !important; }
+
+    /* BALSAMIC */
+    .balsamic-wrapper { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+    .hero-mock { background: var(--bg-surface) !important; }
+    .lux-card { background: var(--bg-surface) !important; border-color: var(--border-light) !important; }
+
+    /* FLAVOR PROFILES */
+    .editorial-container { background-color: transparent !important; }
+    .editorial-hero { background: transparent !important; border: 1px solid var(--border-light) !important; box-shadow: none !important; }
+    .editorial-hero-content h1, .editorial-hero-content p { color: #ffffff !important; text-shadow: 0 2px 10px rgba(0,0,0,0.8) !important; }
+    .editorial-content-card { background: var(--bg-surface) !important; border-color: var(--border-light) !important; }
+    .taste-matrix { background: transparent !important; border-color: var(--border-light) !important; }
+    .matrix-col { background: var(--bg-surface) !important; border-color: var(--border-light) !important; }
+    .editorial-title, .editorial-desc, .taste-matrix h2, .matrix-col h3 { color: var(--text-main) !important; }
+
+    /* GIFT BOX BUILDER */
+    .workshop-wrapper { background-color: transparent !important; }
+    .ws-custom-box, .ws-corporate, .ws-gourmet, .ws-packaging, .ws-shipping { background-color: transparent !important; }
+    .ws-step { background: var(--bg-surface) !important; border-color: var(--border-light) !important; }
+    .ws-visualizer { background: var(--bg-surface) !important; border-color: var(--border-light) !important; }
+    .ws-holiday { background-color: transparent !important; color: var(--text-main) !important; }
+    .ws-holiday h2, .ws-holiday-desc, .ws-holiday-card h3, .ws-holiday-card p { color: var(--text-main) !important; }
+    .ws-holiday-card { background: var(--bg-surface) !important; border-color: var(--border-light) !important; }
+    .ws-corporate h2, .ws-corporate p, .ws-corporate li, .ws-gourmet h2, .ws-packaging h2, .ws-packaging-desc, .ws-shipping h2 { color: var(--text-main) !important; }
+    .ws-pack-item { background: var(--bg-surface) !important; }
+    .ws-pack-item-content h3 { color: var(--text-main) !important; }
+    .ws-unboxing { background: var(--bg-surface) !important; color: var(--text-main) !important; border-top: 1px solid var(--border-light) !important; }
+    .ws-unboxing h2, .ws-unboxing blockquote { color: var(--text-main) !important; }
+    .ws-timeline-icon { background: var(--bg-surface) !important; box-shadow: 0 0 0 10px var(--bg-main) !important; }
+    .ws-timeline-item h4 { color: var(--text-main) !important; }
+
+    /* PAIRING RECOMMENDATIONS */
+    .pr-container { background-color: transparent !important; }
+    .bento-hero { background: var(--bg-surface) !important; border-color: var(--border-light) !important; }
+    .bento-item { background: var(--bg-surface) !important; border-color: var(--border-light) !important; }
+    .pr-title, .bento-title, .bento-desc { color: var(--text-main) !important; }
+  </style>
+
+        <!-- GLOBAL RESPONSIVE SCALING (Aligned with about.html behavior) -->
+  <style id="global-responsive-scaling">
+    html, body{
+      overflow-x: clip !important;
+      width: 100% !important;
+      max-width: 100vw !important;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box !important;
+    }
+    img, video, iframe {
+      max-width: 100% !important;
+    }
+    
+    /* Ensure text doesn't overflow */
+    p, h1, h2, h3, h4, h5, h6, a, span, div {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    @media (max-width: 1024px) {
+      h1, .hero-title { font-size: clamp(2.5rem, 5vw, 4rem) !important; }
+      .ws-hero h1, .editorial-hero-content h1, .alchemy-header h1, .about-hero h1, .hero-content h1, .contact-hero h1 { font-size: 3rem !important; }
+      main, section, .editorial-container, .alchemy-container, .workshop-wrapper, .pr-container, .contact-section { padding-left: 2rem !important; padding-right: 2rem !important; }
+    }
+    
+    @media (max-width: 768px) {
+      /* Typography */
+      h1, .ws-hero h1, .editorial-hero-content h1, .alchemy-header h1, .about-hero h1, .hero-content h1, .contact-hero h1 { font-size: 2.2rem !important; margin-bottom: 1rem !important; }
+      p, .ws-hero p, .editorial-hero-content p, .alchemy-header p, .hero-content p, .contact-hero p { font-size: 1rem !important; }
+      h2, .editorial-title, .pairing-title, .bento-title, .ws-step h2, .taste-matrix h2, .section-header h2 { font-size: 1.8rem !important; margin-bottom: 1rem !important; }
+      h3, .info-card h3, .visit-info h3, .cta-banner h3 { font-size: 1.4rem !important; }
+      
+      /* Padding and Layouts */
+      main, section, .editorial-container, .alchemy-container, .workshop-wrapper, .pr-container, .contact-section { padding-top: 3rem !important; padding-bottom: 3rem !important; padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+      
+      /* Stack multi-column layouts universally */
+      .pairing-section, .editorial-section, .ws-step, .bento-grid, .taste-matrix, .contact-grid, .contact-cards, .visit-card, .footer-container, .bento-item, .features-grid, .society-perks { 
+          display: flex !important; 
+          flex-direction: column !important; 
+          gap: 2rem !important;
+      }
+      .pairing-section.reverse { flex-direction: column !important; }
+      .matrix-col { width: 100% !important; margin-bottom: 1.5rem; }
+      
+      /* Fix form, map, cards */
+      .visit-info, .contact-form-wrapper, .info-card { width: 100% !important; min-height: auto !important; padding: 1.5rem !important; }
+      .form-image, .map-box { width: 100% !important; min-height: auto !important; padding: 0 !important; overflow: hidden; border-radius: 20px; }
+      .form-image img, .map-box iframe, .map-box img { position: relative !important; height: 300px !important; width: 100% !important; display: block !important; object-fit: cover !important; }
+      
+      /* Fix Decorative Images in Contact */
+      div[style*="display: flex; gap: 1rem; justify-content: center"] {
+          flex-wrap: wrap !important;
+      }
+      div[style*="display: flex; gap: 1rem; justify-content: center"] img {
+          width: calc(50% - 0.5rem) !important;
+          height: 180px !important;
+          margin-bottom: 1rem;
+      }
+      
+      /* Image constraints */
+      .pairing-visual img, .editorial-img-wrap img { height: auto !important; max-height: 350px; object-fit: cover; }
+      
+      /* Buttons */
+      .btn-submit, .btn-secondary, button { width: 100% !important; text-align: center !important; }
+      
+      /* Adjust custom inline styles */
+      div[style*="max-width: 1200px;"] { max-width: 100% !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+    }
+    
+    @media (max-width: 480px) {
+      /* Smaller typography */
+      h1, .ws-hero h1, .editorial-hero-content h1, .alchemy-header h1, .about-hero h1, .hero-content h1, .contact-hero h1 { font-size: 1.8rem !important; }
+      h2, .editorial-title, .pairing-title, .bento-title, .ws-step h2, .section-header h2 { font-size: 1.5rem !important; }
+      h3 { font-size: 1.25rem !important; }
+      p, .info-card p, .visit-info p, .form-label { font-size: 0.95rem !important; }
+      
+      /* Spacing */
+      main, section, .editorial-container, .alchemy-container, .workshop-wrapper, .pr-container, .contact-section { padding-top: 2rem !important; padding-bottom: 2rem !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+      .footer { padding: 2rem 1rem 1.5rem !important; }
+      
+      /* Contact specific fixes */
+      .contact-hero { padding: 4rem 1rem !important; }
+      .info-icon { width: 50px !important; height: 50px !important; font-size: 1.4rem !important; }
+      
+      /* Decor images strip - full width */
+      div[style*="display: flex; gap: 1rem; justify-content: center"] img {
+          width: 100% !important;
+          height: 200px !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+      }
+    }
+
+    @media (max-width: 320px) {
+      /* Extra small devices */
+      h1, .contact-hero h1 { font-size: 1.5rem !important; }
+      h2, .section-header h2 { font-size: 1.3rem !important; }
+      main, section, .contact-section { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+      .btn-submit, .btn-secondary { font-size: 0.9rem !important; padding: 0.8rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo-area">
+      <i class="fas fa-olive-branch logo-icon"></i>
+      <a href="./index.html" class="logo-text" id="logoHomeLink">Olivia & Co.</a>
+    </div>
+
+    <ul class="nav-menu" id="navMenu">
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu"><i class="fas fa-arrow-right"></i></button>
+      <li class="nav-item mega-dropdown" id="homeMegaDropdown">
+        <a href="./index.html" class="nav-link" id="homeMainLink">Home <i class="fas fa-chevron-down" style="font-size: 0.6rem;"></i></a>
+        <ul class="mega-dropdown-menu">
+          <li><a href="./index.html" class="mega-dropdown-item">Home 1</a></li>
+          <li><a href="./home 2.html" class="mega-dropdown-item">Home 2</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="./about.html" class="nav-link" >About</a></li>
+      <li class="nav-item"><a href="./olive oil collection.html" class="nav-link">Olive Oil</a></li>
+      <li class="nav-item"><a href="./Balsamic Vinegar Collection.html" class="nav-link">Balsamic</a></li>
+      <li class="nav-item"><a href="./Flavor Profiles.html" class="nav-link">Flavors</a></li>
+      <li class="nav-item"><a href="./Pairing Recommendations.html" class="nav-link">Pairing</a></li>
+      <li class="nav-item"><a href="./Gift Box Builder.html" class="nav-link">Gift Box</a></li>
+      <li class="nav-item" id="clubDropdown">
+        <a href="./Oil of the Month Club.html" class="nav-link" id="clubToggleLink">Oil Club</a>
+      </li>
+      <li class="nav-item"><a href="./Recipe Blog.html" class="nav-link">Recipe Blog</a></li>
+      <li class="nav-item"><a href="./contact.html" class="nav-link">Contact</a></li>
+      <div class="mobile-controls" id="mobileControls">
+        <div class="control-row">
+          <button class="icon-btn mobile-dark-toggle" id="mobileDarkToggle"><i class="fas fa-moon" id="mobileDarkIcon"></i> <span id="mobileDarkText">Dark Mode</span></button>
+        </div>
+        <div class="control-row">
+          <button class="icon-btn mobile-rtl-toggle" id="mobileRtlToggle"><i class="fa-solid fa-right-left"></i> <span>RTL Mode</span></button>
+        </div>
+        <button class="mobile-login-btn" id="mobileLoginBtn"><i class="fas fa-user-circle"></i> Login</button>
+      </div>
+    </ul>
+
+    <div class="desktop-controls">
+      <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon" id="desktopDarkIcon"></i></button>
+      <button class="icon-btn" id="rtlToggle" aria-label="RTL"><i class="fa-solid fa-right-left"></i></button>
+      <button class="login-btn" id="loginBtn"><i class="fas fa-user-circle"></i> Login</button>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+<div class="workshop-wrapper">
+  
+  <!-- 1. Hero Section -->
+  <section class="ws-hero">
+    <div class="ws-hero-content">
+      <h1>Curate the Perfect Gift</h1>
+      <p>Whether it's for a loved one, a holiday celebration, or a corporate milestone, our artisanal olive oils and aged vinegars make a remarkable impression.</p>
+      <button class="ws-btn-primary ws-btn-custom-size">Start Build <i class="fas fa-box-open" style="margin-left: 8px;"></i></button>
+    </div>
+  </section>
+
+  <!-- 2. Create Custom Box -->
+  <section class="ws-custom-box">
+    <div class="ws-custom-container">
+      <div class="ws-steps-list">
+        <h2 style="font-size: 3rem; font-family: 'Playfair Display', serif; color: var(--text-color); margin-bottom: 2rem;">Build Your Custom Box</h2>
+        <div class="ws-step reveal-on-scroll">
+          <h3><span>1</span> Select Box Size</h3>
+          <p>Choose between our elegant duo box, our signature trio, or the grand tasting collection featuring six distinct bottles.</p>
+        </div>
+        <div class="ws-step reveal-on-scroll">
+          <h3><span>2</span> Choose Olive Oils</h3>
+          <p>Browse our selection of robust, delicate, and infused extra virgin olive oils to build the foundation of your gift.</p>
+        </div>
+        <div class="ws-step reveal-on-scroll">
+          <h3><span>3</span> Add Balsamic Vinegars</h3>
+          <p>Complement the oils with our rich, aged dark balsamics or vibrant, fruit-infused white vinegars.</p>
+        </div>
+        <div class="ws-step reveal-on-scroll">
+          <h3><span>4</span> Finishing Touches</h3>
+          <p>Include artisanal dipping spices, a handcrafted olive wood spoon, and a personalized wax-sealed note.</p>
+        </div>
+      </div>
+      <div class="ws-visualizer reveal-on-scroll">
+        <h4 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-main); font-weight: 600;">Your Box Preview</h4>
+        <img src="images/custom_box.png" alt="Custom Box Preview">
+        <div class="ws-visualizer-footer">
+          <span class="ws-visualizer-price">$20.00</span>
+          <button class="ws-btn-primary ws-visualizer-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Holiday Gifts -->
+  <section class="ws-holiday">
+    <h2 class="reveal-on-scroll">Holiday Gifts</h2>
+    <p class="ws-holiday-desc reveal-on-scroll">Bring the warmth of the Mediterranean to their holiday table. Festive packaging and seasonal flavor pairings designed to spread joy.</p>
+    <div class="ws-scroll-row reveal-on-scroll">
+      <div class="ws-holiday-card">
+        <img src="images/holiday_gift1.png" alt="Winter Harvest Box">
+        <h3>Winter Harvest Box</h3>
+        <p>Robust EVOO paired with Fig & Cinnamon Balsamic.</p>
+        <button class="ws-btn-primary" style="background: transparent; border: 1px solid #d4b88b; color: #d4b88b; padding: 0.5rem 1.5rem; font-size: 0.8rem;">View Details</button>
+      </div>
+      <div class="ws-holiday-card">
+        <img src="images/holiday_gift2.png" alt="The Entertainer's Set">
+        <h3>The Entertainer's Set</h3>
+        <p>Three infused oils perfect for holiday appetizers.</p>
+        <button class="ws-btn-primary" style="background: transparent; border: 1px solid #d4b88b; color: #d4b88b; padding: 0.5rem 1.5rem; font-size: 0.8rem;">View Details</button>
+      </div>
+      <div class="ws-holiday-card">
+        <img src="images/holiday_gift3.png" alt="New Year Reserve">
+        <h3>New Year Reserve</h3>
+        <p>Our finest 25-year aged balsamic in a gold-foil box.</p>
+        <button class="ws-btn-primary" style="background: transparent; border: 1px solid #d4b88b; color: #d4b88b; padding: 0.5rem 1.5rem; font-size: 0.8rem;">View Details</button>
+      </div>
+      <div class="ws-holiday-card">
+        <img src="images/holiday_gift4.png" alt="Festive Dipping Kit">
+        <h3>Festive Dipping Kit</h3>
+        <p>Includes Tuscan herbs, rustic bread mix, and oil.</p>
+        <button class="ws-btn-primary" style="background: transparent; border: 1px solid #d4b88b; color: #d4b88b; padding: 0.5rem 1.5rem; font-size: 0.8rem;">View Details</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Corporate Gifts -->
+  <section class="ws-corporate">
+    <div class="ws-corp-container">
+      <div class="ws-corp-img reveal-on-scroll">
+        <img src="images/corporate_gifts.png" alt="Corporate Gifting Stack">
+      </div>
+      <div class="ws-corp-text reveal-on-scroll">
+        <h2>Corporate Gifts</h2>
+        <p>Show genuine appreciation to your clients, partners, and employees with a gift that speaks of quality and taste. We handle large volume orders with meticulous attention to detail.</p>
+        <ul class="ws-corp-list">
+          <li><i class="fas fa-check-circle"></i> Custom engraved wooden boxes with your company logo</li>
+          <li><i class="fas fa-check-circle"></i> Dedicated account manager for bulk orders</li>
+          <li><i class="fas fa-check-circle"></i> Nationwide multi-address shipping</li>
+          <li><i class="fas fa-check-circle"></i> Volume discounts available</li>
+        </ul>
+        <button class="ws-btn-primary ws-btn-custom-size">Download</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Gourmet Bundles -->
+  <section class="ws-gourmet">
+    <h2 class="reveal-on-scroll">Curated Gourmet Bundles</h2>
+    <div class="ws-bento-grid">
+      <div class="ws-bento-card large reveal-on-scroll">
+        <img src="images/bundle_truffle.png" alt="Truffle Enthusiast Bundle">
+        <div class="ws-bento-overlay"></div>
+        <div class="ws-bento-content">
+          <h3>The Truffle Enthusiast</h3>
+          <p>Black truffle oil, white truffle oil, and truffle sea salt.</p>
+          <a href="#" style="color: #d4b88b; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 0.9rem;">Shop Bundle <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="ws-bento-card reveal-on-scroll">
+        <img src="images/bundle_citrus.png" alt="Citrus Bright Bundle">
+        <div class="ws-bento-overlay"></div>
+        <div class="ws-bento-content">
+          <h3>Citrus Brights</h3>
+          <p>Lemon, blood orange, and grapefruit infused oils.</p>
+        </div>
+      </div>
+      <div class="ws-bento-card reveal-on-scroll">
+        <img src="images/bundle_balsamic.png" alt="Balsamic Flight">
+        <div class="ws-bento-overlay"></div>
+        <div class="ws-bento-content">
+          <h3>Balsamic Flight</h3>
+          <p>A tasting tour of 12, 18, and 25-year aged vinegars.</p>
+        </div>
+      </div>
+      <div class="ws-bento-card large reveal-on-scroll">
+        <img src="images/bundle_chef.png" alt="The Master Chef Collection">
+        <div class="ws-bento-overlay"></div>
+        <div class="ws-bento-content">
+          <h3>The Master Chef Collection</h3>
+          <p>The ultimate pantry upgrade: 6 premium bottles and 4 artisanal salts.</p>
+          <a href="#" style="color: #d4b88b; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 0.9rem;">Shop Bundle <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Personalized Packaging -->
+  <section class="ws-packaging">
+    <h2 class="reveal-on-scroll">Personalized Packaging</h2>
+    <p class="ws-packaging-desc reveal-on-scroll">The experience begins before the bottle is even opened. Elevate your gift with our premium customization options.</p>
+    <div class="ws-pack-grid">
+      <div class="ws-pack-item reveal-on-scroll">
+        <img src="images/pack_ribbon.png" alt="Custom Ribbons">
+        <div class="ws-pack-item-content">
+          <i class="fas fa-ribbon"></i>
+          <h3>Silk Ribbons</h3>
+          <p style="font-size: 0.95rem; color: #6b5a48;">Choose from 12 elegant colors to match the occasion.</p>
+        </div>
+      </div>
+      <div class="ws-pack-item reveal-on-scroll">
+        <img src="images/pack_engrave.png" alt="Wood Engraving">
+        <div class="ws-pack-item-content">
+          <i class="fas fa-pen-nib"></i>
+          <h3>Wood Engraving</h3>
+          <p style="font-size: 0.95rem; color: #6b5a48;">Burn a name or special date directly into the wooden crate.</p>
+        </div>
+      </div>
+      <div class="ws-pack-item reveal-on-scroll">
+        <img src="images/pack_note.png" alt="Handwritten Notes">
+        <div class="ws-pack-item-content">
+          <i class="fas fa-envelope-open-text"></i>
+          <h3>Wax-Sealed Notes</h3>
+          <p style="font-size: 0.95rem; color: #6b5a48;">Your personal message, handwritten and sealed with wax.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. The Unboxing Experience -->
+  <section class="ws-unboxing reveal-on-scroll">
+    <div class="ws-unboxing-container">
+      <h2>The Unboxing Experience</h2>
+      <blockquote>"Receiving an Olivia & Co. gift box was an absolute delight. The presentation is flawless, from the thick rustic rope to the scent of fresh wood shavings cradling the bottles. It felt like opening a treasure chest from Italy."</blockquote>
+      <div class="author">— Sarah Jenkins, Verified Buyer</div>
+    </div>
+  </section>
+
+  <!-- 8. Shipping & Delivery -->
+  <section class="ws-shipping">
+    <h2 class="reveal-on-scroll">From Our Workshop to Their Door</h2>
+    <div class="ws-timeline">
+      <div class="ws-timeline-item reveal-on-scroll">
+        <div class="ws-timeline-icon"><i class="fas fa-box"></i></div>
+        <h4>1. Curated & Packed</h4>
+        <p>Your custom selection is safely nestled in our protective wood shavings.</p>
+      </div>
+      <div class="ws-timeline-item reveal-on-scroll">
+        <div class="ws-timeline-icon"><i class="fas fa-ribbon"></i></div>
+        <h4>2. Hand Finished</h4>
+        <p>Ribbons tied, notes written, and wax seals stamped by hand.</p>
+      </div>
+      <div class="ws-timeline-item reveal-on-scroll">
+        <div class="ws-timeline-icon"><i class="fas fa-truck-fast"></i></div>
+        <h4>3. Priority Shipping</h4>
+        <p>Dispatched within 24 hours via secure, temperature-controlled transit.</p>
+      </div>
+      <div class="ws-timeline-item reveal-on-scroll">
+        <div class="ws-timeline-icon"><i class="fas fa-gift"></i></div>
+        <h4>4. Unforgettable Arrival</h4>
+        <p>Delivered flawlessly, ready to wow the recipient.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Brand Column -->
+    <div>
+      <div class="footer-logo-area">
+        <i class="fas fa-olive-branch footer-logo-icon"></i>
+        <span class="footer-logo-text">Olivia & Co.</span>
+      </div>
+      <p class="footer-description">Artisan extra virgin olive oils and aged balsamic vinegars since 1982. Handcrafted from Mediterranean groves.</p>
+      <div class="footer-social">
+        <a href="#" class="footer-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="footer-social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer-social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="footer-social-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+    
+    <!-- Shop Column -->
+    <div>
+      <h4 class="footer-heading">SHOP</h4>
+      <ul class="footer-links">
+        <li><a href="#" class="footer-link">Olive Oil</a></li>
+        <li><a href="#" class="footer-link">Balsamic Vinegar</a></li>
+        <li><a href="#" class="footer-link">Flavored Oils</a></li>
+        <li><a href="#" class="footer-link">Gift Boxes</a></li>
+        <li><a href="#" class="footer-link">Oil Club</a></li>
+      </ul>
+    </div>
+    
+    <!-- Company Column -->
+    <div>
+      <h4 class="footer-heading">COMPANY</h4>
+      <ul class="footer-links">
+        <li><a href="#" class="footer-link">About Us</a></li>
+        <li><a href="#" class="footer-link">Sustainability</a></li>
+        <li><a href="#" class="footer-link">Recipe Blog</a></li>
+        <li><a href="#" class="footer-link">Contact</a></li>
+        <li><a href="#" class="footer-link">FAQs</a></li>
+      </ul>
+    </div>
+    
+    <!-- Newsletter Column -->
+    <div>
+      <h4 class="footer-heading">NEWSLETTER</h4>
+      <p class="footer-description" style="margin-bottom: 0.8rem;">Get 10% off your first order and receive tasting notes.</p>
+      <div class="footer-newsletter">
+        <input type="email" placeholder="Your email address" id="newsletterEmail">
+        <button id="newsletterSubscribeBtn">Subscribe â†’</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-bottom-text">Â© 2025 Olivia & Co. â€” Artisan Olive Oils & Balsamic Vinegars. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const body = document.body;
+    
+    // Elements
+    const darkToggleDesktop = document.getElementById('darkModeToggle');
+    const mobileDarkToggle = document.getElementById('mobileDarkToggle');
+    const themeToggle = document.getElementById('themeToggle'); // For login/register pages
+    
+    const rtlToggleDesktop = document.getElementById('rtlToggle');
+    const mobileRtlToggle = document.getElementById('mobileRtlToggle');
+    
+    const loginDesktop = document.getElementById('loginBtn');
+    const mobileLogin = document.getElementById('mobileLoginBtn');
+    
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const overlay = document.getElementById('menuOverlay');
+    const mobileMenuCloseBtn = document.getElementById('mobileMenuClose');
+    
+    // Icons
+    const desktopDarkIcon = document.getElementById('desktopDarkIcon');
+    const mobileDarkIcon = document.getElementById('mobileDarkIcon');
+    const mobileDarkText = document.getElementById('mobileDarkText');
+    const themeIcon = document.getElementById('themeIcon');
+    
+    // --- Login Redirect ---
+    function redirectToLogin(e) {
+        if(e) { e.preventDefault(); e.stopPropagation(); }
+        window.location.href = 'login.html';
+    }
+    if (loginDesktop) loginDesktop.addEventListener('click', redirectToLogin);
+    if (mobileLogin) mobileLogin.addEventListener('click', redirectToLogin);
+
+    // --- Dark Mode Logic ---
+    const DARK_KEY = 'oliveOilDarkMode';
+    
+    function updateDarkModeUI(isDark) {
+        const iconClass = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        if(desktopDarkIcon) desktopDarkIcon.className = iconClass;
+        if(mobileDarkIcon) mobileDarkIcon.className = iconClass;
+        if(themeIcon) themeIcon.className = iconClass;
+        if(mobileDarkText) mobileDarkText.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    }
+    
+    function setDarkMode(isDark) {
+        if(isDark) body.classList.add('dark');
+        else body.classList.remove('dark');
+        localStorage.setItem(DARK_KEY, isDark);
+        updateDarkModeUI(isDark);
+    }
+    
+    function toggleDarkMode(e) {
+        if(e) { e.preventDefault(); e.stopPropagation(); }
+        setDarkMode(!body.classList.contains('dark'));
+    }
+    
+    // Load saved or system preference
+    const savedDark = localStorage.getItem(DARK_KEY);
+    if(savedDark === 'true') setDarkMode(true);
+    else if(savedDark === 'false') setDarkMode(false);
+    else setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    // Attach listeners
+    if(darkToggleDesktop) darkToggleDesktop.addEventListener('click', toggleDarkMode);
+    if(mobileDarkToggle) mobileDarkToggle.addEventListener('click', toggleDarkMode);
+    if(themeToggle) themeToggle.addEventListener('click', toggleDarkMode);
+    
+    // --- RTL Logic ---
+    const RTL_KEY = 'oliveOilRTLMode';
+    
+    function setRTL(isRTL) {
+        if(isRTL) { body.classList.add('rtl'); body.setAttribute('dir', 'rtl'); }
+        else { body.classList.remove('rtl'); body.removeAttribute('dir'); }
+        localStorage.setItem(RTL_KEY, isRTL);
+    }
+    
+    function toggleRTL(e) {
+        if(e) { e.preventDefault(); e.stopPropagation(); }
+        setRTL(!body.classList.contains('rtl'));
+    }
+    
+    // Load saved RTL preference
+    const savedRTL = localStorage.getItem(RTL_KEY);
+    if(savedRTL === 'true') setRTL(true);
+    else setRTL(false);
+    
+    // Attach listeners
+    if(rtlToggleDesktop) rtlToggleDesktop.addEventListener('click', toggleRTL);
+    if(mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+    
+    // --- Mobile Menu Drawer ---
+    function openMobileMenu() {
+        if(navMenu) navMenu.classList.add('active');
+        if(overlay) overlay.classList.add('active');
+        body.style.overflow = 'hidden';
+        if(hamburger) hamburger.classList.add('active');
+    }
+    
+    function closeMobileMenu() {
+        if(navMenu) navMenu.classList.remove('active');
+        if(overlay) overlay.classList.remove('active');
+        body.style.overflow = '';
+        if(hamburger) hamburger.classList.remove('active');
+        
+        // Close accordions
+        document.querySelectorAll('.nav-item.mega-dropdown, .nav-item.dropdown').forEach(item => {
+            item.classList.remove('open');
+        });
+    }
+    
+    function toggleMobileMenu(e) {
+        if(e) { e.preventDefault(); e.stopPropagation(); }
+        if(navMenu && navMenu.classList.contains('active')) closeMobileMenu();
+        else openMobileMenu();
+    }
+    
+    if(hamburger) hamburger.addEventListener('click', toggleMobileMenu);
+    if(overlay) overlay.addEventListener('click', closeMobileMenu);
+    if(mobileMenuCloseBtn) mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
+    
+    // --- Mobile Menu Accordion ---
+    document.querySelectorAll('.nav-item.mega-dropdown, .nav-item.dropdown').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        if(link) {
+            link.addEventListener('click', (e) => {
+                // Only act as accordion on mobile (when hamburger is visible)
+                if (window.innerWidth <= 1024) {
+                    e.preventDefault(); // Prevent redirect
+                    e.stopPropagation();
+                    item.classList.toggle('open');
+                }
+            });
+        }
+    });
+    
+    // --- Dynamic Active Link Highlighting ---
+    function highlightActivePage() {
+        const currentPath = decodeURIComponent(window.location.pathname).split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link, .mega-dropdown-item').forEach(link => {
+            link.style.color = ''; // Clear inline
+            const href = link.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('http')) {
+                const linkPath = decodeURIComponent(href.replace('./', '')).split('/').pop();
+                if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+                    link.classList.add('active-page');
+                    const parentDropdown = link.closest('.nav-item.dropdown, .nav-item.mega-dropdown');
+                    if (parentDropdown) {
+                        const parentLink = parentDropdown.querySelector('.nav-link');
+                        if (parentLink) parentLink.classList.add('active-page');
+                    }
+                } else {
+                    link.classList.remove('active-page');
+                }
+            }
+        });
+    }
+    highlightActivePage();
+});
+</script>
+</body>
+</html>

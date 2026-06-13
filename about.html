@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>About Olivia & Co. | Our Story</title>
+  <meta name="description" content="Learn about our heritage, sustainable groves, and the master founders behind Olivia & Co.'s premium artisan olive oils.">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body{
+      font-family: 'Inter', sans-serif;
+      background-color: #fefaf5;
+      color: #2c2418;
+      transition: background-color 0.3s ease, color 0.2s ease;
+      line-height: 1.5;
+      overflow-x: clip;
+      width: 100%;
+    }
+    body.dark { background-color: #121212; color: #ece8e0; }
+
+    /* dark mode matching */
+        body.dark .navbar {
+      border-bottom: 1px solid rgba(58, 46, 38, 0.8);
+      background: transparent;
+    }
+
+    body.dark .navbar::before {
+      background: linear-gradient(135deg, rgba(31,27,22,0.95), rgba(42,36,30,0.95), rgba(26,35,30,0.95), rgba(31,27,22,0.95));
+      background-size: 300% 300%;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    body.dark .footer { background-color: #1f1b16; border-bottom: 1px solid #3a2e26; border-top: 1px solid #3a2e26; }
+    body.dark .nav-link, body.dark .nav-item a, body.dark .icon-btn, body.dark .login-btn,
+    body.dark .mobile-controls .icon-btn, body.dark .mobile-login-btn, body.dark .footer a, body.dark .footer .footer-link, body.dark .footer-heading, body.dark .footer-bottom-text { color: #f0e9df; }
+    body.dark .logo-text {
+      background: linear-gradient(90deg, #f0e9df, #8fbc9f, #d4c3aa, #f0e9df);
+      background-size: 300% auto; color: transparent !important; -webkit-background-clip: text; background-clip: text;
+    }
+    body.dark .dropdown-menu, body.dark .mega-dropdown-menu { background-color: #1f1b16; border-color: #4a3e34; }
+    body.dark .dropdown-item, body.dark .mega-dropdown-item { color: #f0e9df; }
+    body.dark .dropdown-item:hover, body.dark .mega-dropdown-item:hover { background-color: #3f3329; }
+    body.dark .hamburger span { background-color: #f0e9df; }
+    body.dark .login-btn { border-color: #c7b59b; }
+    body.dark .mobile-controls { border-top-color: #3a2e26; }
+    body.dark .footer { border-top-color: #3a2e26; background-color: #1f1b16; }
+    body.dark .footer-social-icon { background-color: #1f1b16; color: #f0e9df; }
+    body.dark .footer-social-icon:hover { background-color: #5f8b6f; color: white; }
+    body.dark .footer-newsletter input { background-color: #1f1b16; border-color: #4a3e34; color: #f0e9df; }
+
+    /* ---------- COMPACT NAVBAR (Reduced size) ---------- */
+    @keyframes premiumShimmer { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    @keyframes glowingBorder { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+        .navbar {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      padding: 0.4rem 1rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      border-bottom: none;
+      background: transparent;
+    }
+
+    .navbar::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(246,240,230,0.92), rgba(235,242,238,0.92), rgba(255,255,255,0.92));
+      background-size: 300% 300%;
+      animation: premiumShimmer 10s ease infinite;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: -1;
+      pointer-events: none;
+      transition: background 0.3s ease, backdrop-filter 0.3s ease;
+    }
+    .navbar::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, rgba(95,139,111,0.2), #5f8b6f, #cfbcab, rgba(95,139,111,0.2));
+      background-size: 200% auto; animation: glowingBorder 4s linear infinite;
+    }
+    @media (min-width: 768px) { .navbar {
+      position: -webkit-sticky !important;
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 1000 !important;
+      width: 100%;
+ padding: 0.4rem 2rem; } }
+    .nav-container { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; width: 100%; position: relative; }
+    .logo-area { display: flex; align-items: center; gap: 0.35rem; flex-shrink: 0; min-width: 120px; }
+    .logo-icon { font-size: 1.1rem; color: #5f8b6f; }
+    @keyframes textGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    .logo-text {
+      font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #3f2e21, #5f8b6f, #b89f7a, #3f2e21);
+      background-size: 300% auto; color: transparent; -webkit-background-clip: text; background-clip: text;
+      animation: textGradient 6s linear infinite; text-decoration: none; white-space: nowrap; transition: transform 0.3s ease;
+    }
+    .logo-text:hover { transform: scale(1.02); }
+    @media (min-width: 480px) { .logo-icon { font-size: 1.2rem; } .logo-text { font-size: 1.05rem; } }
+    .nav-menu { display: flex; list-style: none; align-items: center; justify-content: center; flex: 1; margin: 0 1rem; gap: 0.05rem; }
+    .nav-item { position: relative; }
+    .nav-link {
+      display: flex; align-items: center; gap: 5px; padding: 0.3rem 0.7rem; text-decoration: none; font-weight: 600;
+      font-size: 0.8rem; color: #2c2418; border-radius: 30px; transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      white-space: nowrap; position: relative;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; width: 0; height: 2px; bottom: 2px; left: 50%;
+      background: linear-gradient(90deg, #5f8b6f, #cfbcab); transition: width 0.3s, left 0.3s; border-radius: 2px; opacity: 0;
+    }
+    .nav-link:hover::after { width: 80%; left: 10%; opacity: 1; }
+    .nav-link:hover { color: #5f8b6f; transform: translateY(-1px); }
+    .mega-dropdown-menu, .dropdown-menu {
+      position: absolute; top: 100%; left: 0; background: rgba(255, 253, 249, 0.95); backdrop-filter: blur(16px);
+      border-radius: 18px; min-width: 200px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12); border: 1px solid rgba(233, 223, 211, 0.6);
+      opacity: 0; visibility: hidden; transform: translateY(15px) scale(0.98); transition: all 0.4s; z-index: 100; list-style: none; padding: 0.6rem 0;
+    }
+    .nav-item.mega-dropdown:hover .mega-dropdown-menu, .nav-item.dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(8px) scale(1); }
+    .mega-dropdown-item, .dropdown-item { display: block; padding: 0.4rem 1.2rem; text-decoration: none; color: #2c2418; font-size: 0.75rem; font-weight: 450; transition: background 0.15s; }
+    .mega-dropdown-item:hover, .dropdown-item:hover { background-color: #f7efe7; }
+    .desktop-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; margin-left: auto; }
+    .icon-btn { background: none; border: none; font-size: 1rem; cursor: pointer; color: #2c2418; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s; }
+    .icon-btn:hover { background-color: #e7dfd6; }
+    .login-btn {
+      background: transparent; border: 1.5px solid #cfbcab; padding: 0.35rem 1rem; border-radius: 40px; font-weight: 600; font-size: 0.75rem;
+      cursor: pointer; transition: all 0.3s; color: #2c2418; display: flex; align-items: center; gap: 6px; position: relative; overflow: hidden; z-index: 1;
+    }
+    .login-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transition: left 0.5s ease; z-index: -1; }
+    .login-btn:hover::before { left: 100%; }
+    .login-btn:hover { background: linear-gradient(135deg, #5f8b6f, #4a6f58); border-color: transparent; color: #ffffff; box-shadow: 0 6px 16px rgba(95, 139, 111, 0.3); transform: translateY(-2px); }
+    .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; margin-left: 6px; }
+    .hamburger span { width: 22px; height: 2px; background-color: #2c2418; transition: 0.3s ease; border-radius: 2px; transform-origin: center; }
+    .hamburger.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    @media (max-width: 1024px) {
+      .mobile-menu-close {
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        width: 40px !important;
+        height: 40px !important;
+        background: transparent !important;
+        border: none !important;
+        font-size: 1.5rem !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        padding: 0 !important;
+        z-index: 1001 !important;
+        color: #2c2418 !important;
+        transition: background-color 0.2s, color 0.2s !important;
+      }
+      body.dark .mobile-menu-close {
+        color: #f0e9df !important;
+      }
+      .mobile-menu-close:hover {
+        background-color: rgba(95, 139, 111, 0.1) !important;
+        color: #5f8b6f !important;
+      }
+      body.dark .mobile-menu-close:hover {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #f0e9df !important;
+      }
+      body.rtl .mobile-menu-close {
+        right: auto !important;
+        left: 20px !important;
+      }
+
+      .desktop-controls { display: none !important; } .hamburger { display: flex; }
+      .nav-menu { position: fixed; right: -100%; top: 0; flex-direction: column; background-color: #ffffff; width: 280px; height: 100vh; transition: right 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1); box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15); padding: 70px 0 2rem 0; overflow-y: auto; z-index: 999; border-left: 1px solid #e2d6ca; align-items: stretch; gap: 0; margin: 0; flex: none; justify-content: flex-start; }
+      body.dark .nav-menu { background-color: #1f1b16; border-left-color: #3a2e26; }
+      .nav-menu.active { right: 0; }
+      .nav-item { width: 100%; }
+      .nav-link { white-space: normal; justify-content: space-between; padding: 0.75rem 1.5rem; border-radius: 0; font-size: 0.9rem; }
+      .dropdown-menu, .mega-dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; display: none; width: 100%; background-color: rgba(0, 0, 0, 0.02); border: none; padding-left: 1.5rem; box-shadow: none; }
+      .nav-item.dropdown.open .dropdown-menu, .nav-item.mega-dropdown.open .mega-dropdown-menu { display: block; }
+      .mobile-controls { display: flex; flex-direction: column; gap: 12px; padding: 1.5rem; margin-top: 1rem; border-top: 1px solid #e9dfd3; }
+      .mobile-controls .control-row { display: flex; align-items: center; width: 100%; }
+      .mobile-controls .icon-btn { justify-content: flex-start; gap: 12px; width: auto; padding: 0.6rem 1rem; font-size: 0.9rem; border-radius: 12px; background-color: transparent; transition: all 0.2s; }
+      .mobile-controls .icon-btn:hover { background-color: #e7dfd6; color: #2c2418; }
+      body.dark .mobile-controls .icon-btn:hover { background-color: #3a2e26; color: #f0e9df; }
+      .mobile-login-btn { border: 1.5px solid #cfbcab; padding: 0.7rem; border-radius: 40px; font-weight: 600; text-align: center; width: 100%; background: transparent; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s; }
+      .mobile-login-btn:hover { background-color: #e7dfd6; border-color: #5f8b6f; }
+      .menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); z-index: 998; opacity: 0; visibility: hidden; transition: all 0.25s ease; }
+      .menu-overlay.active { opacity: 1; visibility: visible; }
+
+    }
+    @media (min-width: 1025px) { .mobile-controls { display: none !important; } .nav-menu { justify-content: center; } .logo-area, .desktop-controls { width: auto; } }
+
+    /* ---------- FOOTER SECTION ---------- */
+    .footer { background-color: #ffffff; border-top: 1px solid #ede5db; margin-top: 0; padding: 4rem 1rem 1.5rem; transition: background 0.2s; }
+    .footer-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media (min-width: 768px) { .footer-container { grid-template-columns: repeat(4, 1fr); gap: 2rem; padding: 0 1rem; } }
+    .footer-logo-area { display: flex; align-items: center; gap: 0.35rem; margin-bottom: 1rem; }
+    .footer-logo-icon { font-size: 1.2rem; color: #5f8b6f; }
+    .footer-logo-text {
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #3f2e21, #5f8b6f, #b89f7a, #3f2e21);
+      background-size: 300% auto;
+      color: transparent !important;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: textGradient 6s linear infinite;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    .footer-logo-text:hover {
+      transform: scale(1.02);
+    }
+    body.dark .footer-logo-text {
+      background: linear-gradient(90deg, #f0e9df, #8fbc9f, #d4c3aa, #f0e9df);
+      background-size: 300% auto;
+      color: transparent !important;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .footer-description { font-size: 0.8rem; line-height: 1.5; color: #5a4a38; margin-top: 0.5rem; }
+    body.dark .footer-description { color: #c7b59b; }
+    .footer-heading { font-weight: 600; font-size: 0.85rem; letter-spacing: 0.5px; color: #3f2e21; margin-bottom: 1rem; text-transform: uppercase; }
+    .footer-links { list-style: none; padding: 0; }
+    .footer-links li { margin-bottom: 0.6rem; }
+    .footer-link { text-decoration: none; font-size: 0.78rem; font-weight: 500; color: #2c2418; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+    .footer-link:hover { color: #5f8b6f; transform: translateX(3px); }
+    .footer-social { display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap; }
+    .footer-social-icon { width: 32px; height: 32px; border-radius: 50%; background-color: #f0e8df; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #2c2418; font-size: 0.9rem; transition: all 0.2s; }
+    .footer-social-icon:hover { background-color: #5f8b6f; color: white; transform: translateY(-2px); }
+    .footer-newsletter { margin-top: 0.5rem; }
+    .footer-newsletter input { width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #e9dfd3; border-radius: 40px; font-family: 'Inter', sans-serif; font-size: 0.75rem; background-color: transparent; color: #2c2418; outline: none; transition: all 0.2s; }
+    .footer-newsletter input:focus { border-color: #5f8b6f; }
+    .footer-newsletter button { margin-top: 0.6rem; background-color: #5f8b6f; color: white; border: none; padding: 0.5rem 1.2rem; border-radius: 40px; font-weight: 600; font-size: 0.7rem; cursor: pointer; transition: background 0.2s; font-family: 'Inter', sans-serif; }
+    .footer-newsletter button:hover { background-color: #4a6f58; }
+    .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 1.5rem; border-top: 1px solid #ede5db; font-size: 0.7rem; }
+    .footer-bottom-text { color: #5a4a38; }
+
+    /* --- ABOUT PAGE STYLES --- */
+    .about-hero {
+      position: relative;
+      background: url('images/about_hero.jpg') center/cover no-repeat;
+      padding: 8rem 1rem;
+      text-align: center;
+      color: #ffffff;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(31,27,22,0.8), rgba(44,36,24,0.6));
+      z-index: 1;
+    }
+    .about-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .about-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .about-hero p {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .serif-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #3f2e21;
+    }
+    body.dark .serif-title {
+      color: #f0e9df;
+    }
+    .about-hero .serif-title {
+      color: #ffffff !important;
+    }
+
+    /* --- Glass Card --- */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+    body.dark .glass-card {
+      background: rgba(0, 0, 0, 0.45);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .about-hero-glass {
+      padding: 3rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* --- Asymmetric Section & Grid --- */
+    .asymmetric-section {
+      padding: 6rem 1.25rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .asymmetric-section.bg-alt {
+      background-color: #f7efe7;
+      max-width: 100%;
+    }
+    body.dark .asymmetric-section.bg-alt {
+      background-color: #1a1612;
+    }
+
+    .asymmetric-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @media (min-width: 900px) {
+      .asymmetric-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 5rem;
+      }
+      .asymmetric-grid.reverse {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+      .asymmetric-grid.reverse .about-text {
+        order: 2;
+      }
+    }
+
+    .about-img-wrapper {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(44, 36, 24, 0.1);
+    }
+    .about-img-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      pointer-events: none;
+    }
+    .about-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s ease;
+    }
+    .about-img-wrapper:hover .about-img {
+      transform: scale(1.05);
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      color: #3f2e21;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    body.dark .about-text h2 { color: #f0e9df; }
+    .about-text p {
+      font-size: 1.1rem;
+      color: #5a4a38;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    body.dark .about-text p { color: #c7b59b; }
+
+    /* --- Section Intro --- */
+    .section-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 4rem auto;
+    }
+    .section-intro p {
+      color: #5a4a38;
+    }
+    body.dark .section-intro p {
+      color: #c7b59b;
+    }
+
+    /* --- Seasons of the Grove --- */
+    .seasons-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @media (min-width: 576px) {
+      .seasons-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .seasons-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .season-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 380px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .season-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(95, 139, 111, 0.15);
+    }
+    .season-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .season-card:hover img {
+      transform: scale(1.08);
+    }
+    .season-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(31, 27, 22, 0.95) 0%, rgba(31, 27, 22, 0.6) 60%, transparent 100%);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 80%;
+      transition: background 0.3s ease;
+    }
+    .season-card:hover .season-overlay {
+      background: linear-gradient(to top, rgba(95, 139, 111, 0.95) 0%, rgba(95, 139, 111, 0.6) 65%, transparent 100%);
+    }
+    .season-tag {
+      align-self: flex-start;
+      background-color: rgba(95, 139, 111, 0.85);
+      color: #ffffff;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 30px;
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .season-card:hover .season-tag {
+      background-color: rgba(255,255,255,0.25);
+    }
+    .season-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .season-description {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      opacity: 0.85;
+      transition: opacity 0.3s ease;
+    }
+    .season-card:hover .season-description {
+      opacity: 1.0;
+    }
+
+    /* --- Alchemy Stages --- */
+    .alchemy-section {
+      padding: 6rem 1.25rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .alchemy-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 4rem auto;
+    }
+    .alchemy-intro h2 {
+      font-size: 2.8rem;
+      color: #3f2e21;
+      margin-bottom: 1.5rem;
+    }
+    body.dark .alchemy-intro h2 {
+      color: #f0e9df;
+    }
+    .alchemy-intro p {
+      color: #5a4a38;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    body.dark .alchemy-intro p {
+      color: #c7b59b;
+    }
+
+    .alchemy-stages {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+    @media (min-width: 768px) {
+      .alchemy-stages::before {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0; left: 50%;
+        width: 2px;
+        background: #e9dfd3;
+        transform: translateX(-50%);
+      }
+      body.dark .alchemy-stages::before {
+        background: #3a2e26;
+      }
+    }
+
+    .alchemy-stage {
+      position: relative;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: 768px) {
+      .alchemy-stage {
+        width: 50%;
+        padding: 0 3rem;
+      }
+      .alchemy-stage:nth-child(odd) {
+        left: 0;
+        text-align: right;
+        align-items: flex-end;
+      }
+      .alchemy-stage:nth-child(even) {
+        left: 50%;
+        text-align: left;
+        align-items: flex-start;
+      }
+    }
+
+    .alchemy-number {
+      width: 46px;
+      height: 46px;
+      background-color: #5f8b6f;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 0 0 6px rgba(95, 139, 111, 0.15);
+      margin-bottom: 1rem;
+      z-index: 2;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .alchemy-stage:hover .alchemy-number {
+      transform: scale(1.1);
+      background-color: #cfbcab;
+    }
+    @media (min-width: 768px) {
+      .alchemy-number {
+        position: absolute;
+        top: 0;
+        margin-bottom: 0;
+      }
+      .alchemy-stage:nth-child(odd) .alchemy-number {
+        right: -23px;
+      }
+      .alchemy-stage:nth-child(even) .alchemy-number {
+        left: -23px;
+      }
+    }
+
+    .alchemy-content {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 18px;
+      border: 1px solid #ede5db;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    body.dark .alchemy-content {
+      background: #1f1b16;
+      border-color: #3a2e26;
+    }
+    .alchemy-stage:hover .alchemy-content {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(95,139,111,0.08);
+      border-color: #5f8b6f;
+    }
+    .alchemy-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: #3f2e21;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    body.dark .alchemy-content h3 {
+      color: #f0e9df;
+    }
+    .alchemy-content p {
+      color: #5a4a38;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    body.dark .alchemy-content p {
+      color: #c7b59b;
+    }
+
+    /* --- Heirloom Cultivar Library --- */
+    .cultivars-section {
+      padding: 6rem 1.25rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .cultivars-section.bg-alt {
+      background-color: #f7efe7;
+      max-width: 100%;
+    }
+    body.dark .cultivars-section.bg-alt {
+      background-color: #1a1612;
+    }
+    .cultivar-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+      .cultivar-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .cultivar-card {
+      background: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      border: 1px solid #ede5db;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    body.dark .cultivar-card {
+      background: #1f1b16;
+      border-color: #3a2e26;
+    }
+    .cultivar-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(95, 139, 111, 0.1);
+      border-color: #5f8b6f;
+    }
+    .cultivar-badge {
+      align-self: flex-start;
+      background-color: rgba(95, 139, 111, 0.12);
+      color: #5f8b6f;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 30px;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    body.dark .cultivar-badge {
+      background-color: rgba(143, 188, 159, 0.15);
+      color: #8fbc9f;
+    }
+    .cultivar-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #3f2e21;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    body.dark .cultivar-card h3 {
+      color: #f0e9df;
+    }
+    .cultivar-card p {
+      color: #5a4a38;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    body.dark .cultivar-card p {
+      color: #c7b59b;
+    }
+    .cultivar-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      border-top: 1px solid #ede5db;
+      padding-top: 1.25rem;
+      margin-top: auto;
+    }
+    body.dark .cultivar-stats {
+      border-top-color: #3a2e26;
+    }
+    .cultivar-stat-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: #3f2e21;
+    }
+    body.dark .cultivar-stat-item {
+      color: #f0e9df;
+    }
+    .cultivar-stat-item i {
+      color: #5f8b6f;
+      width: 16px;
+    }
+    body.dark .cultivar-stat-item i {
+      color: #8fbc9f;
+    }
+
+    /* --- Active Page Nav Styling --- */
+    .nav-link.active-page, .mega-dropdown-item.active-page {
+      color: #c98a3c !important;
+    }
+    body.dark .nav-link.active-page, body.dark .mega-dropdown-item.active-page {
+      color: #e6b975 !important;
+    }
+    .nav-link.active-page::after {
+      width: 80% !important;
+      left: 10% !important;
+      opacity: 1 !important;
+    }
+
+      @media (min-width: 1025px) { .mobile-menu-close { display: none !important; } }
+  
+    /* --- RTL Support --- */
+    body.rtl { direction: rtl; text-align: right; }
+    body.rtl .navbar .logo-area { flex-direction: row-reverse; }
+    body.rtl .nav-menu { right: auto; left: -100%; transition: left 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1); border-left: none; border-right: 1px solid #e2d6ca; }
+    body.rtl .nav-menu.active { right: auto; left: 0; }
+    
+    body.rtl .desktop-controls { margin-left: 0; margin-right: auto; }
+/* ==========================================================================
+       GLOBAL RESPONSIVE OVERRIDES (Mobile Breakpoints: 320px, 480px, 768px, 1024px)
+       ========================================================================== */
+    html{
+      max-width: 100% !important;
+      overflow-x: visible !important;
+      box-sizing: border-box !important;
+    }
+    body{
+      max-width: 100% !important;
+      overflow-x: clip !important;
+      box-sizing: border-box !important;
+    }
+    *, *::before, *::after {
+      box-sizing: inherit !important;
+    }
+    img, video, picture, iframe {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+    p, h1, h2, h3, h4, h5, h6, span, a, li {
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+    }
+
+    /* Prevent flex containers or elements with fixed widths from overflowing */
+    .container, .gallery-wrapper, .vip-wrapper, .workshop-wrapper, .pr-container, .editorial-container, .contact-section {
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: clip !important;
+    }
+
+    @media (max-width: 1024px) {
+      /* Smooth out desktop-to-tablet transitions */
+      .cards-grid, .pricing-grid, .profiles-grid, .science-bento-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Mobile layout stack overrides */
+      section, 
+      .about-section, 
+      .ws-custom-box, 
+      .ws-holiday, 
+      .ws-corporate, 
+      .ws-gourmet, 
+      .ws-packaging, 
+      .ws-unboxing, 
+      .ws-shipping, 
+      .vip-journey, 
+      .vip-selections, 
+      .vip-benefits, 
+      .vip-pricing, 
+      .vip-testimonials, 
+      .collection-section, 
+      .features-section, 
+      .heritage-section, 
+      .pairing-section, 
+      .club-section, 
+      .testimonial-section,
+      .terroir-section,
+      .sustainability-section,
+      .join-society-section,
+      .creative-hero,
+      .pairing-container,
+      .exhibit-row,
+      .exhibit-row.reverse,
+      .asymmetric-section,
+      .alchemy-section,
+      .cultivars-section {
+        padding: 2.5rem 1.25rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+      .editorial-container {
+        padding: 0 1.25rem !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 3rem !important;
+      }
+      .about-hero, .ws-hero, .contact-hero, .editorial-hero, .vip-hero-content {
+        padding: 3.5rem 1.25rem !important;
+        min-height: auto !important;
+      }
+      
+      /* Typography responsive scaling */
+      h1, .ws-hero h1, .ws-corp-text h2, .vip-section-title, .ws-holiday h2, .ws-gourmet h2, .ws-packaging h2, .ws-unboxing h2, .ws-shipping h2, .gallery-title {
+        font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+        line-height: 1.2 !important;
+      }
+      h2, .about-text h2, .section-title, .exhibit-text h2, .reserve-content h2 {
+        font-size: clamp(1.5rem, 5.5vw, 1.8rem) !important;
+        line-height: 1.2 !important;
+      }
+      h3 {
+        font-size: clamp(1.2rem, 4.5vw, 1.4rem) !important;
+      }
+
+      /* Stack grids and columns vertically */
+      .cards-grid, 
+      .features-grid, 
+      .testimonial-grid, 
+      .collection-grid, 
+      .about-grid, 
+      .values-grid, 
+      .ws-bento-grid, 
+      .ws-pack-grid, 
+      .ws-timeline, 
+      .journey-grid, 
+      .pricing-grid, 
+      .benefits-grid, 
+      .blog-layout, 
+      .two-columns, 
+      .contact-grid, 
+      .matrix-grid, 
+      .triptych-grid, 
+      .masonry-grid,
+      .terroir-grid,
+      .creative-hero,
+      .ws-custom-container,
+      .ws-corp-container,
+      .zig-zag-row,
+      .profiles-grid,
+      .sommelier-layout,
+      .science-bento-grid,
+      .sommelier-steps,
+      .ws-steps-list,
+      .feature-grid,
+      .pairing-ingredients,
+      .seasons-grid,
+      .cultivar-grid,
+      .alchemy-stages,
+      .article-list,
+      .article-item,
+      .sidebar,
+      .tags-cloud,
+      .social-login,
+      .checkbox-group,
+      .exhibit-row,
+      .exhibit-row.reverse,
+      .pricing-grid,
+      .testi-grid,
+      .seasons-grid,
+      .cultivar-grid {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+      }
+      
+      /* Make items span full width when stacked */
+      .matrix-col, .masonry-item, .triptych-card, .ws-pack-item, .ws-holiday-card, .selection-card, .price-card, .testi-card, .benefit-item, .journey-step, .profile-card, .science-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+      }
+      
+      /* Custom timeline stacking */
+      .timeline::before, .ws-timeline::before, .alchemy-stages::before {
+        display: none !important;
+      }
+      .timeline-item, .ws-timeline-item {
+        width: 100% !important;
+        left: 0 !important;
+        text-align: left !important;
+        padding: 0 0 1.5rem 1.5rem !important;
+        border-left: 2px solid #5f8b6f !important;
+        border-bottom: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .alchemy-stage {
+        width: 100% !important;
+        left: 0 !important;
+        text-align: left !important;
+        padding: 0 0 1.5rem 1.5rem !important;
+        border-left: none !important;
+        border-bottom: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .timeline-dot, .ws-timeline-icon, .alchemy-number {
+        left: -6px !important;
+        right: auto !important;
+        position: absolute !important;
+      }
+      
+      /* RTL Support for stacked timeline */
+      body.rtl .timeline-item, body.rtl .ws-timeline-item {
+        text-align: right !important;
+        padding-left: 0 !important;
+        padding-right: 1.5rem !important;
+        border-left: none !important;
+        border-right: 2px solid #5f8b6f !important;
+      }
+      body.rtl .alchemy-stage {
+        text-align: right !important;
+        padding-left: 0 !important;
+        padding-right: 1.5rem !important;
+        border-left: none !important;
+        border-right: none !important;
+      }
+      body.rtl .timeline-dot, body.rtl .ws-timeline-icon, body.rtl .alchemy-number {
+        left: auto !important;
+        right: -6px !important;
+      }
+
+      /* Horizontal scroll elements stack vertically on mobile */
+      .ws-scroll-row, .selections-wrapper {
+        flex-direction: column !important;
+        overflow-x: visible !important;
+        padding: 1rem 0 !important;
+        margin: 0 !important;
+      }
+      .ws-holiday-card, .selection-card {
+        min-width: 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Flex and spacing adjustments */
+      .info-text, .info-image, .ws-visualizer, .ws-corp-img, .ws-corp-text, .exhibit-img, .exhibit-text {
+        width: 100% !important;
+        flex: none !important;
+      }
+      .ws-visualizer {
+        position: static !important;
+      }
+
+      /* Image height adjustments for mobile */
+      .exhibit-img img, .form-image img, .map-box img {
+        height: auto !important;
+        max-height: 300px !important;
+        width: 100% !important;
+        box-shadow: none !important;
+      }
+      
+      /* Buttons fit mobile screens */
+      .btn, .btn-primary, .btn-submit, .btn-secondary, .vip-btn, .login-btn, .mobile-login-btn, .gallery-btn {
+        width: 100% !important;
+        text-align: center !important;
+        display: block !important;
+        padding: 0.8rem 1.25rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1, .ws-hero h1 { font-size: 1.6rem !important; }
+      h2, .about-text h2, .section-title { font-size: 1.35rem !important; }
+      h3 { font-size: 1.15rem !important; }
+
+      .login-container, .register-container, .ws-step, .sidebar-widget, .price-card, .value-card, .benefit-circle, .testi-card {
+        padding: 1rem 0.75rem !important;
+      }
+      .ws-pack-item {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 !important;
+      }
+      .selection-card, .ws-holiday-card {
+        height: auto !important;
+      }
+      
+      /* Section padding reduction for small screens */
+      main, section, .editorial-container, .alchemy-container, .workshop-wrapper, .pr-container, .contact-section {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+      }
+    }
+
+    @media (max-width: 320px) {
+      h1, .ws-hero h1 { font-size: 1.45rem !important; }
+      h2, .about-text h2 { font-size: 1.2rem !important; }
+      
+      /* Extra padding reduction */
+      main, section, .editorial-container, .alchemy-container, .workshop-wrapper, .pr-container, .contact-section {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        padding-top: 1.25rem !important;
+        padding-bottom: 1.25rem !important;
+      }
+    }
+
+    /* RTL Support for Font Awesome directional icons */
+    body.rtl .fa-arrow-right, 
+    body.rtl .fa-long-arrow-alt-right, 
+    body.rtl .fa-chevron-right {
+      display: inline-block !important;
+      transform: scaleX(-1) !important;
+    }
+    </style>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🫒</text></svg>">
+
+        <!-- GLOBAL RESPONSIVE SCALING (Aligned with about.html behavior) -->
+  <style id="global-responsive-scaling">
+    html, body{
+      overflow-x: clip !important;
+      width: 100% !important;
+      max-width: 100vw !important;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box !important;
+    }
+    img, video, iframe {
+      max-width: 100% !important;
+    }
+    
+    /* Ensure text doesn't overflow */
+    p, h1, h2, h3, h4, h5, h6, a, span, div {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    @media (max-width: 1024px) {
+      h1, .hero-title { font-size: clamp(2.5rem, 5vw, 4rem) !important; }
+      .ws-hero h1, .editorial-hero-content h1, .alchemy-header h1, .about-hero h1, .hero-content h1, .contact-hero h1 { font-size: 3rem !important; }
+      main, section, .editorial-container, .alchemy-container, .workshop-wrapper, .pr-container, .contact-section { padding-left: 2rem !important; padding-right: 2rem !important; }
+    }
+    
+    @media (max-width: 768px) {
+      /* Typography */
+      h1, .ws-hero h1, .editorial-hero-content h1, .alchemy-header h1, .about-hero h1, .hero-content h1, .contact-hero h1 { font-size: 2.2rem !important; margin-bottom: 1rem !important; }
+      p, .ws-hero p, .editorial-hero-content p, .alchemy-header p, .hero-content p, .contact-hero p { font-size: 1rem !important; }
+      h2, .editorial-title, .pairing-title, .bento-title, .ws-step h2, .taste-matrix h2, .section-header h2 { font-size: 1.8rem !important; margin-bottom: 1rem !important; }
+      h3, .info-card h3, .visit-info h3, .cta-banner h3 { font-size: 1.4rem !important; }
+      
+      /* Padding and Layouts */
+      main, section, .editorial-container, .alchemy-container, .workshop-wrapper, .pr-container, .contact-section { padding-top: 3rem !important; padding-bottom: 3rem !important; padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+      
+      /* Stack multi-column layouts universally */
+      .pairing-section, .editorial-section, .ws-step, .bento-grid, .taste-matrix, .contact-grid, .contact-cards, .visit-card, .footer-container, .bento-item, .features-grid, .society-perks { 
+          display: flex !important; 
+          flex-direction: column !important; 
+          gap: 2rem !important;
+      }
+      .pairing-section.reverse { flex-direction: column !important; }
+      .matrix-col { width: 100% !important; margin-bottom: 1.5rem; }
+      
+      /* Fix form, map, cards */
+      .visit-info, .contact-form-wrapper, .info-card { width: 100% !important; min-height: auto !important; padding: 1.5rem !important; }
+      .form-image, .map-box { width: 100% !important; min-height: auto !important; padding: 0 !important; overflow: hidden; border-radius: 20px; }
+      .form-image img, .map-box iframe, .map-box img { position: relative !important; height: 300px !important; width: 100% !important; display: block !important; object-fit: cover !important; }
+      
+      /* Fix Decorative Images in Contact */
+      div[style*="display: flex; gap: 1rem; justify-content: center"] {
+          flex-wrap: wrap !important;
+      }
+      div[style*="display: flex; gap: 1rem; justify-content: center"] img {
+          width: calc(50% - 0.5rem) !important;
+          height: 180px !important;
+          margin-bottom: 1rem;
+      }
+      
+      /* Image constraints */
+      .pairing-visual img, .editorial-img-wrap img { height: auto !important; max-height: 350px; object-fit: cover; }
+      
+      /* Buttons */
+      .btn-submit, .btn-secondary, button { width: 100% !important; text-align: center !important; }
+      
+      /* Adjust custom inline styles */
+      div[style*="max-width: 1200px;"] { max-width: 100% !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+    }
+    
+    @media (max-width: 480px) {
+      /* Smaller typography */
+      h1, .ws-hero h1, .editorial-hero-content h1, .alchemy-header h1, .about-hero h1, .hero-content h1, .contact-hero h1 { font-size: 1.8rem !important; }
+      h2, .editorial-title, .pairing-title, .bento-title, .ws-step h2, .section-header h2 { font-size: 1.5rem !important; }
+      h3 { font-size: 1.25rem !important; }
+      p, .info-card p, .visit-info p, .form-label { font-size: 0.95rem !important; }
+      
+      /* Spacing */
+      main, section, .editorial-container, .alchemy-container, .workshop-wrapper, .pr-container, .contact-section { padding-top: 2rem !important; padding-bottom: 2rem !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+      .footer { padding: 2rem 1rem 1.5rem !important; }
+      
+      /* Contact specific fixes */
+      .contact-hero { padding: 4rem 1rem !important; }
+      .info-icon { width: 50px !important; height: 50px !important; font-size: 1.4rem !important; }
+      
+      /* Decor images strip - full width */
+      div[style*="display: flex; gap: 1rem; justify-content: center"] img {
+          width: 100% !important;
+          height: 200px !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+      }
+    }
+
+    @media (max-width: 320px) {
+      /* Extra small devices */
+      h1, .contact-hero h1 { font-size: 1.5rem !important; }
+      h2, .section-header h2 { font-size: 1.3rem !important; }
+      main, section, .contact-section { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+      .btn-submit, .btn-secondary { font-size: 0.9rem !important; padding: 0.8rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo-area">
+      <i class="fas fa-olive-branch logo-icon"></i>
+      <a href="./index.html" class="logo-text" id="logoHomeLink">Olivia & Co.</a>
+    </div>
+
+    <ul class="nav-menu" id="navMenu">
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu"><i class="fas fa-arrow-right"></i></button>
+      <li class="nav-item mega-dropdown" id="homeMegaDropdown">
+        <a href="./index.html" class="nav-link" id="homeMainLink">Home <i class="fas fa-chevron-down" style="font-size: 0.6rem;"></i></a>
+        <ul class="mega-dropdown-menu">
+          <li><a href="./index.html" class="mega-dropdown-item">Home 1</a></li>
+          <li><a href="./home 2.html" class="mega-dropdown-item">Home 2</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="./about.html" class="nav-link" >About</a></li>
+      <li class="nav-item"><a href="./olive oil collection.html" class="nav-link">Olive Oil</a></li>
+      <li class="nav-item"><a href="./Balsamic Vinegar Collection.html" class="nav-link">Balsamic</a></li>
+      <li class="nav-item"><a href="./Flavor Profiles.html" class="nav-link">Flavors</a></li>
+      <li class="nav-item"><a href="./Pairing Recommendations.html" class="nav-link">Pairing</a></li>
+      <li class="nav-item"><a href="./Gift Box Builder.html" class="nav-link">Gift Box</a></li>
+      <li class="nav-item" id="clubDropdown">
+        <a href="./Oil of the Month Club.html" class="nav-link" id="clubToggleLink">Oil Club</a>
+      </li>
+      <li class="nav-item"><a href="./Recipe Blog.html" class="nav-link">Recipe Blog</a></li>
+      <li class="nav-item"><a href="./contact.html" class="nav-link">Contact</a></li>
+      <div class="mobile-controls" id="mobileControls">
+        <div class="control-row">
+          <button class="icon-btn mobile-dark-toggle" id="mobileDarkToggle"><i class="fas fa-moon" id="mobileDarkIcon"></i> <span id="mobileDarkText">Dark Mode</span></button>
+        </div>
+        <div class="control-row">
+          <button class="icon-btn mobile-rtl-toggle" id="mobileRtlToggle"><i class="fa-solid fa-right-left"></i> <span>RTL Mode</span></button>
+        </div>
+        <button class="mobile-login-btn" id="mobileLoginBtn"><i class="fas fa-user-circle"></i> Login</button>
+      </div>
+    </ul>
+
+    <div class="desktop-controls">
+      <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon" id="desktopDarkIcon"></i></button>
+      <button class="icon-btn" id="rtlToggle" aria-label="RTL"><i class="fa-solid fa-right-left"></i></button>
+      <button class="login-btn" id="loginBtn"><i class="fas fa-user-circle"></i> Login</button>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- MAIN CONTENT -->
+<main>
+  
+  <!-- Section 1: Hero Redesign -->
+  <section class="about-hero" style="background-image: url('images/about_hero.jpg');">
+    <div class="about-hero-content">
+      <div class="about-hero-glass glass-card">
+        <h1 class="serif-title" style="font-size: clamp(2.2rem, 6vw, 3.8rem); margin-bottom: 1rem;">The Alchemy of Olivia & Co.</h1>
+        <p style="font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 400; line-height: 1.6; max-width: 700px; margin: 0 auto;">
+          An immersive journey through the sacred microclimates, ancestral soils, and the precise, oxygen-free cold-extraction that defines our award-winning liquid gold.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Terroir & Chronicles of Soil -->
+  <section class="asymmetric-section">
+    <div class="asymmetric-grid">
+      <div class="about-text">
+        <h2 class="serif-title" style="font-size: 2.8rem; margin-bottom: 1.5rem; line-height: 1.2;">The Sanctuary & The Soil</h2>
+        <div style="width: 60px; height: 4px; background: #5f8b6f; margin-bottom: 2rem; border-radius: 2px;"></div>
+        <p>
+          Our estates are located in a rare geological microclimate in Santa Barbara, where cold Pacific morning sea breezes are trapped by the Santa Ynez mountain range. This creates a high diurnal temperature variation, forcing the olive trees to concentrate sugars and build intense, complex aromatic profiles.
+        </p>
+        <p>
+          The soil is a highly unique clay-loam interwoven with Miocene marine fossil beds. Our trees are nourished by complex underground mycorrhizal networks, drawing rich minerals that impart a subtle marine salinity and flinty mineral note to our finished oils.
+        </p>
+      </div>
+      <div class="about-img-wrapper" style="box-shadow: 0 30px 60px rgba(95, 139, 111, 0.12);">
+        <img src="images/about_groves.jpg" alt="Ancient Olive Groves" class="about-img" style="height: 450px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Seasons of the Grove -->
+  <section class="asymmetric-section bg-alt" style="padding: 7rem 1.5rem;">
+    <div class="section-intro">
+      <h2 class="serif-title" style="font-size: 2.8rem; margin-bottom: 1rem;">Seasons of the Grove</h2>
+      <p style="font-size: 1.1rem; line-height: 1.6;">Our orchards are a living, breathing polyculture. Here is how our estate transforms across the cycle of the year.</p>
+    </div>
+    
+    <div class="seasons-grid">
+      <!-- Spring -->
+      <div class="season-card">
+        <img src="images/about_heritage.jpg" alt="Spring Blossom">
+        <div class="season-overlay">
+          <span class="season-tag">Spring</span>
+          <h3 class="season-title">Whispering Blossom</h3>
+          <p class="season-description">
+            Delicate white blossoms blanket the hills like snow. Our local honeybees begin their pollination dance amidst ancient heirloom branches, setting the stage for the tiny fruit nodes.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Summer -->
+      <div class="season-card">
+        <img src="images/about_values.jpg" alt="Summer Growth">
+        <div class="season-overlay">
+          <span class="season-tag">Summer</span>
+          <h3 class="season-title">Solar Synthesis</h3>
+          <p class="season-description">
+            Drinking in over 300 days of warm Californian sunlight, the olives expand rapidly, converting clean solar energy into valuable health-supporting polyphenols and rich, aromatic compounds.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Autumn -->
+      <div class="season-card">
+        <img src="images/about_process.jpg" alt="Autumn Harvest">
+        <div class="season-overlay">
+          <span class="season-tag">Autumn</span>
+          <h3 class="season-title">The Midnight Harvest</h3>
+          <p class="season-description">
+            To preserve flavor volatiles, we harvest at night under powerful floodlights. Harvesting in cold temperatures prevents premature fermentation, keeping the fruit pristine.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Winter -->
+      <div class="season-card">
+        <img src="images/about_sustainability.jpg" alt="Winter Cover Crops">
+        <div class="season-overlay">
+          <span class="season-tag">Winter</span>
+          <h3 class="season-title">Silent Regeneration</h3>
+          <p class="season-description">
+            Wild mustard, clover, and vetch carpet the grove floors. These cover crops naturally fix nitrogen back into the soil and prevent run-off, closing our organic, regenerative agricultural loop.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: 7 Alchemical Stages -->
+  <section class="alchemy-section">
+    <div class="alchemy-intro">
+      <h2 class="serif-title">The Seven Alchemical Stages of Extra Virginity</h2>
+      <p>
+        True Extra Virgin Olive Oil is a fragile, fresh fruit juice. To capture its soul and keep its acid content near zero, our extraction process is a race against time, executed in a completely sterile, cold environment.
+      </p>
+    </div>
+    
+    <div class="alchemy-stages">
+      <div class="alchemy-stage">
+        <div class="alchemy-number">I</div>
+        <div class="alchemy-content">
+          <h3>The Midnight Pluck</h3>
+          <p>Olives are hand-raked into small, aerated crates to prevent crushing. Night picking ensures that the delicate outer skin of the fruit remains cool and firm, preserving volatile esters.</p>
+        </div>
+      </div>
+
+      <div class="alchemy-stage">
+        <div class="alchemy-number">II</div>
+        <div class="alchemy-content">
+          <h3>The Double Purge</h3>
+          <p>Within 60 minutes of picking, the olives are leaf-stripped and washed twice using pure, chilled mountain spring water. No chemicals or detergents ever touch our harvest.</p>
+        </div>
+      </div>
+
+      <div class="alchemy-stage">
+        <div class="alchemy-number">III</div>
+        <div class="alchemy-content">
+          <h3>Stone Granulation</h3>
+          <p>Unlike metal hammer mills that shear cells and generate high heat, our granite millstones slowly crush the olives, forming a rich paste without heating or bruising the cellular structures.</p>
+        </div>
+      </div>
+
+      <div class="alchemy-stage">
+        <div class="alchemy-number">IV</div>
+        <div class="alchemy-content">
+          <h3>Nitrogen-Shielded</h3>
+          <p>The olive paste is gently churned at exactly 22°C (71.6°F) for 35 minutes. To prevent any oxidation of the precious polyphenols, the entire process takes place under a sealed blanket of pure nitrogen gas.</p>
+        </div>
+      </div>
+
+      <div class="alchemy-stage">
+        <div class="alchemy-number">V</div>
+        <div class="alchemy-content">
+          <h3>Speed Centrifugal</h3>
+          <p>A horizontal decanter centrifuge spins the paste at high speeds. This separates the heavy solids and fruit water from the pristine green oil purely through mechanical force, with absolutely zero added heat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Heirloom Cultivar Seed Bank -->
+  <section class="cultivars-section bg-alt">
+    <div class="section-intro">
+      <h2 class="serif-title" style="font-size: 2.8rem; margin-bottom: 1rem;">Our Heirloom Cultivar Library</h2>
+      <p style="font-size: 1.1rem; line-height: 1.6;">
+        We actively protect near-extinct, heirloom olive varieties. We nurture and press each cultivar separately, allowing their distinct flavor personalities to shine.
+      </p>
+    </div>
+
+    <div class="cultivar-grid">
+      <!-- Koroneiki -->
+      <div class="cultivar-card">
+        <span class="cultivar-badge">Spicy</span>
+        <h3>Koroneiki</h3>
+        <p>
+          Known as the king of Greek olives, these tiny fruits produce a vibrant, emerald-green oil. It features intense notes of fresh green banana, wild chicory, and a sharp, peppery throat finish that signals a very high polyphenol content.
+        </p>
+        <div class="cultivar-stats">
+          <div class="cultivar-stat-item"><i class="fas fa-heartbeat"></i> <span>Polyphenols: 680 mg/kg</span></div>
+          <div class="cultivar-stat-item"><i class="fas fa-tint"></i> <span>Acidity: 0.14%</span></div>
+        </div>
+      </div>
+
+      <!-- Picual -->
+      <div class="cultivar-card">
+        <span class="cultivar-badge">Herbaceous</span>
+        <h3>Spanish</h3>
+        <p>
+          The heritage cultivar of Andalusia, our Picual trees produce a highly stable, aromatic oil. It opens with aromas of freshly cut grass, green tomato vine, and fig leaf, ending with a clean, pleasant almond bitterness.
+        </p>
+        <div class="cultivar-stats">
+          <div class="cultivar-stat-item"><i class="fas fa-heartbeat"></i> <span>Polyphenols: 520 mg/kg</span></div>
+          <div class="cultivar-stat-item"><i class="fas fa-tint"></i> <span>Acidity: 0.11%</span></div>
+        </div>
+      </div>
+
+      <!-- Frantoio -->
+      <div class="cultivar-card">
+        <span class="cultivar-badge">Elegant</span>
+        <h3>Frantoio</h3>
+        <p>
+          The classic olive of Tuscany, Frantoio offers a beautifully balanced, fruit-forward experience. It yields a smooth, golden oil with aromas of green apple, sweet artichoke, and a mild, tingling black pepper finish.
+        </p>
+        <div class="cultivar-stats">
+          <div class="cultivar-stat-item"><i class="fas fa-heartbeat"></i> <span>Polyphenols: 410 mg/kg</span></div>
+          <div class="cultivar-stat-item"><i class="fas fa-tint"></i> <span>Acidity: 0.16%</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Meet the Founders -->
+  <section class="asymmetric-section">
+    <div class="asymmetric-grid reverse">
+      <div class="about-text">
+        <h2 class="serif-title" style="font-size: 2.8rem; margin-bottom: 1.5rem; line-height: 1.2;">The Custodians of the Table</h2>
+        <div style="width: 60px; height: 4px; background: #5f8b6f; margin-bottom: 2rem; border-radius: 2px;"></div>
+        <p>
+          Olivia & Co. was founded in 1982 by master tasters Clara and Marcus Vance. Dissatisfied with the industrial blending practices that dominate the olive oil industry, they set out to establish a transparent, estate-grown alternative.
+        </p>
+        <p>
+          "Extra virgin olive oil is the blood of the soil. It cannot be rushed, and it cannot be faked. Every vintage we blend is an invitation to sit at our family table and experience agricultural purity in its most delicious form."
+        </p>
+      </div>
+      <div class="about-img-wrapper" style="box-shadow: 0 30px 60px rgba(95, 139, 111, 0.12);">
+        <img src="images/about_founders.jpg" alt="Master Blenders" class="about-img" style="height: 450px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Awards & Recognition -->
+  <section class="asymmetric-section bg-alt" style="padding: 7rem 1.5rem;">
+    <div class="asymmetric-grid">
+      <div class="about-text">
+        <h2 class="serif-title" style="font-size: 2.8rem; margin-bottom: 1.5rem; line-height: 1.2;">Global Accolades</h2>
+        <div style="width: 60px; height: 4px; background: #5f8b6f; margin-bottom: 2rem; border-radius: 2px;"></div>
+        <p>Our single-estate and reserve blends are audited yearly by international sensory panels. We are honored to have our oils repeatedly selected for Gold Awards at the NYIOOC (New York International Olive Oil Competition) and ranked in the top tiers of the Flos Olei guide.</p>
+        <div style="display: flex; gap: 1.5rem; margin-top: 2rem;">
+          <div style="background: rgba(95, 139, 111, 0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #5f8b6f; font-size: 1.5rem;"><i class="fas fa-award"></i></div>
+          <div style="background: rgba(95, 139, 111, 0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #5f8b6f; font-size: 1.5rem;"><i class="fas fa-medal"></i></div>
+          <div style="background: rgba(95, 139, 111, 0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #5f8b6f; font-size: 1.5rem;"><i class="fas fa-trophy"></i></div>
+        </div>
+      </div>
+      <div class="about-img-wrapper" style="box-shadow: 0 30px 60px rgba(95, 139, 111, 0.12);">
+        <img src="images/about_awards.jpg" alt="Awards and Tasting" class="about-img" style="height: 450px;">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-logo-area">
+        <i class="fas fa-olive-branch footer-logo-icon"></i>
+        <span class="footer-logo-text">Olivia & Co.</span>
+      </div>
+      <p class="footer-description">Artisan extra virgin olive oils and aged balsamic vinegars since 1982. Handcrafted from Mediterranean groves.</p>
+      <div class="footer-social">
+        <a href="#" class="footer-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="footer-social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer-social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="footer-social-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+    
+    <div>
+      <h4 class="footer-heading">SHOP</h4>
+      <ul class="footer-links">
+        <li><a href="#" class="footer-link">Olive Oil</a></li>
+        <li><a href="#" class="footer-link">Balsamic Vinegar</a></li>
+        <li><a href="#" class="footer-link">Flavored Oils</a></li>
+        <li><a href="#" class="footer-link">Gift Boxes</a></li>
+        <li><a href="#" class="footer-link">Oil Club</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="footer-heading">COMPANY</h4>
+      <ul class="footer-links">
+        <li><a href="#" class="footer-link">About Us</a></li>
+        <li><a href="#" class="footer-link">Sustainability</a></li>
+        <li><a href="#" class="footer-link">Recipe Blog</a></li>
+        <li><a href="#" class="footer-link">Contact</a></li>
+        <li><a href="#" class="footer-link">FAQs</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="footer-heading">NEWSLETTER</h4>
+      <p class="footer-description" style="margin-bottom: 0.8rem;">Get 10% off your first order and receive tasting notes.</p>
+      <div class="footer-newsletter">
+        <input type="email" placeholder="Your email address" id="newsletterEmail">
+        <button id="newsletterSubscribeBtn">Subscribe →</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-bottom-text">© 2025 Olivia & Co. — Artisan Olive Oils & Balsamic Vinegars. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const body = document.body;
+    
+    // Elements
+    const darkToggleDesktop = document.getElementById('darkModeToggle');
+    const mobileDarkToggle = document.getElementById('mobileDarkToggle');
+    const themeToggle = document.getElementById('themeToggle'); // For login/register pages
+    
+    const rtlToggleDesktop = document.getElementById('rtlToggle');
+    const mobileRtlToggle = document.getElementById('mobileRtlToggle');
+    
+    const loginDesktop = document.getElementById('loginBtn');
+    const mobileLogin = document.getElementById('mobileLoginBtn');
+    
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const overlay = document.getElementById('menuOverlay');
+    const mobileMenuCloseBtn = document.getElementById('mobileMenuClose');
+    
+    // Icons
+    const desktopDarkIcon = document.getElementById('desktopDarkIcon');
+    const mobileDarkIcon = document.getElementById('mobileDarkIcon');
+    const mobileDarkText = document.getElementById('mobileDarkText');
+    const themeIcon = document.getElementById('themeIcon');
+    
+    // --- Login Redirect ---
+    function redirectToLogin(e) {
+        if(e) { e.preventDefault(); e.stopPropagation(); }
+        window.location.href = 'login.html';
+    }
+    if (loginDesktop) loginDesktop.addEventListener('click', redirectToLogin);
+    if (mobileLogin) mobileLogin.addEventListener('click', redirectToLogin);
+
+    // --- Dark Mode Logic ---
+    const DARK_KEY = 'oliveOilDarkMode';
+    
+    function updateDarkModeUI(isDark) {
+        const iconClass = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        if(desktopDarkIcon) desktopDarkIcon.className = iconClass;
+        if(mobileDarkIcon) mobileDarkIcon.className = iconClass;
+        if(themeIcon) themeIcon.className = iconClass;
+        if(mobileDarkText) mobileDarkText.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    }
+    
+    function setDarkMode(isDark) {
+        if(isDark) body.classList.add('dark');
+        else body.classList.remove('dark');
+        localStorage.setItem(DARK_KEY, isDark);
+        updateDarkModeUI(isDark);
+    }
+    
+    function toggleDarkMode(e) {
+        if(e) { e.preventDefault(); e.stopPropagation(); }
+        setDarkMode(!body.classList.contains('dark'));
+    }
+    
+    // Load saved or system preference
+    const savedDark = localStorage.getItem(DARK_KEY);
+    if(savedDark === 'true') setDarkMode(true);
+    else if(savedDark === 'false') setDarkMode(false);
+    else setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    // Attach listeners
+    if(darkToggleDesktop) darkToggleDesktop.addEventListener('click', toggleDarkMode);
+    if(mobileDarkToggle) mobileDarkToggle.addEventListener('click', toggleDarkMode);
+    if(themeToggle) themeToggle.addEventListener('click', toggleDarkMode);
+    
+    // --- RTL Logic ---
+    const RTL_KEY = 'oliveOilRTLMode';
+    
+    function setRTL(isRTL) {
+        if(isRTL) { body.classList.add('rtl'); body.setAttribute('dir', 'rtl'); }
+        else { body.classList.remove('rtl'); body.removeAttribute('dir'); }
+        localStorage.setItem(RTL_KEY, isRTL);
+    }
+    
+    function toggleRTL(e) {
+        if(e) { e.preventDefault(); e.stopPropagation(); }
+        setRTL(!body.classList.contains('rtl'));
+    }
+    
+    // Load saved RTL preference
+    const savedRTL = localStorage.getItem(RTL_KEY);
+    if(savedRTL === 'true') setRTL(true);
+    else setRTL(false);
+    
+    // Attach listeners
+    if(rtlToggleDesktop) rtlToggleDesktop.addEventListener('click', toggleRTL);
+    if(mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+    
+    // --- Mobile Menu Drawer ---
+    function openMobileMenu() {
+        if(navMenu) navMenu.classList.add('active');
+        if(overlay) overlay.classList.add('active');
+        body.style.overflow = 'hidden';
+        if(hamburger) hamburger.classList.add('active');
+    }
+    
+    function closeMobileMenu() {
+        if(navMenu) navMenu.classList.remove('active');
+        if(overlay) overlay.classList.remove('active');
+        body.style.overflow = '';
+        if(hamburger) hamburger.classList.remove('active');
+        
+        // Close accordions
+        document.querySelectorAll('.nav-item.mega-dropdown, .nav-item.dropdown').forEach(item => {
+            item.classList.remove('open');
+        });
+    }
+    
+    function toggleMobileMenu(e) {
+        if(e) { e.preventDefault(); e.stopPropagation(); }
+        if(navMenu && navMenu.classList.contains('active')) closeMobileMenu();
+        else openMobileMenu();
+    }
+    
+    if(hamburger) hamburger.addEventListener('click', toggleMobileMenu);
+    if(overlay) overlay.addEventListener('click', closeMobileMenu);
+    if(mobileMenuCloseBtn) mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
+    
+    // --- Mobile Menu Accordion ---
+    document.querySelectorAll('.nav-item.mega-dropdown, .nav-item.dropdown').forEach(item => {
+        const link = item.querySelector('.nav-link');
+        if(link) {
+            link.addEventListener('click', (e) => {
+                // Only act as accordion on mobile (when hamburger is visible)
+                if (window.innerWidth <= 1024) {
+                    e.preventDefault(); // Prevent redirect
+                    e.stopPropagation();
+                    item.classList.toggle('open');
+                }
+            });
+        }
+    });
+    
+    // --- Dynamic Active Link Highlighting ---
+    function highlightActivePage() {
+        const currentPath = decodeURIComponent(window.location.pathname).split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link, .mega-dropdown-item').forEach(link => {
+            link.style.color = ''; // Clear inline
+            const href = link.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('http')) {
+                const linkPath = decodeURIComponent(href.replace('./', '')).split('/').pop();
+                if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+                    link.classList.add('active-page');
+                    const parentDropdown = link.closest('.nav-item.dropdown, .nav-item.mega-dropdown');
+                    if (parentDropdown) {
+                        const parentLink = parentDropdown.querySelector('.nav-link');
+                        if (parentLink) parentLink.classList.add('active-page');
+                    }
+                } else {
+                    link.classList.remove('active-page');
+                }
+            }
+        });
+    }
+    highlightActivePage();
+});
+</script>
+</body>
+</html>
