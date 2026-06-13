@@ -951,6 +951,19 @@
       }
     }
 
+    /* --- Active Page Nav Styling --- */
+    .nav-link.active-page, .mega-dropdown-item.active-page {
+      color: #c98a3c !important;
+    }
+    body.dark .nav-link.active-page, body.dark .mega-dropdown-item.active-page {
+      color: #e6b975 !important;
+    }
+    .nav-link.active-page::after {
+      width: 80% !important;
+      left: 10% !important;
+      opacity: 1 !important;
+    }
+
     /* ---------- RTL SUPPORT ---------- */
     body.rtl {
       direction: rtl;
