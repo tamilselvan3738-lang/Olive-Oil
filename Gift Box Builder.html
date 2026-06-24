@@ -147,11 +147,12 @@
     .ws-scroll-row { display: flex; gap: 2rem; overflow-x: auto; padding: 1rem 2rem 3rem; scroll-snap-type: x mandatory; margin: 0 -2rem; -webkit-overflow-scrolling: touch; }
     .ws-scroll-row::-webkit-scrollbar { height: 8px; }
     .ws-scroll-row::-webkit-scrollbar-thumb { background: #d4b88b; border-radius: 10px; }
-    .ws-holiday-card { min-width: 350px; background: rgba(255,255,255,0.03); border: 1px solid rgba(212,184,139,0.2); border-radius: 1.5rem; padding: 2rem; scroll-snap-align: center; transition: transform 0.3s; }
+    .ws-holiday-card { min-width: 350px; background: rgba(255,255,255,0.03); border: 1px solid rgba(212,184,139,0.2); border-radius: 1.5rem; padding: 2rem; scroll-snap-align: center; transition: transform 0.3s; display: flex; flex-direction: column; }
     .ws-holiday-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.06); border-color: #d4b88b; }
     .ws-holiday-card img { width: 100%; height: 250px; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem; }
     .ws-holiday-card h3 { font-size: 1.6rem; margin-bottom: 0.5rem; color: #fff; }
     .ws-holiday-card p { font-size: 1rem; opacity: 0.8; margin-bottom: 1.5rem; }
+    .ws-holiday-card .ws-btn-primary { margin-top: auto; align-self: flex-start; }
 
     /* 4. Corporate Gifts (Sleek Professional Block) */
     .ws-corporate { padding: 8rem 2rem; background: #f4f0ea; position: relative; }
@@ -636,61 +637,27 @@
     }
 
     /* ---------- COMPACT NAVBAR (Reduced size) ---------- */
-    @keyframes premiumShimmer {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    @keyframes glowingBorder {
-      0% { background-position: 0% center; }
-      100% { background-position: 200% center; }
-    }
-
-        .navbar {
+    .navbar {
       position: -webkit-sticky;
       position: sticky;
       top: 0;
       z-index: 1000;
       width: 100%;
-      padding: 0.4rem 1rem;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-      border-bottom: none;
-      background: transparent;
-    }
-
-    .navbar::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(246,240,230,0.92), rgba(235,242,238,0.92), rgba(255,255,255,0.92));
-      background-size: 300% 300%;
-      animation: premiumShimmer 10s ease infinite;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      z-index: -1;
-      pointer-events: none;
-      transition: background 0.3s ease, backdrop-filter 0.3s ease;
-    }
-
-    .navbar::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, rgba(95,139,111,0.2), #5f8b6f, #cfbcab, rgba(95,139,111,0.2));
-      background-size: 200% auto;
-      animation: glowingBorder 4s linear infinite;
+      background-color: #ffffff;
+      padding: 0.8rem 0; /* increased vertical height, zero horizontal padding */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid #ede5db;
+      transition: all 0.3s ease;
     }
 
     @media (min-width: 768px) {
       .navbar {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
-
-        padding: 0.4rem 2rem;
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+        width: 100%;
+        padding: 1.1rem 0; /* increased vertical height on desktop */
       }
     }
 
@@ -702,6 +669,19 @@
       justify-content: space-between;
       width: 100%;
       position: relative;
+      padding: 0 1.25rem; /* horizontal padding matches main content containers on mobile */
+    }
+
+    @media (min-width: 768px) {
+      .nav-container {
+        padding: 0 2rem; /* horizontal padding matches main content containers on desktop */
+      }
+    }
+
+    @media (min-width: 768px) {
+      .nav-container {
+        padding: 0 2rem; /* horizontal padding matches main content containers on desktop */
+      }
     }
 
     /* Logo - left side */

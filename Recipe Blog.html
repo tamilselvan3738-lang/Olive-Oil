@@ -143,61 +143,27 @@
     }
 
     /* ---------- COMPACT NAVBAR (Reduced size) ---------- */
-    @keyframes premiumShimmer {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    @keyframes glowingBorder {
-      0% { background-position: 0% center; }
-      100% { background-position: 200% center; }
-    }
-
-        .navbar {
+    .navbar {
       position: -webkit-sticky;
       position: sticky;
       top: 0;
       z-index: 1000;
       width: 100%;
-      padding: 0.4rem 1rem;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-      border-bottom: none;
-      background: transparent;
-    }
-
-    .navbar::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(246,240,230,0.92), rgba(235,242,238,0.92), rgba(255,255,255,0.92));
-      background-size: 300% 300%;
-      animation: premiumShimmer 10s ease infinite;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      z-index: -1;
-      pointer-events: none;
-      transition: background 0.3s ease, backdrop-filter 0.3s ease;
-    }
-
-    .navbar::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, rgba(95,139,111,0.2), #5f8b6f, #cfbcab, rgba(95,139,111,0.2));
-      background-size: 200% auto;
-      animation: glowingBorder 4s linear infinite;
+      background-color: #ffffff;
+      padding: 0.8rem 0; /* increased vertical height, zero horizontal padding */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid #ede5db;
+      transition: all 0.3s ease;
     }
 
     @media (min-width: 768px) {
       .navbar {
-      position: -webkit-sticky !important;
-      position: sticky !important;
-      top: 0 !important;
-      z-index: 1000 !important;
-      width: 100%;
-
-        padding: 0.4rem 2rem;
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+        width: 100%;
+        padding: 1.1rem 0; /* increased vertical height on desktop */
       }
     }
 
@@ -209,6 +175,19 @@
       justify-content: space-between;
       width: 100%;
       position: relative;
+      padding: 0 1.25rem; /* horizontal padding matches main content containers on mobile */
+    }
+
+    @media (min-width: 768px) {
+      .nav-container {
+        padding: 0 2rem; /* horizontal padding matches main content containers on desktop */
+      }
+    }
+
+    @media (min-width: 768px) {
+      .nav-container {
+        padding: 0 2rem; /* horizontal padding matches main content containers on desktop */
+      }
     }
 
     /* Logo - left side */
@@ -820,9 +799,23 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.05);
       border: 1px solid #ede5db;
     }
+    .featured-recipe-card h2 {
+      color: #2c2418;
+      transition: color 0.3s;
+    }
     body.dark .featured-recipe-card {
       background: #1f1b16;
       border-color: #3a2e26;
+    }
+    body.dark .featured-recipe-card h2 {
+      color: #f0e9df;
+    }
+    .featured-recipe-card p {
+      color: #6b5a48;
+      transition: color 0.3s;
+    }
+    body.dark .featured-recipe-card p {
+      color: #c7b59b;
     }
     .featured-recipe-image-wrap {
       flex: 1;
@@ -898,6 +891,61 @@
         width: 100% !important;
         min-width: 100% !important;
       }
+    }
+
+    .main-courses-section {
+      background-color: #f7efe7;
+      padding: 5rem 0;
+      margin-bottom: 5rem;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+    body.dark .main-courses-section {
+      background-color: #1f1b16;
+    }
+    .main-courses-section h2,
+    .main-courses-section h3 {
+      color: #2c2418;
+      transition: color 0.3s;
+    }
+    body.dark .main-courses-section h2,
+    body.dark .main-courses-section h3 {
+      color: #f0e9df;
+    }
+    .main-courses-section p {
+      color: #6b5a48;
+      transition: color 0.3s;
+    }
+    body.dark .main-courses-section p {
+      color: #c7b59b;
+    }
+
+    .recipe-newsletter-section {
+      background: linear-gradient(135deg, #e9dfd3, #f7efe7);
+      padding: 5rem 1.25rem;
+      text-align: center;
+      border-radius: 2rem;
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+      border: 1px solid #e2d6ca;
+      transition: all 0.3s;
+    }
+    body.dark .recipe-newsletter-section {
+      background: linear-gradient(135deg, #2a241e, #1f1b16);
+      border-color: #3a2e26;
+    }
+    .recipe-newsletter-section h2 {
+      color: #2c2418;
+      transition: color 0.3s;
+    }
+    body.dark .recipe-newsletter-section h2 {
+      color: #f0e9df;
+    }
+    .recipe-newsletter-section p {
+      color: #6b5a48;
+      transition: color 0.3s;
+    }
+    body.dark .recipe-newsletter-section p {
+      color: #c7b59b;
     }
 
     .feature-card {
@@ -1457,8 +1505,8 @@
     </div>
     <div class="featured-recipe-text-wrap">
       <span class="badge" style="margin-bottom: 1rem;">Recipe of the Month</span>
-      <h2 style="font-size: 2.5rem; color: #2c2418; margin-bottom: 1rem; line-height: 1.2;">Blood Orange Olive Oil Cake</h2>
-      <p style="color: #6b5a48; margin-bottom: 1.5rem; font-size: 1.05rem;">An incredibly moist, tender cake that celebrates citrus season. Our mild extra virgin olive oil replaces butter to create a delicate crumb, while a fresh blood orange glaze adds the perfect bright finish.</p>
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2;">Blood Orange Olive Oil Cake</h2>
+      <p style="margin-bottom: 1.5rem; font-size: 1.05rem;">An incredibly moist, tender cake that celebrates citrus season. Our mild extra virgin olive oil replaces butter to create a delicate crumb, while a fresh blood orange glaze adds the perfect bright finish.</p>
       <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
         <span style="font-size: 0.9rem; color: #5f8b6f;"><i class="far fa-clock"></i> 55 Mins</span>
         <span style="font-size: 0.9rem; color: #5f8b6f;"><i class="fas fa-signal"></i> Intermediate</span>
@@ -1475,48 +1523,48 @@
     <p style="color: #6b5a48; max-width: 600px; margin: 0 auto;">Set the stage for a memorable meal with these elegant, flavor-forward small bites.</p>
   </div>
   <div class="three-cards-grid">
-    <div class="feature-card" style="padding: 0; text-align: left;">
+    <div class="feature-card" style="padding: 0; text-align: left; display: flex; flex-direction: column; height: 100%;">
       <img src="images/recipe_app_crostini.png" alt="Burrata Crostini" style="width: 100%; height: 250px; object-fit: cover;">
-      <div style="padding: 1.5rem;">
+      <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1;">
         <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Burrata & Fig Balsamic Crostini</h3>
         <p style="color: #6b5a48; font-size: 0.9rem; margin-bottom: 1rem;">Crispy baguette slices topped with creamy burrata, fresh figs, and our dark aged balsamic.</p>
-        <a href="#" style="color: #5f8b6f; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Get Recipe </a>
+        <a href="#" style="color: #5f8b6f; text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-top: auto; align-self: flex-start;">Get Recipe </a>
       </div>
     </div>
-    <div class="feature-card" style="padding: 0; text-align: left;">
+    <div class="feature-card" style="padding: 0; text-align: left; display: flex; flex-direction: column; height: 100%;">
       <img src="images/recipe_app_tart.png" alt="Onion Tart" style="width: 100%; height: 250px; object-fit: cover;">
-      <div style="padding: 1.5rem;">
+      <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1;">
         <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Caramelized Onion & Thyme Tart</h3>
         <p style="color: #6b5a48; font-size: 0.9rem; margin-bottom: 1rem;">A savory, flaky tart using our robust olive oil to deeply caramelize sweet onions.</p>
-        <a href="#" style="color: #5f8b6f; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Get Recipe </a>
+        <a href="#" style="color: #5f8b6f; text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-top: auto; align-self: flex-start;">Get Recipe </a>
       </div>
     </div>
-    <div class="feature-card" style="padding: 0; text-align: left;">
+    <div class="feature-card" style="padding: 0; text-align: left; display: flex; flex-direction: column; height: 100%;">
       <img src="images/pairing_hearth.png" alt="Olive Tapenade" style="width: 100%; height: 250px; object-fit: cover;">
-      <div style="padding: 1.5rem;">
+      <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1;">
         <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Rustic Olive Tapenade</h3>
         <p style="color: #6b5a48; font-size: 0.9rem; margin-bottom: 1rem;">A classic Mediterranean spread elevated with our garlic-infused extra virgin olive oil.</p>
-        <a href="#" style="color: #5f8b6f; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Get Recipe </a>
+        <a href="#" style="color: #5f8b6f; text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-top: auto; align-self: flex-start;">Get Recipe </a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 4. Main Courses -->
-<section style="background-color: #f7efe7; padding: 5rem 0; margin-bottom: 5rem;">
+<section class="main-courses-section">
   <div class="container">
     <div style="text-align: center; margin-bottom: 3rem;">
       <h2 class="section-title" style="margin-top: 0;">Hearty Main Courses</h2>
-      <p style="color: #6b5a48; max-width: 600px; margin: 0 auto;">Transform simple proteins and pastas into restaurant-quality dishes.</p>
+      <p style="max-width: 600px; margin: 0 auto;">Transform simple proteins and pastas into restaurant-quality dishes.</p>
     </div>
     <div class="two-columns">
       <div class="info-image">
         <img src="images/pairing_mediterranean.png" alt="Herb-Crusted Salmon" style="box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
       </div>
       <div class="info-text">
-        <span class="badge" style="background: white; margin-bottom: 1rem;">Seafood</span>
-        <h3 style="font-size: 2rem; margin-bottom: 1rem; color: #2c2418;">Herb-Crusted Salmon with Lemon Olive Oil</h3>
-        <p style="color: #6b5a48; margin-bottom: 1.5rem; line-height: 1.7;">A bright and fresh weeknight dinner. We use our lemon-infused olive oil to create a vibrant marinade that seals in the salmon's moisture, pairing perfectly with a crispy herb topping.</p>
+        <span class="badge" style="margin-bottom: 1rem;">Seafood</span>
+        <h3 style="font-size: 2rem; margin-bottom: 1rem;">Herb-Crusted Salmon with Lemon Olive Oil</h3>
+        <p style="margin-bottom: 1.5rem; line-height: 1.7;">A bright and fresh weeknight dinner. We use our lemon-infused olive oil to create a vibrant marinade that seals in the salmon's moisture, pairing perfectly with a crispy herb topping.</p>
         <a href="#" class="btn-primary">View Full Recipe</a>
       </div>
     </div>
@@ -1555,28 +1603,28 @@
       <p style="color: #c7b59b; max-width: 600px; margin: 0 auto;">Yes, olive oil belongs in desserts! Discover incredibly moist cakes and rich brownies.</p>
     </div>
     <div class="three-cards-grid">
-      <div class="feature-card" style="background: #1f1b16; border-color: #3a2e26; padding: 0; text-align: left;">
+      <div class="feature-card" style="background: #1f1b16; border-color: #3a2e26; padding: 0; text-align: left; display: flex; flex-direction: column; height: 100%;">
         <img src="images/bal_fruit_main.png" alt="Fruit Dessert" style="width: 100%; height: 250px; object-fit: cover;">
-        <div style="padding: 1.5rem;">
+        <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1;">
           <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem; color: #fefaf5;">Balsamic Macerated Berries</h3>
           <p style="color: #c7b59b; font-size: 0.9rem; margin-bottom: 1rem;">Fresh strawberries and raspberries naturally sweetened with our thick, syrupy dark balsamic over vanilla bean ice cream.</p>
-          <a href="#" style="color: #8fbc9f; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Get Recipe </a>
+          <a href="#" style="color: #8fbc9f; text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-top: auto; align-self: flex-start;">Get Recipe </a>
         </div>
       </div>
-      <div class="feature-card" style="background: #1f1b16; border-color: #3a2e26; padding: 0; text-align: left;">
+      <div class="feature-card" style="background: #1f1b16; border-color: #3a2e26; padding: 0; text-align: left; display: flex; flex-direction: column; height: 100%;">
         <img src="images/infused_olive_oils.png" alt="Olive Oil Brownies" style="width: 100%; height: 250px; object-fit: cover;">
-        <div style="padding: 1.5rem;">
+        <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1;">
           <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem; color: #fefaf5;">Dark Chocolate Sea Salt Brownies</h3>
           <p style="color: #c7b59b; font-size: 0.9rem; margin-bottom: 1rem;">Replacing butter with our robust olive oil creates the fudgiest texture and enhances the rich cocoa flavor.</p>
-          <a href="#" style="color: #8fbc9f; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Get Recipe </a>
+          <a href="#" style="color: #8fbc9f; text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-top: auto; align-self: flex-start;">Get Recipe </a>
         </div>
       </div>
-      <div class="feature-card" style="background: #1f1b16; border-color: #3a2e26; padding: 0; text-align: left;">
+      <div class="feature-card" style="background: #1f1b16; border-color: #3a2e26; padding: 0; text-align: left; display: flex; flex-direction: column; height: 100%;">
         <img src="images/tasting_experience.png" alt="Olive Oil Cookies" style="width: 100%; height: 250px; object-fit: cover;">
-        <div style="padding: 1.5rem;">
+        <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1;">
           <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem; color: #fefaf5;">Lemon Olive Oil Biscotti</h3>
           <p style="color: #c7b59b; font-size: 0.9rem; margin-bottom: 1rem;">Crispy, twice-baked Italian cookies made completely dairy-free with our citrus-infused oil.</p>
-          <a href="#" style="color: #8fbc9f; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Get Recipe </a>
+          <a href="#" style="color: #8fbc9f; text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-top: auto; align-self: flex-start;">Get Recipe </a>
         </div>
       </div>
     </div>
@@ -1617,10 +1665,10 @@
 </section>
 
 <!-- 8. Newsletter CTA -->
-<section style="background: linear-gradient(135deg, #e9dfd3, #f7efe7); padding: 5rem 1.25rem; text-align: center; border-radius: 2rem; max-width: 1200px; margin: 0 auto 5rem; border: 1px solid #e2d6ca;">
+<section class="recipe-newsletter-section">
   <i class="fas fa-envelope-open-text" style="font-size: 2.5rem; color: #5f8b6f; margin-bottom: 1.5rem;"></i>
-  <h2 style="font-size: 2.2rem; color: #2c2418; margin-bottom: 1rem;">Join the Recipe Club</h2>
-  <p style="color: #6b5a48; max-width: 500px; margin: 0 auto 2rem;">Get weekly culinary inspiration, seasonal recipes, and exclusive access to new harvest releases sent directly to your inbox.</p>
+  <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Join the Recipe Club</h2>
+  <p style="max-width: 500px; margin: 0 auto 2rem;">Get weekly culinary inspiration, seasonal recipes, and exclusive access to new harvest releases sent directly to your inbox.</p>
   <form class="newsletter-form">
     <input type="email" placeholder="Enter your email address" required>
     <button type="submit" class="btn-primary">Subscribe</button>
