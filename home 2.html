@@ -164,48 +164,214 @@
         padding: 0 2rem; /* horizontal padding matches main content containers on desktop */
       }
     }
-    .logo-area { display: flex; align-items: center; gap: 0.35rem; flex-shrink: 0; min-width: 120px; }
-    .logo-icon { font-size: 1.1rem; color: #5f8b6f; }
-    @keyframes textGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+    /* Logo - left side */
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+      min-width: 120px;
+    }
+
+    .logo-icon {
+      font-size: 1.1rem;
+      color: #5f8b6f;
+    }
+
+    @keyframes textGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .logo-text {
-      font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.5px;
       background: linear-gradient(90deg, #3f2e21, #5f8b6f, #b89f7a, #3f2e21);
-      background-size: 300% auto; color: transparent; -webkit-background-clip: text; background-clip: text;
-      animation: textGradient 6s linear infinite; text-decoration: none; white-space: nowrap; transition: transform 0.3s ease;
+      background-size: 300% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: textGradient 6s linear infinite;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.3s ease;
     }
-    .logo-text:hover { transform: scale(1.02); }
-    @media (min-width: 480px) { .logo-icon { font-size: 1.2rem; } .logo-text { font-size: 1.05rem; } }
-    .nav-menu { display: flex; list-style: none; align-items: center; justify-content: center; flex: 1; margin: 0 1rem; gap: 0.05rem; }
-    .nav-item { position: relative; }
+    
+    .logo-text:hover {
+      transform: scale(1.02);
+    }
+
+    @media (min-width: 480px) {
+      .logo-icon { font-size: 1.2rem; }
+      .logo-text { font-size: 1.05rem; }
+    }
+
+    /* Desktop navigation menu - centered */
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      margin: 0 1rem;
+      gap: 0.05rem;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
     .nav-link {
-      display: flex; align-items: center; gap: 5px; padding: 0.3rem 0.7rem; text-decoration: none; font-weight: 600;
-      font-size: 0.8rem; color: #2c2418; border-radius: 30px; transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-      white-space: nowrap; position: relative;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0.3rem 0.7rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: #2c2418;
+      border-radius: 30px;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      white-space: nowrap;
+      position: relative;
     }
+
     .nav-link::after {
-      content: ''; position: absolute; width: 0; height: 2px; bottom: 2px; left: 50%;
-      background: linear-gradient(90deg, #5f8b6f, #cfbcab); transition: width 0.3s, left 0.3s; border-radius: 2px; opacity: 0;
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 2px;
+      left: 50%;
+      background: linear-gradient(90deg, #5f8b6f, #cfbcab);
+      transition: width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      border-radius: 2px;
+      opacity: 0;
     }
-    .nav-link:hover::after { width: 80%; left: 10%; opacity: 1; }
-    .nav-link:hover { color: #5f8b6f; transform: translateY(-1px); }
+
+    .nav-link:hover::after {
+      width: 80%;
+      left: 10%;
+      opacity: 1;
+    }
+
+    .nav-link:hover {
+      color: #5f8b6f;
+      transform: translateY(-1px);
+    }
+
+    /* Dropdown menus - desktop */
     .mega-dropdown-menu, .dropdown-menu {
-      position: absolute; top: 100%; left: 0; background: rgba(255, 253, 249, 0.95); backdrop-filter: blur(16px);
-      border-radius: 18px; min-width: 200px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12); border: 1px solid rgba(233, 223, 211, 0.6);
-      opacity: 0; visibility: hidden; transform: translateY(15px) scale(0.98); transition: all 0.4s; z-index: 100; list-style: none; padding: 0.6rem 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(255, 253, 249, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 18px;
+      min-width: 200px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(233, 223, 211, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(15px) scale(0.98);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 100;
+      list-style: none;
+      padding: 0.6rem 0;
     }
-    .nav-item.mega-dropdown:hover .mega-dropdown-menu, .nav-item.dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(8px) scale(1); }
-    .mega-dropdown-item, .dropdown-item { display: block; padding: 0.4rem 1.2rem; text-decoration: none; color: #2c2418; font-size: 0.75rem; font-weight: 450; transition: background 0.15s; }
-    .mega-dropdown-item:hover, .dropdown-item:hover { background-color: #f7efe7; }
-    .desktop-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; margin-left: auto; }
-    .icon-btn { background: none; border: none; font-size: 1rem; cursor: pointer; color: #2c2418; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s; }
-    .icon-btn:hover { background-color: #e7dfd6; }
+
+    .nav-item.mega-dropdown:hover .mega-dropdown-menu,
+    .nav-item.dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(8px) scale(1);
+    }
+
+    .mega-dropdown-item, .dropdown-item {
+      display: block;
+      padding: 0.4rem 1.2rem;
+      text-decoration: none;
+      color: #2c2418;
+      font-size: 0.75rem;
+      font-weight: 450;
+      transition: background 0.15s;
+    }
+
+    .mega-dropdown-item:hover, .dropdown-item:hover {
+      background-color: #f7efe7;
+    }
+
+    /* Desktop controls (hidden on mobile/tablet) */
+    .desktop-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #2c2418;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .icon-btn:hover {
+      background-color: #e7dfd6;
+    }
+
     .login-btn {
-      background: transparent; border: 1.5px solid #cfbcab; padding: 0.35rem 1rem; border-radius: 40px; font-weight: 600; font-size: 0.75rem;
-      cursor: pointer; transition: all 0.3s; color: #2c2418; display: flex; align-items: center; gap: 6px; position: relative; overflow: hidden; z-index: 1;
+      background: transparent;
+      border: 1.5px solid #cfbcab;
+      padding: 0.35rem 1rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      color: #2c2418;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
-    .login-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transition: left 0.5s ease; z-index: -1; }
-    .login-btn:hover::before { left: 100%; }
-    .login-btn:hover { background: linear-gradient(135deg, #5f8b6f, #4a6f58); border-color: transparent; color: #ffffff; box-shadow: 0 6px 16px rgba(95, 139, 111, 0.3); transform: translateY(-2px); }
+
+    .login-btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+
+    .login-btn:hover::before {
+      left: 100%;
+    }
+
+    .login-btn:hover {
+      background: linear-gradient(135deg, #5f8b6f, #4a6f58);
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 6px 16px rgba(95, 139, 111, 0.3);
+      transform: translateY(-2px);
+    }
+
     .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; margin-left: 6px; }
     .hamburger span { width: 22px; height: 2px; background-color: #2c2418; transition: 0.3s ease; border-radius: 2px; transform-origin: center; }
     .hamburger.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
@@ -267,7 +433,46 @@
       .menu-overlay.active { opacity: 1; visibility: visible; }
 
     }
-    @media (min-width: 1025px) { .mobile-controls { display: none !important; } .nav-menu { justify-content: center; } .logo-area, .desktop-controls { width: auto; } }
+    @media (min-width: 1025px) {
+      .mobile-controls, .mobile-menu-close {
+        display: none !important;
+      }
+      .nav-menu {
+        justify-content: center;
+      }
+      .logo-area, .desktop-controls {
+        width: auto;
+      }
+    }
+
+    /* ---------- RTL SUPPORT ---------- */
+    body.rtl {
+      direction: rtl;
+    }
+    body.rtl .creative-hero {
+      direction: ltr;
+    }
+    body.rtl .nav-menu {
+      padding-right: 0;
+    }
+    body.rtl .dropdown-menu,
+    body.rtl .mega-dropdown-menu {
+      left: auto;
+      right: 0;
+    }
+    @media (max-width: 1024px) {
+      body.rtl .nav-menu {
+        right: auto;
+        left: -100%;
+        border-left: none;
+        border-right: 1px solid #e2d6ca;
+      }
+      body.rtl .nav-menu.active {
+        right: auto;
+        left: 0;
+      }
+    }
+
     /* ---------- FOOTER SECTION - MATCHING NAVBAR STYLES ---------- */
     .footer {
       background-color: #ffffff;
@@ -466,6 +671,7 @@
         padding: 2.5rem 2rem 1.5rem;
       }
     }
+
     /* ---------- MAIN CONTENT ---------- */
     .container {
       max-width: 1400px;
@@ -476,6 +682,7 @@
     @media (min-width: 768px) {
       .container { padding: 0 2rem; }
     }
+
     .hero-mock {
       text-align: center;
       padding: 2rem 1rem;
@@ -496,6 +703,7 @@
       .hero-mock { padding: 2.5rem 2rem; }
       .hero-mock h2 { font-size: 2.2rem; }
     }
+
     .feature-grid {
       display: flex;
       flex-wrap: wrap;
@@ -512,6 +720,7 @@
       align-items: center;
       gap: 6px;
     }
+
     .section-title {
       font-size: 1.6rem;
       margin: 2rem 0 1rem;
@@ -532,6 +741,7 @@
     @media (min-width: 1024px) {
       .cards-grid { grid-template-columns: repeat(4, 1fr); }
     }
+
     .feature-card {
       background: #ffffff;
       border-radius: 1.5rem;
@@ -575,6 +785,7 @@
     body.dark .btn-primary {
       background-color: #7b9e8a;
     }
+
     .two-columns {
       display: flex;
       flex-direction: column;
@@ -598,943 +809,972 @@
       border-radius: 1.5rem;
       height: auto;
     }
+
     hr {
       margin: 2rem 0;
       border-color: #e1d5c8;
       opacity: 0.5;
     }
-    /* --- NEW SECTIONS CSS --- */
-    /* 1. Immersive Hero Section */
-    .creative-hero {
+
+    /* ========================================== */
+    /*   THE SENSORY ATELIER: HOMEPAGE STYLES     */
+    /* ========================================== */
+
+    /* General Atelier Utility */
+    .atelier-section {
+      padding: 6rem 2rem;
       position: relative;
-      height: 80vh;
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: url('images/home_hero.png') center/cover no-repeat;
-      background-attachment: fixed;
-    }
-    .creative-hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(44, 36, 24, 0.4);
-    }
-    .hero-glass-card {
-      position: relative;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      padding: 3rem 2rem;
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      text-align: center;
-      color: #fff;
-      max-width: 700px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-    }
-    body.dark .hero-glass-card {
-      background: rgba(31, 27, 22, 0.3);
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-    .hero-glass-card h1 {
-      font-size: 3.2rem;
-      margin-bottom: 1rem;
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -1px;
-    }
-    .hero-glass-card p {
-      font-size: 1.1rem;
-      margin-bottom: 2.25rem;
-      opacity: 0.95;
-      line-height: 1.6;
-    }
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 1rem;
-      background: rgba(95, 139, 111, 0.2);
-      color: #dfd0be;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      border-radius: 30px;
-      margin-bottom: 1.5rem;
-      border: 1px solid rgba(95, 139, 111, 0.3);
-    }
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn-glow {
-      background: linear-gradient(135deg, #5f8b6f, #4a6f58);
-      color: white;
-      padding: 0.9rem 2.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      display: inline-block;
-      transition: all 0.3s;
-      box-shadow: 0 5px 15px rgba(95, 139, 111, 0.4);
-    }
-    .btn-glow:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(95, 139, 111, 0.6);
-      color: white;
-    }
-    .btn-glow-outline {
-      background: rgba(255, 255, 255, 0.08);
-      color: white;
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      border: 1.5px solid rgba(255, 255, 255, 0.4);
-      padding: 0.9rem 2.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      display: inline-block;
-      transition: all 0.3s;
-    }
-    .btn-glow-outline:hover {
-      background: rgba(255, 255, 255, 0.2);
-      border-color: white;
-      transform: translateY(-3px);
-      color: white;
-    }
-    /* 2. Artisan Process (Zig-Zag) */
-    .zig-zag-section {
-      padding: 6rem 0;
-      background-color: #fefaf5;
-    }
-    body.dark .zig-zag-section {
-      background-color: #121212;
-    }
-    .zig-zag-row {
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 3rem;
       align-items: center;
-      margin-bottom: 4rem;
-    }
-    .zig-zag-row:last-child { margin-bottom: 0; }
-    @media (min-width: 768px) {
-      .zig-zag-row { flex-direction: row; }
-      .zig-zag-row.reverse { flex-direction: row-reverse; }
-    }
-    .zz-image, .zz-text { flex: 1; }
-    .zz-image img {
       width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-      transition: transform 0.5s ease;
     }
-    .zz-image:hover img { transform: scale(1.03); }
-    .zz-text { padding: 2rem; }
-    .zz-text h2 {
-      font-size: 2.2rem;
-      color: #3f2e21;
-      margin-bottom: 1.5rem;
-    }
-    body.dark .zz-text h2 { color: #d4c3aa; }
-    .zz-text p {
-      font-size: 1.05rem;
-      color: #5a4a38;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-    body.dark .zz-text p { color: #ece8e0; }
-    /* 3. Heritage & Terroir */
-    .terroir-section {
-      padding: 6rem 0;
-      background: linear-gradient(135deg, #f7efe7 0%, #fefaf5 100%);
-    }
-    body.dark .terroir-section {
-      background: linear-gradient(135deg, #1a1612 0%, #121212 100%);
-    }
-    .terroir-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    @media (min-width: 992px) {
-      .terroir-grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
-    }
-    .terroir-image {
-      height: 100%;
-      min-height: 400px;
-      border-radius: 20px;
-      background: url('images/about_groves.jpg') center/cover;
-      position: relative;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    }
-    .terroir-content {
-      background: #ffffff;
-      padding: 4rem 3rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    body.dark .terroir-content {
-      background: #1f1b16;
-      border: 1px solid #3a2e26;
-    }
-    .terroir-content h3 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: #5f8b6f;
-    }
-    
-    /* 4. Curated Premium Selection */
-    .premium-selection {
-      padding: 6rem 0;
-      text-align: center;
-      background-color: #ffffff;
-    }
-    body.dark .premium-selection { background-color: #1f1b16; }
-    .premium-selection h2 {
-      font-size: 2.2rem;
-      color: #3f2e21;
-      margin-bottom: 1rem;
-    }
-    body.dark .premium-selection h2 { color: #d4c3aa; }
-    .premium-cards {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 3rem;
-    }
-    .premium-card {
-      background: #fefaf5;
-      border-radius: 20px;
-      padding: 2rem;
-      width: 300px;
-      border: 1px solid #ede5db;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-      transition: all 0.4s ease;
-      position: relative;
-      top: 0;
-    }
-    body.dark .premium-card {
-      background: #121212;
-      border-color: #3a2e26;
-    }
-    .premium-card:hover {
-      top: -15px;
-      box-shadow: 0 20px 40px rgba(95, 139, 111, 0.15);
-      border-color: #5f8b6f;
-    }
-    .premium-card img {
-      height: 220px;
-      object-fit: contain;
-      margin-bottom: 1.5rem;
-      filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));
-    }
-    .premium-card h4 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
-    .premium-card .price {
-      color: #5f8b6f;
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
-    /* 5. Culinary Harmony */
-    .pairing-section {
-      padding: 6rem 0;
-      background: #1f1b16;
-      color: #f0e9df;
-      position: relative;
-      overflow: hidden;
-    }
-    .pairing-container {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-      position: relative;
-      z-index: 2;
-    }
-    @media (min-width: 992px) {
-      .pairing-container { flex-direction: row; align-items: center; }
-    }
-    .pairing-text { flex: 1; padding: 2rem; }
-    .pairing-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: #d4c3aa; }
-    .pairing-text p { font-size: 1.1rem; opacity: 0.9; line-height: 1.7; }
-    .pairing-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .pairing-tag {
-      background: rgba(255,255,255,0.1);
-      padding: 0.6rem 1.2rem;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      border: 1px solid rgba(212, 195, 170, 0.3);
-      transition: background 0.3s;
-      cursor: pointer;
-    }
-    .pairing-tag:hover {
-      background: #5f8b6f;
-      border-color: #5f8b6f;
-      color: #fff;
-    }
-    .pairing-image {
-      flex: 1;
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-    .pairing-image img {
-      width: 90%;
-      max-width: 450px;
-      border-radius: 50%;
-      box-shadow: 0 0 50px rgba(0,0,0,0.5);
-      border: 10px solid #2a241d;
-      transition: transform 0.5s ease;
-    }
-    .pairing-image:hover img {
-      transform: rotate(5deg) scale(1.05);
-    }
-    /* Refreshed Sustainability Section (Bento-style) */
-    .sustainability-section {
-      padding: 7rem 1.25rem;
-      background: linear-gradient(180deg, #fefaf5 0%, #f9f2e7 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    body.dark .sustainability-section {
-      background: linear-gradient(180deg, #121212 0%, #1a1612 100%);
-    }
-    .sustainability-section::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(circle at 80% 20%, rgba(95, 139, 111, 0.04) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .sustainability-section h2 {
-      font-size: 2.6rem;
-      color: #3f2e21;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-    body.dark .sustainability-section h2 { color: #f0e9df; }
-    
-    .sustainability-intro {
-      max-width: 750px;
-      margin: 0 auto 4rem auto;
-      text-align: center;
-    }
-    .sustainability-intro p {
-      font-size: 1.15rem;
-      color: #6a5a48;
-      line-height: 1.7;
-    }
-    body.dark .sustainability-intro p {
-      color: #c7b59b;
-    }
-    .sust-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
+    .atelier-container {
       max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
     }
-    @media (max-width: 900px) {
-      .sust-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-    }
-    .sust-card {
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(223, 210, 193, 0.6);
-      border-radius: 24px;
-      padding: 3rem 2rem;
-      text-align: center;
-      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-    body.dark .sust-card {
-      background: rgba(31, 27, 22, 0.5);
-      border-color: rgba(74, 62, 52, 0.6);
-    }
-    .sust-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 4px;
-      background: linear-gradient(90deg, #5f8b6f, #b89f7a);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .sust-card:hover::before {
-      opacity: 1;
-    }
-    .sust-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(95, 139, 111, 0.08);
-      background: rgba(255, 255, 255, 0.95);
-      border-color: rgba(95, 139, 111, 0.3);
-    }
-    body.dark .sust-card:hover {
-      background: rgba(31, 27, 22, 0.9);
-      border-color: rgba(123, 158, 138, 0.3);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-    .sust-icon-wrap {
-      width: 80px;
-      height: 80px;
-      border-radius: 20px;
-      background: rgba(95, 139, 111, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 2rem auto;
-      transition: all 0.4s ease;
-    }
-    .sust-card:hover .sust-icon-wrap {
-      transform: rotate(10deg) scale(1.1);
-      background: #5f8b6f;
-    }
-    .sust-icon-wrap i {
-      font-size: 2.2rem;
-      color: #5f8b6f;
-      transition: color 0.4s ease;
-    }
-    .sust-card:hover .sust-icon-wrap i {
-      color: #ffffff;
-    }
-    .sust-card h4 {
-      font-size: 1.35rem;
-      color: #3f2e21;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    body.dark .sust-card h4 {
-      color: #f0e9df;
-    }
-    .sust-card p {
-      font-size: 0.95rem;
-      color: #6a5a48;
-      line-height: 1.6;
-    }
-    body.dark .sust-card p {
-      color: #c7b59b;
-    }
-
-    /* Tasting Room Section Styling */
-    .tasting-room-section {
-      padding: 7rem 1.25rem;
-      background-color: #fcf6ee;
-    }
-    body.dark .tasting-room-section {
-      background-color: #161310;
-    }
-    .tasting-intro {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 5rem auto;
-    }
-    .section-tag {
-      display: inline-block;
-      padding: 0.4rem 1.2rem;
-      background: rgba(95, 139, 111, 0.1);
-      color: #5f8b6f;
+    .atelier-section-tag {
       font-size: 0.85rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      border-radius: 30px;
-      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+      color: #5f8b6f;
+      margin-bottom: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    body.dark .section-tag {
-      background: rgba(123, 158, 138, 0.15);
-      color: #7b9e8a;
+    body.dark .atelier-section-tag {
+      color: #8fbc9f;
     }
-    .tasting-intro h2 {
-      font-size: 2.6rem;
-      color: #3f2e21;
+    .atelier-title {
+      font-size: 2.75rem;
       font-weight: 800;
+      color: #2c2418;
+      line-height: 1.2;
       margin-bottom: 1.5rem;
+      letter-spacing: -0.5px;
     }
-    body.dark .tasting-intro h2 { color: #f0e9df; }
-    .tasting-intro p {
-      font-size: 1.15rem;
-      color: #6a5a48;
-      line-height: 1.7;
+    body.dark .atelier-title {
+      color: #f0e9df;
     }
-    body.dark .tasting-intro p { color: #c7b59b; }
-    
-    .tasting-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
+    .atelier-subtitle {
+      font-size: 1.1rem;
+      color: #5a4a3a;
+      max-width: 700px;
+      margin-bottom: 3rem;
+      opacity: 0.85;
+      line-height: 1.6;
     }
-    @media (max-width: 900px) {
-      .tasting-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+    body.dark .atelier-subtitle {
+      color: #d4c3aa;
+    }
+
+    /* 1. Atelier Hero Section */
+    .atelier-hero {
+      position: relative;
+      height: 85vh;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('images/atelier_hero.png') center/cover no-repeat;
+      background-attachment: fixed;
+      padding: 2rem;
+      width: 100%;
+    }
+    .atelier-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(18, 18, 18, 0.3) 0%, rgba(18, 18, 18, 0.75) 100%);
+      z-index: 1;
+    }
+    .atelier-hero-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 4rem 3rem;
+      border-radius: 24px;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+      animation: atelierFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    body.dark .atelier-hero-card {
+      background: rgba(18, 18, 18, 0.45);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    .atelier-hero-card .atelier-section-tag {
+      color: #d4c3aa;
+      font-size: 0.9rem;
+      justify-content: center;
+    }
+    .atelier-hero-card h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+    }
+    .atelier-hero-card p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+      font-weight: 350;
+    }
+    .atelier-hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-atelier-primary {
+      padding: 1rem 2.25rem;
+      border-radius: 50px;
+      background: #5f8b6f;
+      color: #ffffff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(95, 139, 111, 0.3);
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+    }
+    .btn-atelier-primary:hover {
+      background: #4a6f58;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(95, 139, 111, 0.4);
+    }
+    .btn-atelier-outline {
+      padding: 1rem 2.25rem;
+      border-radius: 50px;
+      background: transparent;
+      color: #ffffff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      font-size: 0.95rem;
+    }
+    .btn-atelier-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    @keyframes atelierFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
-    .tasting-card {
-      background: #ffffff;
-      border-radius: 30px;
-      overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.04);
-      border: 1px solid rgba(223, 210, 193, 0.4);
+
+    /* 2. Microclimate Terroir Map Section */
+    .terroir-map-section {
+      background-color: #fefaf5;
+    }
+    body.dark .terroir-map-section {
+      background-color: #121212;
+    }
+    .terroir-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .terroir-content-wrapper {
       display: flex;
       flex-direction: column;
-      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
     }
-    body.dark .tasting-card {
-      background: #1f1b16;
-      border-color: rgba(74, 62, 52, 0.4);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    .terroir-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1rem;
     }
-    .tasting-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px rgba(95, 139, 111, 0.12);
-    }
-    body.dark .tasting-card:hover {
-      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-    }
-    .tasting-card-img {
-      width: 100%;
-      height: 280px;
+    .terroir-card {
+      background: #ffffff;
+      border: 1px solid #ede5db;
+      border-radius: 16px;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
       overflow: hidden;
+    }
+    body.dark .terroir-card {
+      background: #1c1813;
+      border-color: #2f281f;
+    }
+    .terroir-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 4px; height: 100%;
+      background: transparent;
+      transition: background 0.3s ease;
+    }
+    .terroir-card.active, .terroir-card:hover {
+      transform: translateX(5px);
+      box-shadow: 0 10px 30px rgba(95, 139, 111, 0.08);
+      border-color: #5f8b6f;
+    }
+    body.dark .terroir-card.active, body.dark .terroir-card:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border-color: #8fbc9f;
+    }
+    .terroir-card.active::before {
+      background: #5f8b6f;
+    }
+    body.dark .terroir-card.active::before {
+      background: #8fbc9f;
+    }
+    .terroir-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .terroir-card h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #3f2e21;
+    }
+    body.dark .terroir-card h4 {
+      color: #d4c3aa;
+    }
+    .terroir-card-meta {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #5f8b6f;
+      background: rgba(95, 139, 111, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      text-transform: uppercase;
+    }
+    body.dark .terroir-card-meta {
+      color: #8fbc9f;
+      background: rgba(143, 188, 159, 0.1);
+    }
+    .terroir-card p {
+      font-size: 0.92rem;
+      color: #6c5a49;
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+    body.dark .terroir-card p {
+      color: #c4b5a4;
+    }
+    .terroir-card-stats {
+      display: flex;
+      gap: 1.5rem;
+      border-top: 1px solid #f3ebe1;
+      padding-top: 0.75rem;
+      margin-top: 0.25rem;
+    }
+    body.dark .terroir-card-stats {
+      border-color: #2c241a;
+    }
+    .terroir-stat {
+      display: flex;
+      flex-direction: column;
+    }
+    .terroir-stat span:first-child {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      opacity: 0.6;
+      letter-spacing: 0.5px;
+    }
+    .terroir-stat span:last-child {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #3f2e21;
+    }
+    body.dark .terroir-stat span:last-child {
+      color: #f0e9df;
+    }
+    
+    .terroir-visual-wrapper {
+      display: flex;
+      justify-content: center;
       position: relative;
     }
-    .tasting-card-img img {
+    .terroir-frame {
+      padding: 1rem;
+      background: #ffffff;
+      border: 1px solid #ede5db;
+      border-radius: 24px;
+      box-shadow: 0 15px 40px rgba(44, 36, 24, 0.06);
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+    }
+    body.dark .terroir-frame {
+      background: #1c1813;
+      border-color: #2f281f;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+    .terroir-frame img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+      transition: opacity 0.2s ease;
+    }
+    .terroir-overlay-badge {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      border: 1px solid #ede5db;
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    body.dark .terroir-overlay-badge {
+      background: rgba(28, 24, 19, 0.9);
+      border-color: #2f281f;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .terroir-overlay-badge i {
+      color: #c98a3c;
+    }
+    .terroir-overlay-badge span {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #3f2e21;
+    }
+    body.dark .terroir-overlay-badge span {
+      color: #f0e9df;
+    }
+
+    /* 3. Culinary Laboratory Section */
+    .culinary-lab-section {
+      background-color: #1a1510;
+      color: #ece8e0;
+      border-top: 1px solid #2a2016;
+      border-bottom: 1px solid #2a2016;
+    }
+    .culinary-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+    .culinary-image-frame {
+      border: 1px solid rgba(212, 195, 170, 0.15);
+      padding: 0.75rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.02);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    }
+    .culinary-image-frame img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+    }
+    .culinary-lab-section .atelier-title {
+      color: #ffffff;
+    }
+    .culinary-lab-section .atelier-subtitle {
+      color: #d4c3aa;
+    }
+    .culinary-showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .culinary-item {
+      display: flex;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(212, 195, 170, 0.1);
+    }
+    .culinary-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .culinary-num {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #5f8b6f;
+      line-height: 1;
+      opacity: 0.85;
+    }
+    .culinary-item-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .culinary-item h4 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #d4c3aa;
+      margin-bottom: 0.5rem;
+    }
+    .culinary-item p {
+      font-size: 0.95rem;
+      color: rgba(236, 232, 224, 0.8);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    .pairing-flavor-wheel {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .flavor-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(95, 139, 111, 0.15);
+      border: 1px solid rgba(95, 139, 111, 0.3);
+      color: #8fbc9f;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+    }
+    .flavor-tag.gold {
+      background: rgba(201, 138, 60, 0.15);
+      border: 1px solid rgba(201, 138, 60, 0.3);
+      color: #e6b975;
+    }
+
+    /* 4. Botanical Archives Section */
+    .botanical-archives-section {
+      background-color: #fefaf5;
+    }
+    body.dark .botanical-archives-section {
+      background-color: #121212;
+    }
+    .botanical-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .botanical-archives-section .atelier-title {
+      position: relative;
+      display: inline-block;
+    }
+    .botanical-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .botanical-entry {
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid #ede5db;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 25px rgba(44,36,24,0.03);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    body.dark .botanical-entry {
+      background: #1c1813;
+      border-color: #2f281f;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .botanical-entry:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(95,139,111,0.08);
+    }
+    body.dark .botanical-entry:hover {
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    .botanical-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #f0e7dc;
+      padding-bottom: 1rem;
+    }
+    body.dark .botanical-header {
+      border-color: #2f281f;
+    }
+    .botanical-name h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #3f2e21;
+    }
+    body.dark .botanical-name h4 {
+      color: #d4c3aa;
+    }
+    .botanical-name span {
+      font-size: 0.8rem;
+      font-style: italic;
+      opacity: 0.7;
+    }
+    .botanical-index {
+      font-family: monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #5f8b6f;
+      border: 1px solid rgba(95,139,111,0.3);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+    }
+    body.dark .botanical-index {
+      color: #8fbc9f;
+      border-color: rgba(143,188,159,0.3);
+    }
+    .botanical-body p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #5a4a3a;
+      margin-bottom: 1.25rem;
+    }
+    body.dark .botanical-body p {
+      color: #c4b5a4;
+    }
+    .botanical-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      background: #fdfaf5;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      border: 1px solid #ede5db;
+    }
+    body.dark .botanical-stats {
+      background: #16120e;
+      border-color: #2f281f;
+    }
+    .botanical-metric {
+      display: flex;
+      flex-direction: column;
+    }
+    .botanical-metric label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 0.2rem;
+    }
+    .botanical-metric value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #5f8b6f;
+    }
+    body.dark .botanical-metric value {
+      color: #8fbc9f;
+    }
+    
+    .botanical-visual {
+      display: flex;
+      justify-content: center;
+    }
+    .botanical-notebook {
+      background: #ffffff;
+      border: 1px solid #ede5db;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 15px 45px rgba(44,36,24,0.05);
+      width: 100%;
+      max-width: 480px;
+    }
+    body.dark .botanical-notebook {
+      background: #1c1813;
+      border-color: #2f281f;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+    .botanical-notebook img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    /* 5. Barrel-Aging Chronology Section */
+    .barrel-chronology-section {
+      background-color: #16120e;
+      color: #ece8e0;
+      border-top: 1px solid #281f17;
+      border-bottom: 1px solid #281f17;
+      padding-bottom: 8rem;
+    }
+    .barrel-chronology-section .atelier-title {
+      color: #ffffff;
+    }
+    .barrel-chronology-section .atelier-subtitle {
+      color: #d4c3aa;
+    }
+    .timeline-container {
+      position: relative;
+      margin-top: 4rem;
+      width: 100%;
+    }
+    .timeline-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba(212, 195, 170, 0.15);
+      z-index: 1;
+      transform: translateY(-50%);
+    }
+    .timeline-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 20%;
+      background: linear-gradient(90deg, #5f8b6f, #c98a3c);
+      transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .timeline-steps {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    .timeline-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 18%;
+      cursor: pointer;
+    }
+    .timeline-node {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #16120e;
+      border: 2px solid rgba(212, 195, 170, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(212, 195, 170, 0.5);
+      transition: all 0.4s ease;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .timeline-step:hover .timeline-node, .timeline-step.active .timeline-node {
+      border-color: #c98a3c;
+      color: #ffffff;
+      background: #c98a3c;
+      box-shadow: 0 0 15px rgba(201, 138, 60, 0.5);
+      transform: scale(1.15);
+    }
+    .timeline-step.active .timeline-node {
+      background: #5f8b6f;
+      border-color: #5f8b6f;
+      box-shadow: 0 0 15px rgba(95, 139, 111, 0.5);
+    }
+    .timeline-step h5 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #d4c3aa;
+      margin-bottom: 0.35rem;
+      transition: color 0.3s;
+    }
+    .timeline-step.active h5 {
+      color: #ffffff;
+    }
+    .timeline-step span {
+      font-size: 0.75rem;
+      opacity: 0.6;
+    }
+    
+    .timeline-panel-wrapper {
+      margin-top: 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4.5rem;
+      align-items: center;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(212, 195, 170, 0.08);
+      border-radius: 24px;
+      padding: 3rem;
+      backdrop-filter: blur(10px);
+      min-height: 380px;
+    }
+    .timeline-panel-visual {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(212,195,170,0.1);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      height: 280px;
+    }
+    .timeline-panel-visual img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s ease;
+      display: block;
+      transition: opacity 0.25s ease;
     }
-    .tasting-card:hover .tasting-card-img img {
-      transform: scale(1.05);
-    }
-    .tasting-card-content {
-      padding: 2.5rem;
+    .timeline-panel-content {
       display: flex;
       flex-direction: column;
-      flex: 1;
     }
-    .tasting-card-content h4 {
-      font-size: 1.5rem;
-      font-weight: 750;
-      color: #3f2e21;
-      margin-bottom: 1rem;
-    }
-    body.dark .tasting-card-content h4 { color: #f0e9df; }
-    .tasting-card-content p {
-      font-size: 0.98rem;
-      color: #6a5a48;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-    body.dark .tasting-card-content p { color: #c7b59b; }
-    
-    .tasting-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 2rem 0;
-    }
-    .tasting-features li {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.9rem;
-      color: #5a4a38;
-      margin-bottom: 0.6rem;
-    }
-    body.dark .tasting-features li { color: #c7b59b; }
-    .tasting-features li i {
-      color: #5f8b6f;
-      font-size: 0.95rem;
-    }
-    .btn-tasting-secondary {
-      background: transparent;
-      border: 2px solid #5f8b6f;
-      color: #5f8b6f;
-      padding: 0.9rem 2rem;
-      border-radius: 40px;
-      text-align: center;
-      text-decoration: none;
+    .timeline-panel-tag {
+      font-size: 0.75rem;
       font-weight: 700;
-      font-size: 0.95rem;
-      transition: all 0.3s;
-      margin-top: auto;
-      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #c98a3c;
+      margin-bottom: 0.75rem;
     }
-    .btn-tasting-secondary:hover {
-      background: #5f8b6f;
+    .timeline-panel-content h3 {
+      font-size: 1.85rem;
+      font-weight: 800;
       color: #ffffff;
-      box-shadow: 0 8px 20px rgba(95, 139, 111, 0.25);
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+    .timeline-panel-content p {
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color: rgba(236, 232, 224, 0.85);
+      margin-bottom: 2rem;
+    }
+    .wood-flavor-wheel {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .wood-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(212, 195, 170, 0.08);
+      border: 1px solid rgba(212, 195, 170, 0.2);
+      color: #d4c3aa;
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
     }
 
-    /* Sensory Guide Section Styling */
-    .sensory-guide-section {
-      padding: 7rem 1.25rem;
+    /* 6. Atelier Gastronomy Club Section */
+    .atelier-club-section {
       background-color: #fefaf5;
-      border-top: 1px solid rgba(223, 210, 193, 0.4);
-      border-bottom: 1px solid rgba(223, 210, 193, 0.4);
+      padding-bottom: 8rem;
     }
-    body.dark .sensory-guide-section {
-      background-color: #121212;
-      border-color: rgba(74, 62, 52, 0.4);
-    }
-    .sensory-intro {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 5rem auto;
-    }
-    .sensory-intro h2 {
-      font-size: 2.6rem;
-      color: #3f2e21;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-    }
-    body.dark .sensory-intro h2 { color: #f0e9df; }
-    .sensory-intro p {
-      font-size: 1.15rem;
-      color: #6a5a48;
-      line-height: 1.7;
-    }
-    body.dark .sensory-intro p { color: #c7b59b; }
-    
-    .sensory-interactive-container {
-      display: flex;
-      max-width: 1100px;
-      margin: 0 auto;
-      gap: 3rem;
-      align-items: stretch;
-    }
-    @media (max-width: 768px) {
-      .sensory-interactive-container {
-        flex-direction: column;
-        gap: 2rem;
-      }
-    }
-    .sensory-steps-nav {
-      flex-shrink: 0;
-      width: 250px;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    @media (max-width: 768px) {
-      .sensory-steps-nav {
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem;
-      }
-    }
-    .sensory-step-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 1.5rem;
-      border-radius: 16px;
-      cursor: pointer;
-      border: 1.5px solid rgba(223, 210, 193, 0.4);
-      background: rgba(255,255,255,0.4);
-      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    body.dark .sensory-step-item {
-      background: rgba(31, 27, 22, 0.2);
-      border-color: rgba(74, 62, 52, 0.4);
-    }
-    @media (max-width: 768px) {
-      .sensory-step-item {
-        flex: 1;
-        min-width: 90px;
-        padding: 0.8rem 1rem;
-        justify-content: center;
-        border-radius: 12px;
-      }
-    }
-    .sensory-step-item:hover {
-      background: rgba(255,255,255,0.9);
-      border-color: #5f8b6f;
-      transform: translateX(4px);
-    }
-    @media (max-width: 768px) {
-      .sensory-step-item:hover {
-        transform: translateY(-2px);
-      }
-    }
-    body.dark .sensory-step-item:hover {
-      background: rgba(31, 27, 22, 0.8);
-      border-color: #7b9e8a;
-    }
-    .sensory-step-item.active {
-      background: #5f8b6f;
-      border-color: #5f8b6f;
-      color: #ffffff;
-      box-shadow: 0 10px 20px rgba(95, 139, 111, 0.2);
-    }
-    body.dark .sensory-step-item.active {
-      background: #7b9e8a;
-      border-color: #7b9e8a;
-      box-shadow: 0 10px 20px rgba(123, 158, 138, 0.2);
-    }
-    .step-num {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: rgba(95, 139, 111, 0.1);
-      color: #5f8b6f;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-      transition: all 0.3s;
-    }
-    .sensory-step-item.active .step-num {
-      background: rgba(255,255,255,0.2);
-      color: #ffffff;
-    }
-    .step-label {
-      font-weight: 700;
-      font-size: 1rem;
-    }
-    
-    .sensory-content-panel {
-      flex: 1;
-      background: #ffffff;
-      border-radius: 28px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.03);
-      border: 1px solid rgba(223, 210, 193, 0.5);
-      padding: 3rem;
-      display: flex;
-      align-items: center;
-      position: relative;
-      min-height: 380px;
-    }
-    body.dark .sensory-content-panel {
-      background: #1f1b16;
-      border-color: rgba(74, 62, 52, 0.5);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-    }
-    @media (max-width: 768px) {
-      .sensory-content-panel {
-        padding: 2rem;
-        min-height: auto;
-      }
-    }
-    .sensory-step-content {
-      display: none;
-      width: 100%;
-      animation: fadeInSensory 0.5s ease-out forwards;
-    }
-    .sensory-step-content.active {
-      display: block;
-    }
-    @keyframes fadeInSensory {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .step-content-layout {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      justify-content: space-between;
-    }
-    @media (max-width: 900px) {
-      .step-content-layout {
-        flex-direction: column-reverse;
-        gap: 1.5rem;
-        text-align: center;
-      }
-    }
-    .step-text {
-      flex: 1;
-    }
-    .step-text h3 {
-      font-size: 1.8rem;
-      color: #3f2e21;
-      font-weight: 750;
-      margin-bottom: 1.25rem;
-    }
-    body.dark .step-text h3 { color: #f0e9df; }
-    .step-text p {
-      font-size: 1.05rem;
-      color: #5a4a38;
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
-    }
-    body.dark .step-text p { color: #c7b59b; }
-    .sensory-tip {
-      background: #fdf6ee;
-      padding: 1.2rem 1.5rem;
-      border-radius: 16px;
-      border-left: 4px solid #5f8b6f;
-      font-size: 0.95rem !important;
-    }
-    body.dark .sensory-tip {
-      background: #2a241e;
-      border-left-color: #7b9e8a;
-    }
-    .step-visual {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      background: rgba(95, 139, 111, 0.05);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    body.dark .step-visual {
-      background: rgba(123, 158, 138, 0.05);
-    }
-    .step-visual i {
-      font-size: 4rem;
-      color: #5f8b6f;
-    }
-    body.dark .step-visual i {
-      color: #7b9e8a;
-    }
-    /* 7. The Connoisseur's Voice */
-    .testimonial-section {
-      padding: 6rem 0;
-      background: #f7efe7;
-    }
-    body.dark .testimonial-section { background: #1a1612; }
-    .testimonial-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 4rem 3rem;
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.05);
-      position: relative;
-    }
-    body.dark .testimonial-card {
-      background: #1f1b16;
-      border: 1px solid #3a2e26;
-    }
-    .quote-icon {
-      font-size: 3rem;
-      color: #cfbcab;
-      opacity: 0.3;
-      position: absolute;
-      top: 1.5rem; left: 2.5rem;
-    }
-    .testimonial-text {
-      font-size: 1.35rem;
-      font-style: italic;
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
-      color: #3f2e21;
-      position: relative;
-      z-index: 1;
-    }
-    body.dark .testimonial-text { color: #f0e9df; }
-    .testimonial-author {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .testimonial-author img {
-      width: 80px; height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      border: 3px solid #5f8b6f;
-    }
-    .testimonial-author h5 { font-size: 1.1rem; color: #3f2e21; }
-    body.dark .testimonial-author h5 { color: #d4c3aa; }
-    .testimonial-author span { font-size: 0.85rem; opacity: 0.7; }
-    
-    /* 8. Join the Society */
-    .join-society-section {
-      padding: 4rem 1.25rem;
-      background-color: #fefaf5;
-    }
-    body.dark .join-society-section {
+    body.dark .atelier-club-section {
       background-color: #121212;
     }
-    .join-society {
-      margin: 0 auto;
+    .club-container {
       max-width: 1200px;
-      background: linear-gradient(135deg, #2a241d, #1a1612);
-      border-radius: 30px;
-      padding: 4rem 3rem;
-      display: flex;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #1c1813 0%, #100d0a 100%);
+      border-radius: 32px;
+      padding: 5rem 4rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 5rem;
       align-items: center;
-      justify-content: space-between;
-      color: #f0e9df;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-      flex-wrap: wrap;
-      gap: 3rem;
+      color: #ece8e0;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
       position: relative;
       overflow: hidden;
     }
-    .join-society::before {
+    .club-container::before {
       content: '';
       position: absolute;
-      top: -50%; left: -50%;
-      width: 200%; height: 200%;
-      background: radial-gradient(circle, rgba(95,139,111,0.1) 0%, transparent 60%);
-      animation: premiumShimmer 15s linear infinite;
+      top: -30%; left: -30%;
+      width: 160%; height: 160%;
+      background: radial-gradient(circle, rgba(95,139,111,0.12) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .society-text { flex: 1; min-width: 300px; position: relative; z-index: 2; }
-    .society-text h2 { font-size: 2.8rem; color: #d4c3aa; margin-bottom: 1rem; }
-    .society-text p { font-size: 1.15rem; max-width: 500px; margin-bottom: 2.5rem; opacity: 0.9; line-height: 1.6; }
-    .society-image { width: 350px; position: relative; z-index: 2; }
-    .society-image img { width: 100%; border-radius: 15px; transform: rotate(5deg); transition: transform 0.4s ease; box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
-    .join-society:hover .society-image img { transform: rotate(0deg) scale(1.05); }
-    .society-form {
+    .club-content {
+      position: relative;
+      z-index: 2;
+    }
+    .club-content h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+      letter-spacing: -1px;
+      line-height: 1.15;
+    }
+    .club-content p {
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: rgba(236, 232, 224, 0.85);
+      margin-bottom: 2.5rem;
+      max-width: 540px;
+    }
+    .club-benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .club-benefit {
       display: flex;
-      gap: 0.5rem;
-      max-width: 450px;
+      align-items: center;
+      gap: 0.75rem;
     }
-    .society-form input {
+    .club-benefit i {
+      color: #5f8b6f;
+      font-size: 1.1rem;
+    }
+    .club-benefit span {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #d4c3aa;
+    }
+    .club-form {
+      display: flex;
+      gap: 0.75rem;
+      width: 100%;
+      max-width: 500px;
+    }
+    .club-form input {
       flex: 1;
-      padding: 1rem 1.5rem;
+      padding: 1.1rem 1.5rem;
       border-radius: 50px;
-      border: 1px solid #4a3e34;
-      background: rgba(0,0,0,0.2);
-      color: #fff;
+      border: 1px solid rgba(212, 195, 170, 0.2);
+      background: rgba(0, 0, 0, 0.4);
+      color: #ffffff;
       font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
       outline: none;
+      transition: border-color 0.3s;
     }
-    .society-form input:focus { border-color: #5f8b6f; }
-    .society-form button {
-      padding: 1rem 2rem;
+    .club-form input:focus {
+      border-color: #5f8b6f;
+    }
+    .club-form button {
+      padding: 1.1rem 2rem;
       border-radius: 50px;
       border: none;
       background: #5f8b6f;
-      color: #fff;
+      color: #ffffff;
       font-weight: 600;
+      font-size: 0.95rem;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.2s;
     }
-    .society-form button:hover { background: #4a6f58; }
+    .club-form button:hover {
+      background: #4a6f58;
+      transform: translateY(-1px);
+    }
+    
+    .club-visual {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+    }
+    .club-image-box {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 0.75rem;
+      background: rgba(255, 255, 255, 0.02);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+      max-width: 380px;
+      transform: rotate(3deg);
+      transition: transform 0.4s ease;
+    }
+    .club-image-box:hover {
+      transform: rotate(0deg) scale(1.03);
+    }
+    .club-image-box img {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      height: 380px;
+      object-fit: cover;
+    }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 1024px) {
+      .terroir-grid, .culinary-grid, .botanical-grid, .timeline-panel-wrapper, .club-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .terroir-visual-wrapper, .botanical-visual, .club-visual {
+        order: -1;
+      }
+      .timeline-panel-wrapper {
+        padding: 2rem;
+        grid-template-columns: 1fr;
+      }
+      .timeline-steps {
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        gap: 1rem;
+      }
+      .timeline-step {
+        width: 120px;
+        flex-shrink: 0;
+      }
+      .timeline-line {
+        display: none;
+      }
+      .club-container {
+        padding: 3rem 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .atelier-section {
+        padding: 4rem 1.25rem;
+      }
+      .atelier-hero {
+        height: auto;
+        padding: 6rem 1.25rem 4rem 1.25rem;
+      }
+      .atelier-hero-card {
+        padding: 2.5rem 1.5rem;
+      }
+      .atelier-hero-card h1 {
+        font-size: 2.2rem;
+      }
+      .atelier-title {
+        font-size: 2rem;
+      }
+      .club-content h2 {
+        font-size: 2.2rem;
+      }
+      .club-benefits {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .club-form {
+        flex-direction: column;
+        gap: 0.75rem;
+        max-width: 100%;
+      }
+      .club-form button {
+        width: 100%;
+      }
+      .terroir-frame img, .culinary-image-frame img, .botanical-notebook img {
+        height: 350px;
+      }
+      .club-image-box img {
+        height: 300px;
+      }
+      .timeline-panel-wrapper {
+        padding: 1.5rem;
+      }
+      .timeline-panel-content h3 {
+        font-size: 1.5rem;
+      }
+    }
   
     /* --- Active Page Nav Styling --- */
     .nav-link.active-page, .mega-dropdown-item.active-page {
@@ -1763,314 +2003,450 @@
 </header>
 <div class="menu-overlay" id="menuOverlay"></div>
  <!-- 1. Immersive Hero Section -->
-<section class="creative-hero">
-  <div class="hero-glass-card">
-    <span class="hero-tag"><i class="fas fa-olive-branch"></i> Specialty Tasting Room</span>
-    <h1>The Tasting Room</h1>
-    <p>Discover the golden elixir born from ancient Mediterranean groves. Experience our early-harvest cold-pressed olive oils and aged balsamic reserve vinegars, crafted with passion, heritage, and uncompromising quality.</p>
-    <div class="hero-buttons">
-      <a href="#tasting-experience" class="btn-glow">Book a Tasting</a>
-      <a href="#sensory-masterclass" class="btn-glow-outline">Tasting Masterclass</a>
+<section class="atelier-hero">
+  <div class="atelier-hero-card">
+    <span class="atelier-section-tag"><i class="fas fa-eye"></i> The Sensory Atelier</span>
+    <h1>Where Liquid Poetry is Born</h1>
+    <p>An immersive sensory estate of earth, wood, and time. We craft ultra-limited reserve extra virgin olive oils and traditional aged balsamics for those who perceive taste as art.</p>
+    <div class="atelier-hero-buttons">
+      <a href="#terroir" class="btn-atelier-primary">Enter the Atelier</a>
+      <a href="#chronology" class="btn-atelier-outline">Explore the Chronology</a>
     </div>
   </div>
 </section>
-<!-- 2. Artisan Process (Zig-Zag Layout) -->
-<section class="zig-zag-section">
-  <div class="container">
-    <div class="zig-zag-row">
-      <div class="zz-image">
-        <img src="images/about_process.jpg" alt="Cold Pressing Olives">
+
+<!-- 2. The Microclimate Terroir Map -->
+<section class="atelier-section terroir-map-section" id="terroir">
+  <div class="atelier-container terroir-grid">
+    <div class="terroir-content-wrapper">
+      <span class="atelier-section-tag"><i class="fas fa-map-marked-alt"></i> Microclimate Terroir</span>
+      <h2 class="atelier-title">Three Estates. Three Expressions.</h2>
+      <p class="atelier-subtitle">Our olive trees thrive across three distinct microclimates on our Mediterranean estate, each nurturing unique flavor profiles and chemical characteristics.</p>
+      
+      <div class="terroir-cards">
+        <div class="terroir-card active" onclick="selectTerroir(1, 'images/terroir_cliffs.png', 'Coastal Cliffs')">
+          <div class="terroir-card-header">
+            <h4>The Coastal Cliffs</h4>
+            <span class="terroir-card-meta">Saline &amp; Mineral</span>
+          </div>
+          <p>Battered by sea winds, these ancient terraced groves yield a bright, early-harvest Picual oil with unique maritime salinity and tomato leaf aromatics.</p>
+          <div class="terroir-card-stats">
+            <div class="terroir-stat">
+              <span>Altitude</span>
+              <span>120m</span>
+            </div>
+            <div class="terroir-stat">
+              <span>Soil</span>
+              <span>Calcareous Limestone</span>
+            </div>
+            <div class="terroir-stat">
+              <span>Acidity</span>
+              <span>0.11%</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="terroir-card" onclick="selectTerroir(2, 'images/botanical_branch.png', 'Mist Valley')">
+          <div class="terroir-card-header">
+            <h4>The Mist-Shrouded Valley</h4>
+            <span class="terroir-card-meta">Buttery &amp; Herbaceous</span>
+          </div>
+          <p>Sheltered from the elements, our valley Frantoio trees produce a delicate, smooth golden nectar carrying notes of sweet green almond and chamomile.</p>
+          <div class="terroir-card-stats">
+            <div class="terroir-stat">
+              <span>Altitude</span>
+              <span>45m</span>
+            </div>
+            <div class="terroir-stat">
+              <span>Soil</span>
+              <span>Rich Alluvial Silt</span>
+            </div>
+            <div class="terroir-stat">
+              <span>Acidity</span>
+              <span>0.14%</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="terroir-card" onclick="selectTerroir(3, 'images/cellar_barrels.png', 'Stone Ridge')">
+          <div class="terroir-card-header">
+            <h4>The Sun-Baked Stone Ridge</h4>
+            <span class="terroir-card-meta">Peppery &amp; Robust</span>
+          </div>
+          <p>Clinging to fractured shale, these high-altitude Coratina trees struggle for water, concentrating immense polyphenol levels and delivering an intense, fiery finish.</p>
+          <div class="terroir-card-stats">
+            <div class="terroir-stat">
+              <span>Altitude</span>
+              <span>310m</span>
+            </div>
+            <div class="terroir-stat">
+              <span>Soil</span>
+              <span>Fractured Shale &amp; Clay</span>
+            </div>
+            <div class="terroir-stat">
+              <span>Acidity</span>
+              <span>0.09%</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="zz-text">
-        <h2>The Cold-Press Tradition</h2>
-        <p>Our artisan process starts with hand-picked olives, pressed within hours of harvest to ensure zero oxidation. We extract the oil using mechanical means at temperatures below 27°C (80°F).</p>
-        <p>This meticulous method preserves the delicate polyphenols, giving our olive oil its peppery kick and extraordinary health benefits.</p>
-      </div>
-    </div>
-    <div class="zig-zag-row reverse">
-      <div class="zz-image">
-        <img src="images/grove_to_glass.png" alt="Grove to Glass">
-      </div>
-      <div class="zz-text">
-        <h2>From Grove to Glass</h2>
-        <p>We trace every single bottle back to the specific grove and harvest day. We believe transparency is the key to true quality.</p>
-        <p>Experience the pure, unfiltered essence of Mediterranean heritage in every drop.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 3. Tasting Room Experience Section -->
-<section class="tasting-room-section" id="tasting-experience">
-  <div class="container">
-    <div class="tasting-intro">
-      <span class="section-tag">Sensory Exploration</span>
-      <h2>The Olive &amp; Vinegar Tasting Room</h2>
-      <p>Step inside our physical tasting room, where rustic wooden tables and shining stainless steel fustis set the stage for an unforgettable culinary journey. Let our certified sommeliers guide you through custom flights of extra virgin olive oils and aged balsamic vinegars.</p>
     </div>
     
-    <div class="tasting-grid">
-      <div class="tasting-card">
-        <div class="tasting-card-img">
-          <img src="images/tasting_experience.png" alt="Guided Sommelier Tasting">
-        </div>
-        <div class="tasting-card-content">
-          <h4>Guided Sommelier Tasting</h4>
-          <p>Book a private session with a certified olive oil sommelier. Learn to recognize early-harvest grassy notes, identify defects, and master the art of pairing oils with artisanal cheeses, fresh fruits, and breads.</p>
-          <ul class="tasting-features">
-            <li><i class="fas fa-check"></i> 6 Single-Estate EVOO Varietals</li>
-            <li><i class="fas fa-check"></i> Guided Sensory Flavor Wheel Analysis</li>
-            <li><i class="fas fa-check"></i> Personalized Food Pairing Guide</li>
-          </ul>
-          <a href="#join-society" class="btn-tasting-secondary">Book Experience</a>
-        </div>
-      </div>
-
-      <div class="tasting-card">
-        <div class="tasting-card-img">
-          <img src="images/tasting_technique.png" alt="Aged Balsamic Barrel Flights">
-        </div>
-        <div class="tasting-card-content">
-          <h4>Aged Balsamic Barrel Flights</h4>
-          <p>Explore the complex depth of our traditional vinegars. Taste white balsamic infusions, dark berry blends, and our signature 18-year barrel-aged reserve, dripping with notes of fig, oak, and molasses.</p>
-          <ul class="tasting-features">
-            <li><i class="fas fa-check"></i> 5 Barrel-Aged Traditional Balsamics</li>
-            <li><i class="fas fa-check"></i> Wood-Cask Aging Education</li>
-            <li><i class="fas fa-check"></i> Curated Charcuterie Pairings</li>
-          </ul>
-          <a href="#join-society" class="btn-tasting-secondary">Book Experience</a>
+    <div class="terroir-visual-wrapper">
+      <div class="terroir-frame">
+        <img id="terroirImage" src="images/terroir_cliffs.png" alt="Coastal Cliffs Estate">
+        <div class="terroir-overlay-badge">
+          <i class="fas fa-compass"></i>
+          <span id="terroirBadgeText">Coastal Cliffs</span>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- 4. Interactive Tasting Masterclass Section -->
-<section class="sensory-guide-section" id="sensory-masterclass">
-  <div class="container">
-    <div class="sensory-intro">
-      <span class="section-tag">Tasting Etiquette</span>
-      <h2>The 5 S's of Sensory Olive Oil Analysis</h2>
-      <p>Just like fine wine, extra virgin olive oil has complex flavor dimensions. Master the professional tasting technique used by olive oil sommeliers to fully appreciate our reserve collections.</p>
-    </div>
 
-    <div class="sensory-interactive-container">
-      <!-- Steps Navigation (Left on desktop) -->
-      <div class="sensory-steps-nav">
-        <div class="sensory-step-item active" onclick="showSensoryStep(1)">
-          <span class="step-num">1</span>
-          <span class="step-label">See</span>
-        </div>
-        <div class="sensory-step-item" onclick="showSensoryStep(2)">
-          <span class="step-num">2</span>
-          <span class="step-label">Swirl</span>
-        </div>
-        <div class="sensory-step-item" onclick="showSensoryStep(3)">
-          <span class="step-num">3</span>
-          <span class="step-label">Smell</span>
-        </div>
-        <div class="sensory-step-item" onclick="showSensoryStep(4)">
-          <span class="step-num">4</span>
-          <span class="step-label">Slurp</span>
-        </div>
-        <div class="sensory-step-item" onclick="showSensoryStep(5)">
-          <span class="step-num">5</span>
-          <span class="step-label">Swallow</span>
+<!-- 3. The Culinary Laboratory -->
+<section class="atelier-section culinary-lab-section" id="culinary-lab">
+  <div class="atelier-container culinary-grid">
+    <div class="culinary-image-frame">
+      <img src="images/gastronomy_dessert.png" alt="Michelin Gourmet Dessert Presentation">
+    </div>
+    
+    <div class="culinary-showcase">
+      <span class="atelier-section-tag"><i class="fas fa-flask"></i> Culinary Alchemy</span>
+      <h2 class="atelier-title">The Gastronomy Laboratory</h2>
+      <p class="atelier-subtitle">We collaborate with Michelin-starred culinarians to push the boundaries of texture and temperature, revealing the sublime synergy of extra virgin olive oil and balsamic reserve.</p>
+      
+      <div class="culinary-item">
+        <span class="culinary-num">01</span>
+        <div class="culinary-item-content">
+          <h4>Meringue &amp; Fig Reduction</h4>
+          <p>A delicate white sea-salt meringue cradling fresh black mission figs, drizzled with our signature 18-year barrel-aged traditional balsamic syrup and encapsulated Picual olive oil micro-pearls.</p>
+          <div class="pairing-flavor-wheel">
+            <span class="flavor-tag">Contrast</span>
+            <span class="flavor-tag gold">Acidity</span>
+            <span class="flavor-tag">Salinity</span>
+            <span class="flavor-tag gold">Oak Tannin</span>
+          </div>
         </div>
       </div>
-
-      <!-- Step Content Display (Right on desktop) -->
-      <div class="sensory-content-panel">
-        <div class="sensory-step-content active" id="step-content-1">
-          <div class="step-content-layout">
-            <div class="step-text">
-              <h3>See the Golden-Green Glow</h3>
-              <p>Pour about one tablespoon of olive oil into a small glass (preferably a blue tasting glass to avoid bias). Look at the color, opacity, and body of the oil.</p>
-              <p class="sensory-tip"><strong>Sommelier Fact:</strong> While color doesn't indicate flavor quality, a vibrant green or gold hue is beautiful and showcases the early-harvest extraction of fresh olives.</p>
-            </div>
-            <div class="step-visual">
-              <i class="fas fa-eye"></i>
-            </div>
+      
+      <div class="culinary-item">
+        <span class="culinary-num">02</span>
+        <div class="culinary-item-content">
+          <h4>Smoked Hebridean Salmon &amp; Coratina</h4>
+          <p>Slow-smoked organic salmon draped over charcoal rye sourdough, finished with a heavy pour of our high-polyphenol Stone Ridge Coratina. The intense peppery finish cuts through the rich wood smoke.</p>
+          <div class="pairing-flavor-wheel">
+            <span class="flavor-tag">Complement</span>
+            <span class="flavor-tag gold">Smoke</span>
+            <span class="flavor-tag">Herbaceous</span>
+            <span class="flavor-tag gold">Spicy Finish</span>
           </div>
         </div>
-
-        <div class="sensory-step-content" id="step-content-2">
-          <div class="step-content-layout">
-            <div class="step-text">
-              <h3>Swirl &amp; Warm the Oil</h3>
-              <p>Cup the tasting glass in one hand and cover the top with your other hand. Gently swirl the glass for about 60 seconds.</p>
-              <p class="sensory-tip"><strong>Sommelier Fact:</strong> Warming the oil with your body heat activates the volatile organic compounds in the oil. Keeping it covered traps these aromatic molecules inside the glass, concentrating them for the next step.</p>
-            </div>
-            <div class="step-visual">
-              <i class="fas fa-sync-alt"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="sensory-step-content" id="step-content-3">
-          <div class="step-content-layout">
-            <div class="step-text">
-              <h3>Smell the Complex Aromas</h3>
-              <p>Bring the glass directly to your nose, remove your covering hand, and take a deep, slow breath. Notice the immediate aromas.</p>
-              <p class="sensory-tip"><strong>Sommelier Fact:</strong> Premium early-harvest olive oils smell green, fresh, and complex. Look for notes of freshly cut grass, green tomato leaf, green apple, artichoke, herbs, or even green almond.</p>
-            </div>
-            <div class="step-visual">
-              <i class="fas fa-wind"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="sensory-step-content" id="step-content-4">
-          <div class="step-content-layout">
-            <div class="step-text">
-              <h3>Slurp to Emulsify</h3>
-              <p>Take a small sip of the oil. Do not swallow yet! Inhale sharply through your mouth with your teeth closed, making a slurping sound.</p>
-              <p class="sensory-tip"><strong>Sommelier Fact:</strong> The sharp intake of air ("strippaggio" in Italian) emulsifies the oil with your saliva, spraying it as a fine mist over your tongue and palate. This allows all your tastebuds to detect bitterness and fruitiness.</p>
-            </div>
-            <div class="step-visual">
-              <i class="fas fa-utensils"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="sensory-step-content" id="step-content-5">
-          <div class="step-content-layout">
-            <div class="step-text">
-              <h3>Swallow &amp; Feel the Finish</h3>
-              <p>Finally, swallow the oil. Pay attention to the sensations at the back of your throat as you swallow.</p>
-              <p class="sensory-tip"><strong>Sommelier Fact:</strong> A high-quality oil will produce a distinct peppery tickle, scratch, or even a cough in the back of your throat. This is the mark of oleocanthal, a powerful, healthy polyphenol antioxidant.</p>
-            </div>
-            <div class="step-visual">
-              <i class="fas fa-smile-beam"></i>
-            </div>
+      </div>
+      
+      <div class="culinary-item">
+        <span class="culinary-num">03</span>
+        <div class="culinary-item-content">
+          <h4>Tuscan Olive Oil Gelato &amp; Wild Thyme</h4>
+          <p>A velvety house-churned sweet cream gelato infused with early-harvest Frantoio oil, topped with fresh-plucked wild mountain thyme and crystalline sea salt flakes.</p>
+          <div class="pairing-flavor-wheel">
+            <span class="flavor-tag">Emulsion</span>
+            <span class="flavor-tag gold">Velvet</span>
+            <span class="flavor-tag">Buttery</span>
+            <span class="flavor-tag gold">Herbaceous Sweet</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- 5. Curated Premium Selection -->
-<section class="premium-selection">
-  <div class="container">
-    <h2>Curated Reserve Selections</h2>
-    <div class="premium-cards">
-      <div class="premium-card">
-        <img src="images/premium_reserve.png" alt="Premium Reserve">
-        <h4>Family Reserve</h4>
-        <p style="opacity: 0.8; margin-bottom: 1rem; font-size: 0.9rem;">Robust, peppery, early harvest.</p>
-        <div class="price">$38.00</div>
-      </div>
-      <div class="premium-card">
-        <img src="images/single_estate_oils.png" alt="Single Estate">
-        <h4>Single Estate Picual</h4>
-        <p style="opacity: 0.8; margin-bottom: 1rem; font-size: 0.9rem;">Tomato leaf, green almond notes.</p>
-        <div class="price">$42.00</div>
-      </div>
-      <div class="premium-card">
-        <img src="images/organic_olive_oil.png" alt="Organic Blend">
-        <h4>Organic Tuscan</h4>
-        <p style="opacity: 0.8; margin-bottom: 1rem; font-size: 0.9rem;">Smooth, buttery, versatile.</p>
-        <div class="price">$34.00</div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 6. Heritage & Terroir -->
-<section class="terroir-section">
-  <div class="container terroir-grid">
-    <div class="terroir-image"></div>
-    <div class="terroir-content">
-      <span class="badge" style="align-self: flex-start; margin-bottom: 1rem;">Est. 1982</span>
-      <h3>Roots Deep in the Mediterranean Soil</h3>
-      <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem;">
-        For over four decades, our family has nurtured these ancient groves under the Mediterranean sun. We believe that true quality takes time, patience, and a deep respect for tradition. Every bottle we produce is a testament to our dedication to the craft of artisan olive oil making.
-      </p>
-      <div>
-        <a href="about.html" class="btn-primary" style="text-decoration: none; display: inline-block;">Read Our Story</a>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 7. Culinary Harmony -->
-<section class="pairing-section">
-  <div class="container pairing-container">
-    <div class="pairing-text">
-      <h2>Culinary Harmony</h2>
-      <p>True culinary magic happens when the right olive oil meets the perfect dish. Our robust oils enhance hearty meats, while our delicate oils elevate fresh greens and seafood.</p>
-      <div class="pairing-tags">
-        <span class="pairing-tag">Robust &amp; Grilled Meats</span>
-        <span class="pairing-tag">Delicate &amp; Fresh Fish</span>
-        <span class="pairing-tag">Medium &amp; Sourdough</span>
-        <span class="pairing-tag">Fruity &amp; Vanilla Ice</span>
-      </div>
-    </div>
-    <div class="pairing-image">
-      <img src="images/pairings.jpg" alt="Culinary Pairings">
-    </div>
-  </div>
-</section>
-<!-- 8. Sustainability Promise -->
-<section class="sustainability-section">
-  <div class="container">
-    <h2>Our Promise to the Planet</h2>
-    <div class="sustainability-intro">
-      <p>Sustainability is at the heart of our tasting room. From hand-harvesting in organic groves to solar-powering our mills and running a zero-waste operation, we honor the land that feeds us.</p>
-    </div>
-    <div class="sust-grid">
-      <div class="sust-card">
-        <div class="sust-icon-wrap">
-          <i class="fas fa-seedling"></i>
+
+<!-- 4. The Botanical Archives -->
+<section class="atelier-section botanical-archives-section" id="botanical-archives">
+  <div class="atelier-container botanical-grid">
+    <div class="botanical-list">
+      <span class="atelier-section-tag"><i class="fas fa-book-open"></i> Cultivar Register</span>
+      <h2 class="atelier-title">The Botanical Archives</h2>
+      <p class="atelier-subtitle">Our estate preserves rare, protected olive and grape cultivars that hold the genetic lineage of centuries of Mediterranean agriculture.</p>
+      
+      <div class="botanical-entry">
+        <div class="botanical-header">
+          <div class="botanical-name">
+            <h4>The Millenaria</h4>
+            <span>Olea europaea Millenaria</span>
+          </div>
+          <span class="botanical-index">Reg. No. 082</span>
         </div>
-        <h4>100% Organic</h4>
-        <p>Farming in harmony with nature. Our biodynamic farming methods are completely chemical-free, nurturing the soil and the trees naturally.</p>
-      </div>
-      <div class="sust-card">
-        <div class="sust-icon-wrap">
-          <i class="fas fa-recycle"></i>
+        <div class="botanical-body">
+          <p>A highly protected cultivar harvested exclusively from nine trees on our estate dating back to the 9th century. Yields a light, highly aromatic oil rich in oleocanthal.</p>
+          <div class="botanical-stats">
+            <div class="botanical-metric">
+              <label>Polyphenols</label>
+              <value>870 mg/kg</value>
+            </div>
+            <div class="botanical-metric">
+              <label>Yield Ratio</label>
+              <value>11% (Early Harvest)</value>
+            </div>
+          </div>
         </div>
-        <h4>Zero Waste</h4>
-        <p>Using every single part of the olive. Olive pomace and wastewater are repurposed for organic agricultural compost and heating.</p>
       </div>
-      <div class="sust-card">
-        <div class="sust-icon-wrap">
-          <i class="fas fa-solar-panel"></i>
+      
+      <div class="botanical-entry">
+        <div class="botanical-header">
+          <div class="botanical-name">
+            <h4>Royal Picual</h4>
+            <span>Olea europaea Picual Royal</span>
+          </div>
+          <span class="botanical-index">Reg. No. 104</span>
         </div>
-        <h4>Solar Powered</h4>
-        <p>Renewable energy at our mill. Our pressing facilities run entirely on solar power, resulting in a carbon-negative extraction process.</p>
+        <div class="botanical-body">
+          <p>A unique regional mutation of the traditional Picual clone, exhibiting double the normal level of leaf-green chlorophyll and producing a brilliant emerald oil with an apple-peeling nose.</p>
+          <div class="botanical-stats">
+            <div class="botanical-metric">
+              <label>Chlorophyll</label>
+              <value>42 ppm</value>
+            </div>
+            <div class="botanical-metric">
+              <label>Flavor Profile</label>
+              <value>Green Tomato &amp; Almond</value>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="botanical-visual">
+      <div class="botanical-notebook">
+        <img src="images/botanical_branch.png" alt="Botanical Archive Illustration of Olive Branch">
       </div>
     </div>
   </div>
 </section>
-<!-- 9. The Connoisseur's Voice -->
-<section class="testimonial-section">
-  <div class="container">
-    <div class="testimonial-card">
-      <i class="fas fa-quote-left quote-icon"></i>
-      <p class="testimonial-text">
-        "Olivia & Co.'s Family Reserve is simply the finest olive oil I have tasted this year. The vibrant grassy notes and peppery finish elevate my dishes to a Michelin-star level."
-      </p>
-      <div class="testimonial-author">
-        <img src="images/chefs_corner.png" alt="Chef Testimonial">
-        <h5>Chef Alessandro Ricci</h5>
-        <span>Head Chef, Il Gusto Milano</span>
+
+<!-- 5. The Barrel-Aging Chronology -->
+<section class="atelier-section barrel-chronology-section" id="chronology">
+  <div class="atelier-container">
+    <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+      <span class="atelier-section-tag"><i class="fas fa-hourglass-half"></i> Maturation Narrative</span>
+      <h2 class="atelier-title">The Barrel-Aging Chronology</h2>
+      <p class="atelier-subtitle">Our traditional balsamic vinegar matures in a progressive "batteria" of five wood types, each imparting distinct chemical complexity over a quarter of a century.</p>
+    </div>
+    
+    <div class="timeline-container">
+      <div class="timeline-line">
+        <div class="timeline-progress" id="timelineProgress"></div>
+      </div>
+      
+      <div class="timeline-steps">
+        <div class="timeline-step active" onclick="selectTimelineStep(1, 20)">
+          <div class="timeline-node">1</div>
+          <h5>Oak (Rovere)</h5>
+          <span>Years 1 – 5</span>
+        </div>
+        <div class="timeline-step" onclick="selectTimelineStep(2, 40)">
+          <div class="timeline-node">2</div>
+          <h5>Chestnut (Castagno)</h5>
+          <span>Years 6 – 10</span>
+        </div>
+        <div class="timeline-step" onclick="selectTimelineStep(3, 60)">
+          <div class="timeline-node">3</div>
+          <h5>Cherry (Ciliegio)</h5>
+          <span>Years 11 – 15</span>
+        </div>
+        <div class="timeline-step" onclick="selectTimelineStep(4, 80)">
+          <div class="timeline-node">4</div>
+          <h5>Mulberry (Gelso)</h5>
+          <span>Years 16 – 20</span>
+        </div>
+        <div class="timeline-step" onclick="selectTimelineStep(5, 100)">
+          <div class="timeline-node">5</div>
+          <h5>Ash (Frassino)</h5>
+          <span>Years 21 – 25+</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="timeline-panel-wrapper">
+      <div class="timeline-panel-visual">
+        <img id="timelineImage" src="images/cellar_barrels.png" alt="Oak Barrel Aging Cellar">
+      </div>
+      <div class="timeline-panel-content">
+        <span class="timeline-panel-tag" id="timelinePanelTag">Cask Type: Rovere (Oak)</span>
+        <h3 id="timelinePanelTitle">The Structural Foundation</h3>
+        <p id="timelinePanelText">In the first five years, the cooked grape must rests in large oak barrels. Oak provides the structural tannins, vanilla notes, and wood backbone that stabilize the vinegar's long-term maturation process.</p>
+        <div class="wood-flavor-wheel" id="timelineFlavors">
+          <span class="wood-tag">Wood Tannin</span>
+          <span class="wood-tag">Vanilla</span>
+          <span class="wood-tag">Spiced Toast</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
-<!-- 10. Join the Society -->
-<section class="join-society-section" id="join-society">
-  <div class="join-society">
-    <div class="society-text">
-      <h2>Join The Connoisseur Society</h2>
-      <p>Subscribe to our Oil of the Month Club and receive exclusive, limited-batch harvests before they are released to the public.</p>
-      <form class="society-form" onsubmit="event.preventDefault(); alert('Welcome to the Society!');">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Join Now</button>
+
+<!-- 6. The Atelier Gastronomy Club -->
+<section class="atelier-section atelier-club-section" id="club">
+  <div class="atelier-container club-container">
+    <div class="club-content">
+      <span class="atelier-section-tag" style="color: #8fbc9f;"><i class="fas fa-crown"></i> Connoisseur Registry</span>
+      <h2>The Atelier Reserve Club</h2>
+      <p>Gain entry into our family's private sensory allocations. Club members receive quarterly micro-lot early harvest olive oils, single-wood experimental balsamics, and private invitations to estate blending workshops.</p>
+      
+      <div class="club-benefits">
+        <div class="club-benefit">
+          <i class="fas fa-award"></i>
+          <span>Micro-Lot Allocations</span>
+        </div>
+        <div class="club-benefit">
+          <i class="fas fa-calendar-alt"></i>
+          <span>Estate Sommelier Events</span>
+        </div>
+        <div class="club-benefit">
+          <i class="fas fa-map"></i>
+          <span>Single-Grove Traceability</span>
+        </div>
+        <div class="club-benefit">
+          <i class="fas fa-shipping-fast"></i>
+          <span>Temperature-Controlled Shipping</span>
+        </div>
+      </div>
+      
+      <form class="club-form" onsubmit="event.preventDefault(); alert('We welcome you to the Connoisseur Registry.');">
+        <input type="email" placeholder="Enter your private email" required>
+        <button type="submit">Request Invitation</button>
       </form>
     </div>
-    <div class="society-image">
-      <img src="images/oil_club_box.png" alt="Oil Club Box">
+    
+    <div class="club-visual">
+      <div class="club-image-box">
+        <img src="images/reserve_box.png" alt="Luxury wood presentation gift box with olive oil and vinegar bottles">
+      </div>
     </div>
   </div>
 </section>
+
+<!-- Interactive Script for Atelier Home Page -->
+<script>
+  // Terroir Selection Interactive Logic
+  const terroirData = {
+    1: {
+      name: "Coastal Cliffs",
+      image: "images/terroir_cliffs.png"
+    },
+    2: {
+      name: "Mist Valley",
+      image: "images/botanical_branch.png"
+    },
+    3: {
+      name: "Stone Ridge",
+      image: "images/cellar_barrels.png"
+    }
+  };
+
+  function selectTerroir(id, imageUrl, name) {
+    // Update active class on cards
+    const cards = document.querySelectorAll('.terroir-card');
+    cards.forEach((card, index) => {
+      if (index === id - 1) card.classList.add('active');
+      else card.classList.remove('active');
+    });
+    
+    // Update Image and Badge Text
+    const imgEl = document.getElementById('terroirImage');
+    const badgeTextEl = document.getElementById('terroirBadgeText');
+    
+    if (imgEl) {
+      // Subtle fade effect on image swap
+      imgEl.style.opacity = '0';
+      setTimeout(() => {
+        imgEl.src = imageUrl;
+        imgEl.style.opacity = '1';
+      }, 150);
+    }
+    if (badgeTextEl) {
+      badgeTextEl.textContent = name;
+    }
+  }
+
+  // Timeline Selection Interactive Logic
+  const timelineData = {
+    1: {
+      tag: "Cask Type: Rovere (Oak) - Years 1-5",
+      title: "The Structural Foundation",
+      text: "In the first five years, the cooked grape must rests in large oak barrels. Oak provides the structural tannins, vanilla notes, and wood backbone that stabilize the vinegar's long-term maturation process.",
+      flavors: ["Wood Tannin", "Vanilla", "Spiced Toast", "Structure"],
+      progress: 20
+    },
+    2: {
+      tag: "Cask Type: Castagno (Chestnut) - Years 6-10",
+      title: "Deep Color and Body",
+      text: "Transferred to chestnut wood, the vinegar absorbs dark wood resins. Chestnut is rich in natural tannins and coloring substances, helping the must develop its signature glossy, dark brown color.",
+      flavors: ["Dark Resin", "Astringent Tannin", "Deep Color", "Body"],
+      progress: 40
+    },
+    3: {
+      tag: "Cask Type: Ciliegio (Cherry) - Years 11-15",
+      title: "Sweet Fruit and Esters",
+      text: "As the volume reduces, the vinegar moves into cherry casks. Cherry is a highly porous wood that releases delicate, sweet red-fruit aromas and esters, rounding out the harsh oak tannins.",
+      flavors: ["Red Fruit", "Soft Sweetness", "Floral Esters", "Acidity Balance"],
+      progress: 60
+    },
+    4: {
+      tag: "Cask Type: Gelso (Mulberry) - Years 16-20",
+      title: "Concentration and Oxygenation",
+      text: "Mulberry wood barrels promote high evaporation and rapid concentration of the liquid. This wood adds a complex, resinous herbaceous tone, signaling the start of the final refining phase.",
+      flavors: ["Concentrated Syrup", "Herbaceous Note", "Oxygen Exchange", "Rapid Reduction"],
+      progress: 80
+    },
+    5: {
+      tag: "Cask Type: Frassino (Ash) - Years 21-25+",
+      title: "Final Refinement and Harmony",
+      text: "The final years are spent in the smallest ash casks. Ash wood is extremely dense and hard, providing subtle floral aromas and completing the flavor harmony. The vinegar is now dense, glossy, and perfectly balanced.",
+      flavors: ["Floral Refinement", "Lobe Polish", "Perfect Balance", "Molasses Density"],
+      progress: 100
+    }
+  };
+
+  function selectTimelineStep(stepNum, progressPercent) {
+    // Update active class on steps
+    const steps = document.querySelectorAll('.timeline-step');
+    steps.forEach((step, index) => {
+      if (index === stepNum - 1) step.classList.add('active');
+      else step.classList.remove('active');
+    });
+    
+    // Update progress bar
+    const progressEl = document.getElementById('timelineProgress');
+    if (progressEl) {
+      progressEl.style.width = `${progressPercent}%`;
+    }
+    
+    // Get data
+    const data = timelineData[stepNum];
+    if (!data) return;
+    
+    // Update texts
+    const tagEl = document.getElementById('timelinePanelTag');
+    const titleEl = document.getElementById('timelinePanelTitle');
+    const textEl = document.getElementById('timelinePanelText');
+    const flavorsEl = document.getElementById('timelineFlavors');
+    
+    if (tagEl) tagEl.textContent = data.tag;
+    if (titleEl) titleEl.textContent = data.title;
+    if (textEl) textEl.textContent = data.text;
+    
+    if (flavorsEl) {
+      flavorsEl.innerHTML = '';
+      data.flavors.forEach(flavor => {
+        const span = document.createElement('span');
+        span.className = 'wood-tag';
+        span.textContent = flavor;
+        flavorsEl.appendChild(span);
+      });
+    }
+  }
+</script>
 <!-- FOOTER WITH SAME NAVBAR DESIGN, COLORS, FONTS, STYLES -->
 <footer class="footer">
   <div class="footer-container">
